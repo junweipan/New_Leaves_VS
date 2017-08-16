@@ -1,17 +1,99 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+	<!--Page Title-->
+<section class="page-title" style="background-image:url(images/background/5.jpg);">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1>Contact Us</h1>
+            <ul class="bread-crumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!--Contact Section-->
+<section class="contact-section">
+    <div class="auto-container">
+        <div class="row clearfix">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+            <!--Info Column-->
+            <div class="info-column col-md-7 col-sm-12 col-xs-12">
+
+                <h2>Send Us Message</h2>
+                <!--Contact Form-->
+                <div class="contact-form">
+                    <form method="post" action="sendemail.php" id="contact-form">
+                        <div class="row clearfix">
+
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="username" value="" placeholder="Full Name">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" name="email" value="" placeholder="Email Address">
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" name="phone" value="" placeholder="Phone Number">
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="theme-btn btn-style-one">Send</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!--End Contact Form-->
+
+            </div>
+
+            <!--Form Container-->
+            <div class="form-column col-md-5 col-sm-12 col-xs-12">
+                <div class="inner-column">
+                    <h2>Our Address</h2>
+                    <div class="text">Lorem ipsum dolor sit amet, no pro labore iriure sententiae, ei altera oblique percipit vel dolor amet . </div>
+
+                    <ul class="contact-info">
+                        <li><div class="icon-box"><span class="flaticon-phone-call"></span></div><h4>Phone</h4>(880) 1723801729</li>
+                        <li><div class="icon-box"><span class="flaticon-web"></span></div><h4>Email</h4>contact@rashedmail.com</li>
+                    </ul>
+
+                    <ul class="social-icon-six">
+                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                        <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                        <li><a href="#"><span class="fa fa-vimeo"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Contact Section-->
+<!--Map Section-->
+<section class="map-section">
+    <!--Map Outer-->
+    <div class="map-outer">
+        <!--Map Canvas-->
+        <div class="map-canvas"
+             data-zoom="10"
+             data-lat="-37.817085"
+             data-lng="144.955631"
+             data-type="roadmap"
+             data-hue="#ffc400"
+             data-title="Envato"
+             data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+        </div>
+    </div>
+</section>
+<!--End Map Section-->
