@@ -184,16 +184,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.jpg" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\flaticon.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\hover.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.bootstrap-touchspin.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\nouislider.css" />
+    <Content Include="Content\nouislider.pips.css" />
+    <Content Include="Content\owl.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\revolution-slider.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\flaticon.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\FuturaBT-Medium.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\revicons90c6.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\footer-logo.png" />
+    <Content Include="images\logo-small.png" />
+    <Content Include="images\logo.png" />
     <Content Include="Models\New_Leaves_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>New_Leaves_Model.edmx</DependentUpon>
@@ -206,6 +228,7 @@
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\appear.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -218,17 +241,47 @@
     <Content Include="Models\New_Leaves_Model.edmx.diagram">
       <DependentUpon>New_Leaves_Model.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\flaticon.eot" />
+    <Content Include="fonts\flaticon.ttf" />
+    <Content Include="fonts\flaticon.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\FuturaBT-Medium.eot" />
+    <Content Include="fonts\FuturaBT-Medium.ttf" />
+    <Content Include="fonts\FuturaBT-Medium.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\revicons90c6.eot" />
+    <Content Include="fonts\revicons90c6.ttf" />
+    <Content Include="fonts\revicons90c6.woff" />
+    <Content Include="images\.DS_Store" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.bootstrap-touchspin.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery.fancybox-media.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\map-script.js" />
+    <Content Include="Scripts\mixitup.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\nouislider.js" />
+    <Content Include="Scripts\owl.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\revolution.min.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\validate.js" />
+    <Content Include="Scripts\wow.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
