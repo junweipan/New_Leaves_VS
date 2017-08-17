@@ -1,0 +1,58 @@
+﻿@model IEnumerable<New_Leaves.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.decription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.icon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estimated_price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.decription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.icon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estimated_price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Item_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Item_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Item_Id })
+        </td>
+    </tr>
+}
+
+</table>
