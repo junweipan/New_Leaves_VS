@@ -45,7 +45,7 @@
             @Html.DisplayFor(modelItem => item.icon)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.estimated_price)
+            <span>$</span> @Html.DisplayFor(modelItem => item.estimated_price)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Item_Id }) |
