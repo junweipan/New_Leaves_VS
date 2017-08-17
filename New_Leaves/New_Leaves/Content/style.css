@@ -408,7 +408,11 @@ img{
 	display:inline-block;
 	max-width:100%;
 }
-
+.main-header .logo-outerpadding0{
+	position:relative;
+	z-index:25;
+	
+}
 .main-header .logo-outer{
 	position:relative;
 	z-index:25;
