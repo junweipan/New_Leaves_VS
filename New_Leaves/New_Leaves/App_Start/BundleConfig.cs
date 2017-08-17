@@ -14,6 +14,39 @@ namespace New_Leaves
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox.pack").Include(
+                        "~/Scripts/jquery.fancybox.pack.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox-media").Include(
+                        "~/Scripts/jquery.fancybox.media.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/owl").Include(
+                        "~/Scripts/owl.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appear").Include(
+                        "~/Scripts/appear.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/wow").Include(
+                        "~/Scripts/wow.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+                        "~/Scripts/jquery-ui.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/script").Include(
+                        "~/Scripts/script.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/revolution").Include(
+                        "~/Scripts/revolution.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mixitup").Include(
+                        "~/Scripts/mixitup.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/validate").Include(
+                        "~/Scripts/validate.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/map-script").Include(
+                        "~/Scripts/map-script.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
