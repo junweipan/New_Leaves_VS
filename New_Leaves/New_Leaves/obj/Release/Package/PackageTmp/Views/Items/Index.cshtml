@@ -16,16 +16,16 @@
             @Html.DisplayNameFor(model => model.Item_name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.category)
+            @Html.DisplayNameFor(model => model.Category)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.decription)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.icon)
+            @Html.DisplayNameFor(model => model.Icon)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.estimated_price)
+            @Html.DisplayNameFor(model => model.Estimated_price)
         </th>
         <th></th>
     </tr>
@@ -36,16 +36,16 @@
             @Html.DisplayFor(modelItem => item.Item_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.category)
+            @Html.DisplayFor(modelItem => item.Category)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.decription)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.icon)
+            @Html.DisplayFor(modelItem => item.Icon)
         </td>
         <td>
-            <span>$</span> @Html.DisplayFor(modelItem => item.estimated_price)
+            @Html.DisplayFor(modelItem => item.Estimated_price)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Item_Id }) |

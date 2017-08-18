@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewLeavesDBModelStoreContainer" CdmEntityContainer="NewLeavesDBEntities">
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="NewLeavesDBModel.Donation">
+        <MappingFragment StoreEntitySet="Donation">
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="Wish_List_Id" ColumnName="Wish_List_Id" />
+          <ScalarProperty Name="Donation_Item" ColumnName="Donation_Item" />
+          <ScalarProperty Name="Donation_Date" ColumnName="Donation_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="NewLeavesDBModel.Donor">
+        <MappingFragment StoreEntitySet="Donor">
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="DonorFName" ColumnName="DonorFName" />
+          <ScalarProperty Name="DonorLName" ColumnName="DonorLName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="NewLeavesDBModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Item_name" ColumnName="Item_name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Estimated_price" ColumnName="Estimated_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refugees">
+      <EntityTypeMapping TypeName="NewLeavesDBModel.Refugee">
+        <MappingFragment StoreEntitySet="Refugee">
+          <ScalarProperty Name="RId" ColumnName="RId" />
+          <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
+          <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FamilyDescription" ColumnName="FamilyDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wish_List">
+      <EntityTypeMapping TypeName="NewLeavesDBModel.Wish_List">
+        <MappingFragment StoreEntitySet="Wish_List">
+          <ScalarProperty Name="Wish_List_Id" ColumnName="Wish_List_Id" />
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="RId" ColumnName="RId" />
+          <ScalarProperty Name="List_Submit_Date" ColumnName="List_Submit_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
