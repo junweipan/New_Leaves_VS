@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class ItemsController : Controller
     {
-        private DatabaseEntities3 db = new DatabaseEntities3();
+        private NewLeavesDBEntities db = new NewLeavesDBEntities();
 
         // GET: Items
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Item_Id,Item_name,category,decription,icon,estimated_price")] Item item)
+        public ActionResult Create([Bind(Include = "Item_Id,Item_name,Category,Description,Icon,Estimated_price")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Item_Id,Item_name,category,decription,icon,estimated_price")] Item item)
+        public ActionResult Edit([Bind(Include = "Item_Id,Item_name,Category,Description,Icon,Estimated_price")] Item item)
         {
             if (ModelState.IsValid)
             {

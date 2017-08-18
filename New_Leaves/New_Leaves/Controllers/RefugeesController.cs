@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class RefugeesController : Controller
     {
-        private DatabaseEntities3 db = new DatabaseEntities3();
+        private NewLeavesDBEntities db = new NewLeavesDBEntities();
 
         // GET: Refugees
         public ActionResult Index()

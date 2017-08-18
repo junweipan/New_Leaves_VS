@@ -17,7 +17,7 @@ namespace New_Leaves.Models
         public int DId { get; set; }
         public Nullable<int> Wish_List_Id { get; set; }
         public string Donation_Item { get; set; }
-        public Nullable<System.DateTime> Donate_Date { get; set; }
+        public Nullable<System.DateTime> Donation_Date { get; set; }
         public string Status { get; set; }
     
         public virtual Donor Donor { get; set; }

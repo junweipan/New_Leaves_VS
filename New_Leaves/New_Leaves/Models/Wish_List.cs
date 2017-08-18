@@ -22,9 +22,9 @@ namespace New_Leaves.Models
     
         public int Wish_List_Id { get; set; }
         public Nullable<int> Item_Id { get; set; }
-        public Nullable<System.DateTime> List_submit_Date { get; set; }
-        public string Status { get; set; }
         public Nullable<int> RId { get; set; }
+        public Nullable<System.DateTime> List_Submit_Date { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Donation> Donations { get; set; }

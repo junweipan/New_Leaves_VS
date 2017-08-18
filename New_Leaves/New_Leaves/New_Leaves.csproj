@@ -166,43 +166,39 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Donation.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donor.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Item.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.Context.cs">
+    <Compile Include="Models\NewLeavesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.cs">
+    <Compile Include="Models\NewLeavesModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model.Designer.cs">
+    <Compile Include="Models\NewLeavesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Refugee.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Wish_List.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.jpg" />
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -230,15 +226,15 @@
     <Content Include="images\footer-logo.png" />
     <Content Include="images\logo-small.png" />
     <Content Include="images\logo.png" />
-    <Content Include="Models\Model.Context.tt">
+    <Content Include="Models\NewLeavesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
+      <LastGenOutput>NewLeavesModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model.tt">
+    <Content Include="Models\NewLeavesModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
+      <LastGenOutput>NewLeavesModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -264,12 +260,12 @@
     <Content Include="fonts\revicons90c6.ttf" />
     <Content Include="fonts\revicons90c6.woff" />
     <Content Include="images\.DS_Store" />
-    <EntityDeploy Include="Models\Model.edmx">
+    <EntityDeploy Include="Models\NewLeavesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>NewLeavesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Content Include="Models\NewLeavesModel.edmx.diagram">
+      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -312,11 +308,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Items\Create.cshtml" />
-    <Content Include="Views\Items\Delete.cshtml" />
-    <Content Include="Views\Items\Details.cshtml" />
-    <Content Include="Views\Items\Edit.cshtml" />
-    <Content Include="Views\Items\Index.cshtml" />
     <Content Include="Views\Refugees\Create.cshtml" />
     <Content Include="Views\Refugees\Delete.cshtml" />
     <Content Include="Views\Refugees\Details.cshtml" />
@@ -327,8 +318,15 @@
     <Content Include="Views\Donors\Details.cshtml" />
     <Content Include="Views\Donors\Edit.cshtml" />
     <Content Include="Views\Donors\Index.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

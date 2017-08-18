@@ -22,10 +22,10 @@ namespace New_Leaves.Models
     
         public int Item_Id { get; set; }
         public string Item_name { get; set; }
-        public string category { get; set; }
-        public string decription { get; set; }
-        public byte[] icon { get; set; }
-        public Nullable<decimal> estimated_price { get; set; }
+        public string Category { get; set; }
+        public string Description { get; set; }
+        public byte[] Icon { get; set; }
+        public Nullable<decimal> Estimated_price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wish_List> Wish_List { get; set; }

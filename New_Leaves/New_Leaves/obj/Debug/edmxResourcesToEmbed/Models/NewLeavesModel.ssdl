@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewLeavesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Donation">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="int" Nullable="false" />
+    <Property Name="Wish_List_Id" Type="int" />
+    <Property Name="Donation_Item" Type="nvarchar" MaxLength="50" />
+    <Property Name="Donation_Date" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DonorFName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonorLName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="Suburb" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Item_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Icon" Type="image" />
+    <Property Name="Estimated_price" Type="money" />
+  </EntityType>
+  <EntityType Name="Refugee">
+    <Key>
+      <PropertyRef Name="RId" />
+    </Key>
+    <Property Name="RId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefugeeFName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RefugeeLName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="Suburb" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostCode" Type="nchar" MaxLength="10" />
+    <Property Name="State" Type="nchar" MaxLength="10" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="FamilyDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Wish_List">
+    <Key>
+      <PropertyRef Name="Wish_List_Id" />
+    </Key>
+    <Property Name="Wish_List_Id" Type="int" Nullable="false" />
+    <Property Name="Item_Id" Type="int" />
+    <Property Name="RId" Type="int" />
+    <Property Name="List_Submit_Date" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_Donation_ToDonor">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+    <End Role="Donation" Type="Self.Donation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="Donation">
+        <PropertyRef Name="DId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donation_Wish_List">
+    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="0..1" />
+    <End Role="Donation" Type="Self.Donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wish_List">
+        <PropertyRef Name="Wish_List_Id" />
+      </Principal>
+      <Dependent Role="Donation">
+        <PropertyRef Name="Wish_List_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wish_List_ToItem">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Item_Id" />
+      </Principal>
+      <Dependent Role="Wish_List">
+        <PropertyRef Name="Item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wish_List_ToRefugee">
+    <End Role="Refugee" Type="Self.Refugee" Multiplicity="0..1" />
+    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Refugee">
+        <PropertyRef Name="RId" />
+      </Principal>
+      <Dependent Role="Wish_List">
+        <PropertyRef Name="RId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NewLeavesDBModelStoreContainer">
+    <EntitySet Name="Donation" EntityType="Self.Donation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donor" EntityType="Self.Donor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Refugee" EntityType="Self.Refugee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wish_List" EntityType="Self.Wish_List" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Donation_ToDonor" Association="Self.FK_Donation_ToDonor">
+      <End Role="Donor" EntitySet="Donor" />
+      <End Role="Donation" EntitySet="Donation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donation_Wish_List" Association="Self.FK_Donation_Wish_List">
+      <End Role="Wish_List" EntitySet="Wish_List" />
+      <End Role="Donation" EntitySet="Donation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wish_List_ToItem" Association="Self.FK_Wish_List_ToItem">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Wish_List" EntitySet="Wish_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wish_List_ToRefugee" Association="Self.FK_Wish_List_ToRefugee">
+      <End Role="Refugee" EntitySet="Refugee" />
+      <End Role="Wish_List" EntitySet="Wish_List" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
