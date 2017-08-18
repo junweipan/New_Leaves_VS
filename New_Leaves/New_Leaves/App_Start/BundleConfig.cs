@@ -59,7 +59,19 @@ namespace New_Leaves
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/style.css"));
+                      "~/Content/style.css",
+                      "~/Content/animate.css",
+                      "~/Content/flaticon.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/hover.css",
+                      "~/Content/jquery-ui.css",
+                      "~/Content/style.jquery.bootstap-touchspin.css",
+                      "~/Content/style.jquery.fancybox.css",
+                      "~/Content/nouislider.css",
+                      "~/Content/nouislider.pips.css",
+                      "~/Content/owl.css",
+                      "~/Content/responsive.css",
+                      "~/Content/revolution-slider.css"));
         }
     }
 }
