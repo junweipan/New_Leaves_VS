@@ -200,6 +200,7 @@
   <ItemGroup>
     <Content Include="about.jpg" />
     <Content Include="Content\animate.css" />
+    <Content Include="Content\assets\timer.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\flaticon.css" />
@@ -224,8 +225,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\footer-logo.png" />
+    <Content Include="images\fullwidth-1.jpg" />
     <Content Include="images\logo-small.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\slide-image-1.jpg" />
+    <Content Include="images\slide-image-2.jpg" />
+    <Content Include="images\slide-image-3.jpg" />
     <Content Include="Models\NewLeavesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NewLeavesModel.edmx</DependentUpon>
@@ -295,6 +300,7 @@
     <Content Include="Scripts\validate.js" />
     <Content Include="Scripts\wow.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\footer.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -324,6 +330,7 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
