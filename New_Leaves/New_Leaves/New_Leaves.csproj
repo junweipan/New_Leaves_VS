@@ -226,8 +226,7 @@
     <Content Include="images\favicon.ico" />
     <Content Include="images\footer-logo.png" />
     <Content Include="images\fullwidth-1.jpg" />
-    <Content Include="images\logo-small.png" />
-    <Content Include="images\logo.png" />
+    <Content Include="images\logo_small.png" />
     <Content Include="images\slide-image-1.jpg" />
     <Content Include="images\slide-image-2.jpg" />
     <Content Include="images\slide-image-3.jpg" />
