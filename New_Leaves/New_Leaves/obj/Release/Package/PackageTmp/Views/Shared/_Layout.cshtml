@@ -6,13 +6,15 @@
     <title>@ViewBag.Title - New Leaves</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="~/Content/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
@@ -32,7 +34,7 @@
                             <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
                         </ul>
                         <div class="donation-btn">
-                            <a href="#" class="donate-coupon theme-btn btn-style-two">Donate Now</a>
+                            <a href="@Url.Action("Index","Items")" class="theme-btn btn-style-two">Donate Now</a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +47,7 @@
                 <div class="clearfix">
 
                     <div class="pull-left logo-outerpadding0">
-                        <div class="logo"><a href='@Url.Action("Index","Home")'><img src='@Url.Content("~/images/NewLeaves_small.png")' alt="" title=""></a></div>
+                        <div class="logo"><a href='@Url.Action("Index","Home")'><img src="images/NewLeaves_small.png" ></a></div>
                     </div>
 
                     <div class="nav-outer clearfix">
@@ -120,151 +122,13 @@
         @RenderBody()
         <hr />
         <!--Main Footer-->
-        <footer class="main-footer">
-            <!--Footer Upper-->
-            <div class="footer-upper">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <!--Column-->
-                        <div class="column col-md-8 col-sm-12 col-xs-12">
-                            <h2><span>Stay in touch</span> & sign up for newsletter</h2>
-                        </div>
-                        <!--Column-->
-                        <div class="Column col-md-4 col-sm-12 col-xs-12">
-                            <div class="email-form">
-                                <form method="post" action="contact.html">
-                                    <div class="form-group">
-                                        <input type="email" name="email" value="" placeholder="Enter your email" required>
-                                        <button type="submit"><span class="icon flaticon-send-message-button"></span></button>
-                                    </div>
-                                </form>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Widgets Section-->
-            <div class="widgets-section">
-                <div class="auto-container">
-                    <div class="row clearfix">
-
-                        <!--Big Column-->
-                        <div class="big-column col-md-6 col-sm-12 col-xs-12">
-                            <div class="row clearfix">
-
-                                <!--Footer Column / Logo Widget-->
-                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                    <div class="footer-widget logo-widget">
-                                        <div class="widget-content">
-                                            <div class="logo-box">
-                                                <a href="index.html"><img src="images/footer-logo.png" alt="" /></a>
-                                            </div>
-                                            <div class="text">Lorem ipsum dolor sit amet, vix an natu tur eleifend, mel amet laorit menandri. Ei item  justo complectitur duo. </div>
-                                            <ul class="social-icon-three">
-                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-vimeo"></span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Footer Column / Links Widget-->
-                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                    <div class="footer-widget links-widget">
-                                        <h2>Quick Links</h2>
-                                        <div class="widget-content">
-                                            <ul class="list">
-                                                <li><a href="#">About us </a></li>
-                                                <li><a href="#">Recent projects</a></li>
-                                                <li><a href="#">Our Mission</a></li>
-                                                <li><a href="#">FAQ’s</a></li>
-                                                <li><a href="#">Privacy & plicy</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!--Big Column-->
-                        <div class="big-column col-md-6 col-sm-12 col-xs-12">
-                            <div class="row clearfix">
-
-                                <!--Footer Column-->
-                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                    <div class="footer-widget posts-widget">
-                                        <h2>Latest News</h2>
-                                        <div class="widget-content">
-                                            <div class="posts">
-                                                <div class="post">
-                                                    <figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""></figure>
-                                                    <div class="desc-text"><a href="blog-single.html">How can be successfull in market place..</a></div>
-                                                    <div class="time">13 Feb, 2016 </div>
-                                                </div>
-                                                <div class="post">
-                                                    <figure class="post-thumb"><img src="images/resource/post-thumb-2.jpg" alt=""></figure>
-                                                    <div class="desc-text"><a href="blog-single.html">How can be successfull in market place..</a></div>
-                                                    <div class="time">13 Feb, 2016 </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Footer Column-->
-                                <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-
-                                    <div class="footer-widget address-widget">
-                                        <h2>Our Address</h2>
-                                        <div class="widget-content">
-                                            <ul class="list-style-one">
-                                                <li><span class="icon flaticon-location-pin"></span>60 Grant Ave. Central New Road 0708, UK</li>
-                                                <li><span class="icon flaticon-technology-5"></span>+880 1723 801 729</li>
-                                                <li><span class="icon flaticon-e-mail-envelope"></span>enviroco@gmail.com</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!--Footer Bottom-->
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="column col-md-6 col-sm-12 col-xs-12">
-                            <div class="copyright">All Right Researved <a href="index.html">Enviro</a>2017</div>
-                        </div>
-                        <div class="column col-md-6 col-sm-12 col-xs-12">
-                            <ul class="footer-nav">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">Privacy & policy</a></li>
-                                <li><a href="#">FAQ’s</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </footer>
         <!--End Footer-->
         <!--Page Bottom-->
         <section class="page-bottom" style="background-image:url(images/background/4.jpg);">
             <div class="auto-container">
                 <div class="title">Spread your love</div>
-                <h2>Become A Volunteer</h2>
+                <h2>Become A Donor</h2>
                 <a href="#" class="theme-btn btn-style-two">Join Us Now</a>
             </div>
         </section>
