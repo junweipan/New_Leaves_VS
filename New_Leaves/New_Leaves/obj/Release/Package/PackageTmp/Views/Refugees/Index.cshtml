@@ -39,6 +39,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FamilyDescription)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
         <th></th>
     </tr>
 
@@ -70,6 +73,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FamilyDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.RId }) |

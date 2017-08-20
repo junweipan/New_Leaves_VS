@@ -233,6 +233,7 @@
     <Content Include="images\NewLeaves_small2.png" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\slide-image-1.jpg" />
+    <Content Include="images\resource\aboutimage.jpg" />
     <Content Include="images\slide-image-2.jpg" />
     <Content Include="images\slide-image-3.jpg" />
     <Content Include="Models\NewLeavesModel.Context.tt">
