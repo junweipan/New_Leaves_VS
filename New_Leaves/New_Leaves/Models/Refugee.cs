@@ -30,6 +30,7 @@ namespace New_Leaves.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string FamilyDescription { get; set; }
+        public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wish_List> Wish_List { get; set; }

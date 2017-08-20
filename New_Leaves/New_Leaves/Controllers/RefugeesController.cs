@@ -46,7 +46,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RId,RefugeeFName,RefugeeLName,Street,Suburb,PostCode,State,Phone,Email,FamilyDescription")] Refugee refugee)
+        public ActionResult Create([Bind(Include = "RId,RefugeeFName,RefugeeLName,Street,Suburb,PostCode,State,Phone,Email,FamilyDescription,Password")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RId,RefugeeFName,RefugeeLName,Street,Suburb,PostCode,State,Phone,Email,FamilyDescription")] Refugee refugee)
+        public ActionResult Edit([Bind(Include = "RId,RefugeeFName,RefugeeLName,Street,Suburb,PostCode,State,Phone,Email,FamilyDescription,Password")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {
