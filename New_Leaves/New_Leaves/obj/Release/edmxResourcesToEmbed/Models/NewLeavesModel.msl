@@ -15,7 +15,6 @@
     <EntitySetMapping Name="Donors">
       <EntityTypeMapping TypeName="NewLeavesDBModel.Donor">
         <MappingFragment StoreEntitySet="Donor">
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="DId" ColumnName="DId" />
           <ScalarProperty Name="DonorFName" ColumnName="DonorFName" />
           <ScalarProperty Name="DonorLName" ColumnName="DonorLName" />
@@ -24,6 +23,7 @@
           <ScalarProperty Name="Street" ColumnName="Street" />
           <ScalarProperty Name="Suburb" ColumnName="Suburb" />
           <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -42,7 +42,6 @@
     <EntitySetMapping Name="Refugees">
       <EntityTypeMapping TypeName="NewLeavesDBModel.Refugee">
         <MappingFragment StoreEntitySet="Refugee">
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RId" ColumnName="RId" />
           <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
           <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
@@ -53,6 +52,7 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="FamilyDescription" ColumnName="FamilyDescription" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

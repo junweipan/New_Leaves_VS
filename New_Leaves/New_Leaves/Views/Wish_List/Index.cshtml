@@ -1,0 +1,52 @@
+﻿@model IEnumerable<New_Leaves.Models.Wish_List>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.List_Submit_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Item_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.List_Submit_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item.Item_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_Id })
+        </td>
+    </tr>
+}
+
+</table>
