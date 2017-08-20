@@ -47,6 +47,15 @@ namespace New_Leaves
             bundles.Add(new ScriptBundle("~/bundles/map-script").Include(
                         "~/Scripts/map-script.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/newLeavesViz").Include(
+                        "~/Scripts/newLeavesViz.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/d3").Include(
+                        "~/Scripts/d3.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/chart").Include(
+                       "~/Scripts/chart.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
