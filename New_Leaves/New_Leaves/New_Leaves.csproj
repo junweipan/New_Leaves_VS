@@ -281,6 +281,7 @@
     <Content Include="Models\NewLeavesModel.edmx.diagram">
       <DependentUpon>NewLeavesModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\data\data.csv" />
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\NewLeaves - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -351,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

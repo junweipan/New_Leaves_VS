@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - New Leaves</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/d3")
+    @Scripts.Render("~/bundles/chart")
+
+    <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js”></script>
 
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -344,6 +348,7 @@
     @Scripts.Render("~/bundles/mixitup")
     @Scripts.Render("~/bundles/validate")
     @Scripts.Render("~/bundles/script")
+    @Scripts.Render("~/bundles/newLeavesViz")
    
     @RenderSection("scripts", required: false)
 </body>
