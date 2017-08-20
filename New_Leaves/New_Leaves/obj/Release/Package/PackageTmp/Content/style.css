@@ -1486,6 +1486,10 @@ img{
 ====================================================================
 
 ***/
+.services-section2{
+	position:relative;
+	padding:35px 0px 35px;
+}
 
 .services-section{
 	position:relative;
@@ -1577,6 +1581,10 @@ img{
 .services-section.style-two{
 	background-color:#f9f9f9;
 	padding-bottom:100px;
+}
+.services-section.style-two2{
+	background-color:#f9f9f9;
+	padding-bottom:30px;
 }
 
 .services-section.style-two .services-block-two .inner-box{
@@ -1698,8 +1706,12 @@ img{
 
 ***/
 
-.fullwidth-section-one{
-	position:relative;
+.fullwidth-section-one {
+    position: relative;
+}
+.fullwidth-section-one2{
+	
+    margin-top:40px;
 }
 
 .fullwidth-section-one .section-outer{
@@ -2337,6 +2349,14 @@ img{
 	background-repeat:repeat;
 	background-size:cover;
 }
+.counter-section2{
+	position:relative;
+	padding:100px 0px 70px;
+	background-repeat:repeat;
+	background-size:cover;
+    margin-bottom:40px;
+}
+
 
 .counter-section:before{
 	position:absolute;
@@ -2449,6 +2469,7 @@ img{
 
 .team-member .inner-box .image{
 	position:relative;
+
 }
 
 .team-member .inner-box .image img{

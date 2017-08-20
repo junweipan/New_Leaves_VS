@@ -11,8 +11,15 @@ namespace New_Leaves.Controllers
         public ActionResult Index()
         {
             return View("Index1");
-        }
 
+        }
+        public ActionResult Team()
+           
+        {
+           
+
+            return View("team");
+        }
 
         public ActionResult About()
         {
