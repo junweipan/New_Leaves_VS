@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @* @Html.ActionLink("Create New", "Create") *@
 </p>
 <table class="table">
     <tr>
@@ -42,11 +42,12 @@
             @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_Id })
-        </td>
-    </tr>
-}
+        @*   @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_Id }) |*@
+ 
+            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_Id })@*  |
+    @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_Id })*@ 
+            </td>
+        </tr>
+    }
 
-</table>
+    </table>
