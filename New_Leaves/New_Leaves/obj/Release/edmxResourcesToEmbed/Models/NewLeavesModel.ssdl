@@ -55,7 +55,7 @@
     <Key>
       <PropertyRef Name="Wish_List_Id" />
     </Key>
-    <Property Name="Wish_List_Id" Type="int" Nullable="false" />
+    <Property Name="Wish_List_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Item_Id" Type="int" />
     <Property Name="RId" Type="int" />
     <Property Name="List_Submit_Date" Type="date" />

@@ -24,8 +24,8 @@
     <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Donation" Relationship="Self.FK_Donation_ToDonor" FromRole="Donor" ToRole="Donation" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Donation" Relationship="Self.FK_Donation_ToDonor" FromRole="Donor" ToRole="Donation" />
   </EntityType>
   <EntityType Name="Item">
     <Key>
@@ -53,14 +53,14 @@
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FamilyDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToRefugee" FromRole="Refugee" ToRole="Wish_List" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToRefugee" FromRole="Refugee" ToRole="Wish_List" />
   </EntityType>
   <EntityType Name="Wish_List">
     <Key>
       <PropertyRef Name="Wish_List_Id" />
     </Key>
-    <Property Name="Wish_List_Id" Type="Int32" Nullable="false" />
+    <Property Name="Wish_List_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Item_Id" Type="Int32" />
     <Property Name="RId" Type="Int32" />
     <Property Name="List_Submit_Date" Type="DateTime" Precision="0" />
