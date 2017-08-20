@@ -25,6 +25,7 @@
     <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Donation" Relationship="Self.FK_Donation_ToDonor" FromRole="Donor" ToRole="Donation" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Item">
     <Key>
@@ -53,6 +54,7 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FamilyDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToRefugee" FromRole="Refugee" ToRole="Wish_List" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Wish_List">
     <Key>
