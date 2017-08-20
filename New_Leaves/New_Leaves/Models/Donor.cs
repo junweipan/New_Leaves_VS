@@ -22,6 +22,7 @@ namespace New_Leaves.Models
         public string Street { get; set; }
         public string Suburb { get; set; }
         public string State { get; set; }
+        public string Password { get; set; }
     
         public virtual Donation Donation { get; set; }
     }

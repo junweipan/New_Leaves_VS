@@ -48,7 +48,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State")] Donor donor)
+        public ActionResult Create([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State,Password")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State")] Donor donor)
+        public ActionResult Edit([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State,Password")] Donor donor)
         {
             if (ModelState.IsValid)
             {

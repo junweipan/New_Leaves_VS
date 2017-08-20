@@ -22,6 +22,7 @@
     <Property Name="Street" Type="nvarchar" MaxLength="50" />
     <Property Name="Suburb" Type="nvarchar" MaxLength="50" />
     <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Item">
     <Key>
@@ -48,6 +49,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="FamilyDescription" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Wish_List">
     <Key>
