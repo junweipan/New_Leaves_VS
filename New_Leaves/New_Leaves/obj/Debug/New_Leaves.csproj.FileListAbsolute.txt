@@ -449,6 +449,5 @@ C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\bin\System.Web.WebPages
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\bin\System.Web.WebPages.Razor.xml
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\bin\Antlr3.Runtime.pdb
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\bin\Newtonsoft.Json.xml
-C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\obj\Debug\New_Leaves.dll
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\New_Leaves\obj\Debug\New_Leaves.pdb
