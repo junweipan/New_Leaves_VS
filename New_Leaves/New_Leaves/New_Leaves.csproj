@@ -163,6 +163,7 @@
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\RefugeesController.cs" />
     <Compile Include="Controllers\Wish_ListController.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +173,7 @@
     <Compile Include="Models\Donor.cs">
       <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Extended\Donor.cs" />
     <Compile Include="Models\Item.cs">
       <DependentUpon>NewLeavesModel.tt</DependentUpon>
     </Compile>
