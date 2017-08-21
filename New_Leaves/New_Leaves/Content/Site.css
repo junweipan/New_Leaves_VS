@@ -17,9 +17,8 @@
     display: block;
 }
 
-.btn-submit-forms {
-    background: green;
-    color: white;
+.forms-style {
+    margin: 10px 400px;
 }
 
 .visualization {
