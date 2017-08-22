@@ -158,7 +158,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\DonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
@@ -169,35 +168,35 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Donation.cs">
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donor.cs">
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Extended\Donor.cs" />
     <Compile Include="Models\Item.cs">
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewLeavesModel.Context.cs">
+    <Compile Include="Models\NLModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewLeavesModel.Context.tt</DependentUpon>
+      <DependentUpon>NLModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewLeavesModel.cs">
+    <Compile Include="Models\NLModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewLeavesModel.Designer.cs">
+    <Compile Include="Models\NLModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
+      <DependentUpon>NLModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Refugee.cs">
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Wish_List.cs">
-      <DependentUpon>NewLeavesModel.tt</DependentUpon>
+      <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -243,15 +242,15 @@
     <Content Include="images\resource\aboutimage.jpg" />
     <Content Include="images\slide-image-2.jpg" />
     <Content Include="images\slide-image-3.jpg" />
-    <Content Include="Models\NewLeavesModel.Context.tt">
+    <Content Include="Models\NLModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
-      <LastGenOutput>NewLeavesModel.Context.cs</LastGenOutput>
+      <DependentUpon>NLModel.edmx</DependentUpon>
+      <LastGenOutput>NLModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NewLeavesModel.tt">
+    <Content Include="Models\NLModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
-      <LastGenOutput>NewLeavesModel.cs</LastGenOutput>
+      <DependentUpon>NLModel.edmx</DependentUpon>
+      <LastGenOutput>NLModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -277,14 +276,14 @@
     <Content Include="fonts\revicons90c6.ttf" />
     <Content Include="fonts\revicons90c6.woff" />
     <Content Include="images\.DS_Store" />
-    <EntityDeploy Include="Models\NewLeavesModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NewLeavesModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\NewLeavesModel.edmx.diagram">
-      <DependentUpon>NewLeavesModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\data\data.csv" />
+    <EntityDeploy Include="Models\NLModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NLModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NLModel.edmx.diagram">
+      <DependentUpon>NLModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\newleaves - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -337,11 +336,6 @@
     <Content Include="Views\Donors\Details.cshtml" />
     <Content Include="Views\Donors\Edit.cshtml" />
     <Content Include="Views\Donors\Index.cshtml" />
-    <Content Include="Views\Wish_List\Create.cshtml" />
-    <Content Include="Views\Wish_List\Delete.cshtml" />
-    <Content Include="Views\Wish_List\Details.cshtml" />
-    <Content Include="Views\Wish_List\Edit.cshtml" />
-    <Content Include="Views\Wish_List\Index.cshtml" />
     <Content Include="Views\Refugees\Create.cshtml" />
     <Content Include="Views\Refugees\Delete.cshtml" />
     <Content Include="Views\Refugees\Details.cshtml" />
@@ -352,6 +346,11 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Wish_List\Create.cshtml" />
+    <Content Include="Views\Wish_List\Delete.cshtml" />
+    <Content Include="Views\Wish_List\Details.cshtml" />
+    <Content Include="Views\Wish_List\Edit.cshtml" />
+    <Content Include="Views\Wish_List\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

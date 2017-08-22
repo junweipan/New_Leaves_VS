@@ -14,16 +14,27 @@ namespace New_Leaves.Models
     
     public partial class Donor
     {
-        public int DId { get; set; }
-        public string DonorFName { get; set; }
-        public string DonorLName { get; set; }
-        public string Phone { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Donor()
+        {
+            this.Donations = new HashSet<Donation>();
+        }
+    
+        public int DID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
+        public bool IsEmailVerified { get; set; }
+        public System.Guid ActivationCode { get; set; }
         public string Street { get; set; }
         public string Suburb { get; set; }
         public string State { get; set; }
-        public string Password { get; set; }
+        public string Postcode { get; set; }
+        public string Phone { get; set; }
+        public byte[] icon { get; set; }
     
-        public virtual Donation Donation { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Donation> Donations { get; set; }
     }
 }

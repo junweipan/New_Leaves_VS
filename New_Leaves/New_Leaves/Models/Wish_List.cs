@@ -18,17 +18,17 @@ namespace New_Leaves.Models
         public Wish_List()
         {
             this.Donations = new HashSet<Donation>();
+            this.Items = new HashSet<Item>();
         }
     
-        public int Wish_List_Id { get; set; }
-        public Nullable<int> Item_Id { get; set; }
-        public Nullable<int> RId { get; set; }
-        public Nullable<System.DateTime> List_Submit_Date { get; set; }
+        public int RID { get; set; }
+        public string List_Submit_Date { get; set; }
         public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Donation> Donations { get; set; }
-        public virtual Item Item { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Item> Items { get; set; }
         public virtual Refugee Refugee { get; set; }
     }
 }

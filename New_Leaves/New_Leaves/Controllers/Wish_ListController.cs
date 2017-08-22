@@ -12,12 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class Wish_ListController : Controller
     {
-        private NewLeavesDBEntities db = new NewLeavesDBEntities();
+        private newleavesDB2 db = new newleavesDB2();
 
         // GET: Wish_List
         public ActionResult Index()
         {
-            var wish_List = db.Wish_List.Include(w => w.Item).Include(w => w.Refugee);
+            var wish_List = db.Wish_List.Include(w => w.Refugee);
             return View(wish_List.ToList());
         }
 
@@ -39,8 +39,7 @@ namespace New_Leaves.Controllers
         // GET: Wish_List/Create
         public ActionResult Create()
         {
-            ViewBag.Item_Id = new SelectList(db.Items, "Item_Id", "Item_name");
-            ViewBag.RId = new SelectList(db.Refugees, "RId", "RefugeeFName");
+            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName");
             return View();
         }
 
@@ -49,7 +48,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Wish_List_Id,Item_Id,RId,List_Submit_Date,Status")] Wish_List wish_List)
+        public ActionResult Create([Bind(Include = "RID,List_Submit_Date,Status")] Wish_List wish_List)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +57,7 @@ namespace New_Leaves.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Item_Id = new SelectList(db.Items, "Item_Id", "Item_name", wish_List.Item_Id);
-            ViewBag.RId = new SelectList(db.Refugees, "RId", "RefugeeFName", wish_List.RId);
+            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 
@@ -75,8 +73,7 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Item_Id = new SelectList(db.Items, "Item_Id", "Item_name", wish_List.Item_Id);
-            ViewBag.RId = new SelectList(db.Refugees, "RId", "RefugeeFName", wish_List.RId);
+            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 
@@ -85,7 +82,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Wish_List_Id,Item_Id,RId,List_Submit_Date,Status")] Wish_List wish_List)
+        public ActionResult Edit([Bind(Include = "RID,List_Submit_Date,Status")] Wish_List wish_List)
         {
             if (ModelState.IsValid)
             {
@@ -93,8 +90,7 @@ namespace New_Leaves.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Item_Id = new SelectList(db.Items, "Item_Id", "Item_name", wish_List.Item_Id);
-            ViewBag.RId = new SelectList(db.Refugees, "RId", "RefugeeFName", wish_List.RId);
+            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 

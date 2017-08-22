@@ -12,13 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class DonorsController : Controller
     {
-        private NewLeavesDBEntities db = new NewLeavesDBEntities();
+        private newleavesDB2 db = new newleavesDB2();
 
         // GET: Donors
         public ActionResult Index()
         {
-            var donors = db.Donors.Include(d => d.Donation);
-            return View(donors.ToList());
+            return View(db.Donors.ToList());
         }
 
         // GET: Donors/Details/5
@@ -39,7 +38,6 @@ namespace New_Leaves.Controllers
         // GET: Donors/Create
         public ActionResult Create()
         {
-            ViewBag.DId = new SelectList(db.Donations, "DId", "Donation_Item");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State,Password")] Donor donor)
+        public ActionResult Create([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,icon")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace New_Leaves.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DId = new SelectList(db.Donations, "DId", "Donation_Item", donor.DId);
             return View(donor);
         }
 
@@ -73,7 +70,6 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DId = new SelectList(db.Donations, "DId", "Donation_Item", donor.DId);
             return View(donor);
         }
 
@@ -82,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DId,DonorFName,DonorLName,Phone,Email,Street,Suburb,State,Password")] Donor donor)
+        public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,icon")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace New_Leaves.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DId = new SelectList(db.Donations, "DId", "Donation_Item", donor.DId);
             return View(donor);
         }
 

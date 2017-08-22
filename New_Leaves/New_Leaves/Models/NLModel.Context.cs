@@ -13,10 +13,10 @@ namespace New_Leaves.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NewLeavesDBEntities : DbContext
+    public partial class newleavesDB2 : DbContext
     {
-        public NewLeavesDBEntities()
-            : base("name=NewLeavesDBEntities")
+        public newleavesDB2()
+            : base("name=newleavesDB2")
         {
         }
     

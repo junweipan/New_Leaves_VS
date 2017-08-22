@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="af79c7e221c846a8a4d5b214615fc7bf" Name="Diagram1">
+        <EntityTypeShape EntityType="newleavesDBModel.Donation" Width="1.5" PointX="5.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesDBModel.Donor" Width="1.5" PointX="2.875" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesDBModel.Item" Width="1.5" PointX="7.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesDBModel.Refugee" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesDBModel.Wish_List" Width="1.5" PointX="5.375" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="newleavesDBModel.FK_Donation_ToDonor" ManuallyRouted="false" />
+        <AssociationConnector Association="newleavesDBModel.FK_Donation_ToWishList" ManuallyRouted="false" />
+        <AssociationConnector Association="newleavesDBModel.FK_Item_ToWish_List" ManuallyRouted="false" />
+        <AssociationConnector Association="newleavesDBModel.FK_Wish_List_ToRefugee" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

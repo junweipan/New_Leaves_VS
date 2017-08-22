@@ -14,20 +14,15 @@ namespace New_Leaves.Models
     
     public partial class Item
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Item()
-        {
-            this.Wish_List = new HashSet<Wish_List>();
-        }
-    
-        public int Item_Id { get; set; }
-        public string Item_name { get; set; }
+        public int Item_ID { get; set; }
+        public Nullable<int> RID { get; set; }
+        public string Item_Name { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
         public byte[] Icon { get; set; }
-        public Nullable<decimal> Estimated_price { get; set; }
+        public Nullable<decimal> Estimated_Price { get; set; }
+        public string Status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wish_List> Wish_List { get; set; }
+        public virtual Wish_List Wish_List { get; set; }
     }
 }

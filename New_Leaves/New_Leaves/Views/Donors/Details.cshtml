@@ -12,27 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DonorFName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonorFName)
+            @Html.DisplayFor(model => model.FirstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DonorLName)
+            @Html.DisplayNameFor(model => model.LastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonorLName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
+            @Html.DisplayFor(model => model.LastName)
         </dd>
 
         <dt>
@@ -41,6 +33,30 @@
 
         <dd>
             @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEmailVerified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEmailVerified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivationCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivationCode)
         </dd>
 
         <dt>
@@ -68,24 +84,32 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.Postcode)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Password)
+            @Html.DisplayFor(model => model.Postcode)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Donation.Donation_Item)
+            @Html.DisplayNameFor(model => model.Phone)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Donation.Donation_Item)
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icon)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
