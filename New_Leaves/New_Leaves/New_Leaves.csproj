@@ -158,6 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DonorRegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\RefugeesController.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Models\Donor.cs">
       <DependentUpon>NLModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DonorLogin.cs" />
     <Compile Include="Models\Extended\Donor.cs" />
     <Compile Include="Models\Item.cs">
       <DependentUpon>NLModel.tt</DependentUpon>
@@ -328,7 +330,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index1.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\team.cshtml" />
     <Content Include="Views\Refugees\Create.cshtml" />
     <Content Include="Views\Refugees\Delete.cshtml" />
@@ -345,10 +347,14 @@
     <Content Include="Views\Wish_List\Details.cshtml" />
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
+    <Content Include="Views\DonorRegister\Registration.cshtml" />
+    <Content Include="Views\DonorRegister\VerifyAccount.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\DonorRegister\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Donor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

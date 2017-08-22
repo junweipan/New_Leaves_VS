@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newleavesDBModelStoreContainer" CdmEntityContainer="newleavesDBEntities">
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="newleavesDBModel.Donation">
+        <MappingFragment StoreEntitySet="Donation">
+          <ScalarProperty Name="DonationID" ColumnName="DonationID" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Donate_Date" ColumnName="Donate_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="newleavesDBModel.Donor">
+        <MappingFragment StoreEntitySet="Donor">
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+          <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="newleavesDBModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refugees">
+      <EntityTypeMapping TypeName="newleavesDBModel.Refugee">
+        <MappingFragment StoreEntitySet="Refugee">
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="AthorityCode" ColumnName="AthorityCode" />
+          <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
+          <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Family_Description" ColumnName="Family_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wish_List">
+      <EntityTypeMapping TypeName="newleavesDBModel.Wish_List">
+        <MappingFragment StoreEntitySet="Wish_List">
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="List_Submit_Date" ColumnName="List_Submit_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

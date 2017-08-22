@@ -8,7 +8,7 @@ namespace New_Leaves.Models
 
 {
     [MetadataType(typeof(DonorMetadata))]
-    public partial class Domor
+    public partial class Donor
     {
         public string ConfirmPassword { get; set; }
     }
@@ -26,12 +26,27 @@ namespace New_Leaves.Models
         [Display(Name = "Email ID")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
         [DataType(DataType.EmailAddress)]
-        public string EmailID { get; set; }
+        public string Email { get; set; }
 
-        [Display(Name = "Date of birth")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime DateOfBirth { get; set; }
+        [Display(Name = "State")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        public string State { get; set; }
+
+        [Display(Name = "Phone")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        public string Phone { get; set; }
+
+        [Display(Name = "Postcode")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        public string Postcode { get; set; }
+
+        [Display(Name = "Street")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        public string Street { get; set; }
+
+        [Display(Name = "Suburb")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        public string Suburb { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]

@@ -30,5 +30,7 @@ namespace New_Leaves.Models
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Refugee> Refugees { get; set; }
         public virtual DbSet<Wish_List> Wish_List { get; set; }
+
+        public System.Data.Entity.DbSet<New_Leaves.Models.DonorLogin> DonorLogins { get; set; }
     }
 }

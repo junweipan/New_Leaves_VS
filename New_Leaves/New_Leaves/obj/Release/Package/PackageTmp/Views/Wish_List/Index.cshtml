@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @* @Html.ActionLink("Create New", "Create") *@
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.Status)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Item.Item_name)
+            @Html.DisplayNameFor(model => model.Item.Item_Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
@@ -36,18 +36,17 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Item.Item_name)
+            @Html.DisplayFor(modelItem => item.Item.Item_Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
         </td>
         <td>
-        @*   @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_Id }) |*@
- 
-            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_Id })@*  |
-    @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_Id })*@ 
-            </td>
-        </tr>
-    }
+            @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })
+        </td>
+    </tr>
+}
 
-    </table>
+</table>

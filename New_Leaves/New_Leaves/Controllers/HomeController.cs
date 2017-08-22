@@ -8,9 +8,16 @@ namespace New_Leaves.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
-            return View("Index1");
+            return View();
+
+        }
+        [Authorize]
+        public ActionResult Test()
+        {
+            return View();
 
         }
         public ActionResult Team()
