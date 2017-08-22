@@ -28,6 +28,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Item.Item_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Item_Name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
         </dt>
 
@@ -38,6 +46,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Wish_List_ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -30,9 +30,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Wish_List.List_Submit_Date)
-        </th>
         <th></th>
     </tr>
 
@@ -55,9 +52,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Wish_List.List_Submit_Date)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Item_ID }) |

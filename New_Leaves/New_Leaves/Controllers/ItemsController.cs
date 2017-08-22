@@ -12,13 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class ItemsController : Controller
     {
-        private newleavesDB2 db = new newleavesDB2();
+        private newleavesDBEntities db = new newleavesDBEntities();
 
         // GET: Items
         public ActionResult Index()
         {
-            var items = db.Items.Include(i => i.Wish_List);
-            return View(items.ToList());
+            return View(db.Items.ToList());
         }
 
         // GET: Items/Details/5
@@ -39,7 +38,6 @@ namespace New_Leaves.Controllers
         // GET: Items/Create
         public ActionResult Create()
         {
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Item_ID,RID,Item_Name,Category,Description,Icon,Estimated_Price,Status")] Item item)
+        public ActionResult Create([Bind(Include = "Item_ID,Item_Name,Category,Description,Icon,Estimated_Price,Status")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace New_Leaves.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", item.RID);
             return View(item);
         }
 
@@ -73,7 +70,6 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", item.RID);
             return View(item);
         }
 
@@ -82,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Item_ID,RID,Item_Name,Category,Description,Icon,Estimated_Price,Status")] Item item)
+        public ActionResult Edit([Bind(Include = "Item_ID,Item_Name,Category,Description,Icon,Estimated_Price,Status")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace New_Leaves.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", item.RID);
             return View(item);
         }
 

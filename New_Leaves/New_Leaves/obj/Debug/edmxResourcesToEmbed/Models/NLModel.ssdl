@@ -6,7 +6,7 @@
     </Key>
     <Property Name="DonationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DID" Type="int" />
-    <Property Name="RID" Type="int" />
+    <Property Name="Wish_List_ID" Type="int" />
     <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Donate_Date" Type="date" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" />
@@ -34,7 +34,6 @@
       <PropertyRef Name="Item_ID" />
     </Key>
     <Property Name="Item_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RID" Type="int" />
     <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Category" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
@@ -52,21 +51,23 @@
     <Property Name="RefugeeLName" Type="nvarchar" MaxLength="50" />
     <Property Name="Icon" Type="image" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
-    <Property Name="PostCode" Type="nchar" MaxLength="10" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Street" Type="nvarchar" MaxLength="50" />
-    <Property Name="Suburb" Type="nchar" MaxLength="10" />
-    <Property Name="State" Type="nchar" MaxLength="10" />
+    <Property Name="Suburb" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
     <Property Name="Family_Description" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Wish_List">
     <Key>
-      <PropertyRef Name="RID" />
+      <PropertyRef Name="Wish_List_ID" />
     </Key>
-    <Property Name="RID" Type="int" Nullable="false" />
-    <Property Name="List_Submit_Date" Type="nchar" MaxLength="10" />
-    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="Wish_List_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RID" Type="int" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="List_Submit_Date" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Donation_ToDonor">
     <End Role="Donor" Type="Self.Donor" Multiplicity="0..1" />
@@ -85,28 +86,28 @@
     <End Role="Donation" Type="Self.Donation" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Wish_List">
-        <PropertyRef Name="RID" />
+        <PropertyRef Name="Wish_List_ID" />
       </Principal>
       <Dependent Role="Donation">
-        <PropertyRef Name="RID" />
+        <PropertyRef Name="Wish_List_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Item_ToWish_List">
-    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="0..1" />
-    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+  <Association Name="FK_Wish_List_ToItem">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Wish_List">
-        <PropertyRef Name="RID" />
+      <Principal Role="Item">
+        <PropertyRef Name="Item_ID" />
       </Principal>
-      <Dependent Role="Item">
-        <PropertyRef Name="RID" />
+      <Dependent Role="Wish_List">
+        <PropertyRef Name="Item_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Wish_List_ToRefugee">
-    <End Role="Refugee" Type="Self.Refugee" Multiplicity="1" />
-    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="0..1" />
+    <End Role="Refugee" Type="Self.Refugee" Multiplicity="0..1" />
+    <End Role="Wish_List" Type="Self.Wish_List" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Refugee">
         <PropertyRef Name="RID" />
@@ -130,9 +131,9 @@
       <End Role="Wish_List" EntitySet="Wish_List" />
       <End Role="Donation" EntitySet="Donation" />
     </AssociationSet>
-    <AssociationSet Name="FK_Item_ToWish_List" Association="Self.FK_Item_ToWish_List">
-      <End Role="Wish_List" EntitySet="Wish_List" />
+    <AssociationSet Name="FK_Wish_List_ToItem" Association="Self.FK_Wish_List_ToItem">
       <End Role="Item" EntitySet="Item" />
+      <End Role="Wish_List" EntitySet="Wish_List" />
     </AssociationSet>
     <AssociationSet Name="FK_Wish_List_ToRefugee" Association="Self.FK_Wish_List_ToRefugee">
       <End Role="Refugee" EntitySet="Refugee" />

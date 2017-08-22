@@ -12,13 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class RefugeesController : Controller
     {
-        private newleavesDB2 db = new newleavesDB2();
+        private newleavesDBEntities db = new newleavesDBEntities();
 
         // GET: Refugees
         public ActionResult Index()
         {
-            var refugees = db.Refugees.Include(r => r.Wish_List);
-            return View(refugees.ToList());
+            return View(db.Refugees.ToList());
         }
 
         // GET: Refugees/Details/5
@@ -39,7 +38,6 @@ namespace New_Leaves.Controllers
         // GET: Refugees/Create
         public ActionResult Create()
         {
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date");
             return View();
         }
 
@@ -57,7 +55,6 @@ namespace New_Leaves.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", refugee.RID);
             return View(refugee);
         }
 
@@ -73,7 +70,6 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", refugee.RID);
             return View(refugee);
         }
 
@@ -90,7 +86,6 @@ namespace New_Leaves.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RID = new SelectList(db.Wish_List, "RID", "List_Submit_Date", refugee.RID);
             return View(refugee);
         }
 

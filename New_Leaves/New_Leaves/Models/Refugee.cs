@@ -14,6 +14,12 @@ namespace New_Leaves.Models
     
     public partial class Refugee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Refugee()
+        {
+            this.Wish_List = new HashSet<Wish_List>();
+        }
+    
         public int RID { get; set; }
         public Nullable<int> AthorityCode { get; set; }
         public string RefugeeFName { get; set; }
@@ -28,6 +34,7 @@ namespace New_Leaves.Models
         public string Phone { get; set; }
         public string Family_Description { get; set; }
     
-        public virtual Wish_List Wish_List { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wish_List> Wish_List { get; set; }
     }
 }

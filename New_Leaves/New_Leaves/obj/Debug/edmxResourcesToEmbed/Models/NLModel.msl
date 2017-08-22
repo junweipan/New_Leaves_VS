@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="newleavesDBModelStoreContainer" CdmEntityContainer="newleavesDB2">
+  <EntityContainerMapping StorageEntityContainer="newleavesDBModelStoreContainer" CdmEntityContainer="newleavesDBEntities">
     <EntitySetMapping Name="Donations">
       <EntityTypeMapping TypeName="newleavesDBModel.Donation">
         <MappingFragment StoreEntitySet="Donation">
           <ScalarProperty Name="DonationID" ColumnName="DonationID" />
           <ScalarProperty Name="DID" ColumnName="DID" />
-          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
           <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
           <ScalarProperty Name="Donate_Date" ColumnName="Donate_Date" />
           <ScalarProperty Name="Status" ColumnName="Status" />
@@ -36,7 +36,6 @@
       <EntityTypeMapping TypeName="newleavesDBModel.Item">
         <MappingFragment StoreEntitySet="Item">
           <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
-          <ScalarProperty Name="RID" ColumnName="RID" />
           <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -68,7 +67,9 @@
     <EntitySetMapping Name="Wish_List">
       <EntityTypeMapping TypeName="newleavesDBModel.Wish_List">
         <MappingFragment StoreEntitySet="Wish_List">
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
           <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
           <ScalarProperty Name="List_Submit_Date" ColumnName="List_Submit_Date" />
           <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
