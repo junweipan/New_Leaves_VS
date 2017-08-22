@@ -129,11 +129,11 @@ namespace New_Leaves.Controllers
 
                         if (Url.IsLocalUrl(ReturnUrl))
                         {
-                            return RedirectToAction("Test", "Home");
+                            return Redirect(ReturnUrl);
                         }
                         else
                         {
-                            return RedirectToAction("Test", "Home");
+                            return RedirectToAction("Index", "Home");
                         }
                     }
                     else

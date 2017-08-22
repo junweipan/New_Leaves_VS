@@ -1,23 +1,25 @@
-﻿@HttpContext.Current.User.Identity.Name
+﻿
 @if (Request.IsAuthenticated)
-{@HttpContext.Current.User.Identity.Name
-    using (Html.BeginForm("Logout", "Donor", FormMethod.Post, new { id = "logoutForm" }))
+{
+   
     {
-        @Html.AntiForgeryToken()
-        @HttpContext.Current.User.Identity.Name
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Hello!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+
+            <li>  @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+       using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+        }
+
+
     }
 }
+
 else
+
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Join Us", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+            }
 

@@ -40,10 +40,7 @@
                     </div>
                     <div class="top-right">
                         <ul class="social-icon-four clearfix">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                           
                         </ul>
                         <div class="donation-btn">
                             <a href="@Url.Action("Index","Wish_List")" class="theme-btn btn-style-two">See Wish List!</a>
@@ -88,7 +85,7 @@
                                     <li><a href="@Url.Action("Contact","Home")">Contact Us</a></li>
                                     <li><a href="@Url.Action("Registration", "DonorRegister")">I am a Donor</a></li>
                                     <li><a href="@Url.Action("Create","Refugees")">I am a Refugee</a></li>
-                                    <li><a href="#">Login</a></li>
+                                    <li><a href=@Html.Partial("_LoginPartial")</a></li>
                                    
                                 </ul>
                             </div>
