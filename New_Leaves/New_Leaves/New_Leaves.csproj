@@ -160,9 +160,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DonorRegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemsController.cs" />
-    <Compile Include="Controllers\RefugeesController.cs" />
-    <Compile Include="Controllers\Wish_ListController.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -332,21 +329,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\team.cshtml" />
-    <Content Include="Views\Refugees\Create.cshtml" />
-    <Content Include="Views\Refugees\Delete.cshtml" />
-    <Content Include="Views\Refugees\Details.cshtml" />
-    <Content Include="Views\Refugees\Edit.cshtml" />
-    <Content Include="Views\Refugees\Index.cshtml" />
-    <Content Include="Views\Items\Create.cshtml" />
-    <Content Include="Views\Items\Delete.cshtml" />
-    <Content Include="Views\Items\Details.cshtml" />
-    <Content Include="Views\Items\Edit.cshtml" />
-    <Content Include="Views\Items\Index.cshtml" />
-    <Content Include="Views\Wish_List\Create.cshtml" />
-    <Content Include="Views\Wish_List\Delete.cshtml" />
-    <Content Include="Views\Wish_List\Details.cshtml" />
-    <Content Include="Views\Wish_List\Edit.cshtml" />
-    <Content Include="Views\Wish_List\Index.cshtml" />
     <Content Include="Views\DonorRegister\Registration.cshtml" />
     <Content Include="Views\DonorRegister\VerifyAccount.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
