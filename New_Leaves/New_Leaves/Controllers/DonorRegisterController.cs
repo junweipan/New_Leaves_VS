@@ -133,7 +133,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("IndexLogin", "Home");
                         }
                     }
                     else
@@ -156,7 +156,7 @@ namespace New_Leaves.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "DonorRegister");
+            return RedirectToAction("Index", "Home");
         }
 
 

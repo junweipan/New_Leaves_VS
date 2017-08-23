@@ -9,13 +9,13 @@ namespace New_Leaves.Controllers
     public class HomeController : Controller
     {
         [Authorize]
-        public ActionResult Index()
+        public ActionResult IndexLogin()
         {
             return View();
 
         }
-        [Authorize]
-        public ActionResult Test()
+       
+        public ActionResult Index()
         {
             return View();
 
