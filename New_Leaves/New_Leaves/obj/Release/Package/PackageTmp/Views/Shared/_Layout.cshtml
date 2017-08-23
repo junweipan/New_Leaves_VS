@@ -51,51 +51,8 @@
         </div>
 
         <!--Header-Upper-->
-        <div class="header-upper">
-            <div class="auto-container">
-                <div class="clearfix">
-
-                    <div class="pull-left logo-outerpadding0">
-                        <div class="logo"><a href='@Url.Action("Index","Home")'><img src="~/images/logo_small.png" ></a></div>
-                    </div>
-
-                    <div class="nav-outer clearfix">
-                        <!-- Main Menu -->
-                        <nav class="main-menu">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <div class="navbar-collapse collapse clearfix">
-                                <ul class="navigation clearfix">
-                                    <li class="dropdown">
-                                        <a href="#">About</a>
-                                        <ul>
-                                            <li><a href="@Url.Action("About","Home")">About Us</a></li>
-                                            <li><a href="@Url.Action("Team","Home")">Our Team</a></li>
-                                          
-                                        </ul>
-                                    </li>
-                                    
-                                    <li><a href="@Url.Action("Contact","Home")">Contact Us</a></li>
-                                    <li><a href="@Url.Action("Registration", "DonorRegister")">I am a Donor</a></li>
-                                    <li><a href="@Url.Action("Create","Refugees")">I am a Refugee</a></li>
-                                    <li><a href=@Html.Partial("_LoginPartial")</a></li>
-                                   
-                                </ul>
-                            </div>
-                        </nav>
-                        <!-- Main Menu End-->
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        @Html.Partial("_LoginPartial2")
+        
         <!--End Header Upper-->
         <!--Sticky Header-->
         <div class="sticky-header">
