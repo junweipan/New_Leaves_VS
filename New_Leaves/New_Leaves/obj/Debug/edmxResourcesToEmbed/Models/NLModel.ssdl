@@ -27,7 +27,7 @@
     <Property Name="State" Type="nvarchar" MaxLength="50" />
     <Property Name="Postcode" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-    <Property Name="icon" Type="image" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Item">
     <Key>
@@ -37,9 +37,9 @@
     <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Category" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
-    <Property Name="Icon" Type="image" />
     <Property Name="Estimated_Price" Type="money" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Refugee">
     <Key>
@@ -49,7 +49,6 @@
     <Property Name="AthorityCode" Type="int" />
     <Property Name="RefugeeFName" Type="nvarchar" MaxLength="50" />
     <Property Name="RefugeeLName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Icon" Type="image" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -58,6 +57,7 @@
     <Property Name="State" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
     <Property Name="Family_Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="Wish_List">
     <Key>

@@ -32,7 +32,7 @@
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="Postcode" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="icon" Type="image" />
+          <Property Name="icon" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -42,9 +42,9 @@
           <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Category" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
-          <Property Name="Icon" Type="image" />
           <Property Name="Estimated_Price" Type="money" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Refugee">
           <Key>
@@ -54,7 +54,6 @@
           <Property Name="AthorityCode" Type="int" />
           <Property Name="RefugeeFName" Type="nvarchar" MaxLength="50" />
           <Property Name="RefugeeLName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Icon" Type="image" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -63,6 +62,7 @@
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="Family_Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="icon" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Wish_List">
           <Key>
@@ -179,7 +179,7 @@
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Postcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Donations" Relationship="Self.FK_Donation_ToDonor" FromRole="Donor" ToRole="Donation" />
         </EntityType>
         <EntityType Name="Item">
@@ -190,9 +190,9 @@
           <Property Name="Item_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Estimated_Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToItem" FromRole="Item" ToRole="Wish_List" />
         </EntityType>
         <EntityType Name="Refugee">
@@ -203,7 +203,6 @@
           <Property Name="AthorityCode" Type="Int32" />
           <Property Name="RefugeeFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RefugeeLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -212,6 +211,7 @@
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Family_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToRefugee" FromRole="Refugee" ToRole="Wish_List" />
         </EntityType>
         <EntityType Name="Wish_List">
@@ -342,9 +342,9 @@
                 <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -355,7 +355,6 @@
                 <ScalarProperty Name="AthorityCode" ColumnName="AthorityCode" />
                 <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
                 <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
-                <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="PostCode" ColumnName="PostCode" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -364,6 +363,7 @@
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Family_Description" ColumnName="Family_Description" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

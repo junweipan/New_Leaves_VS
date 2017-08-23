@@ -39,9 +39,9 @@
           <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Icon" ColumnName="Icon" />
           <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -52,7 +52,6 @@
           <ScalarProperty Name="AthorityCode" ColumnName="AthorityCode" />
           <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
           <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
-          <ScalarProperty Name="Icon" ColumnName="Icon" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="PostCode" ColumnName="PostCode" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -61,6 +60,7 @@
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Family_Description" ColumnName="Family_Description" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
