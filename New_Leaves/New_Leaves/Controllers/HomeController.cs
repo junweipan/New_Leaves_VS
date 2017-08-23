@@ -11,13 +11,13 @@ namespace New_Leaves.Controllers
         [Authorize]
         public ActionResult IndexLogin()
         {
-            return View();
+            return View("IndexLogin");
 
         }
        
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
 
         }
         public ActionResult Team()
