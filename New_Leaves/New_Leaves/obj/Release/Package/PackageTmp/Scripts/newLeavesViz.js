@@ -30,7 +30,6 @@ for(var key in cleanData) {
 })//ends rawData with D3
 
 
-
 // CHART JS VISUALISATION
 let ctx = document.getElementById("totalRefugees").getContext('2d');
 let totalRefugees = new Chart(ctx, {
@@ -40,7 +39,7 @@ let totalRefugees = new Chart(ctx, {
         datasets: [{
             label: '# of Refugees from 1951 to 2017',
             data: dataValues,
-            backgroundColor: 'rgba(82,205,14, 0.2)' ,
+            backgroundColor: 'rgba(82,205,14, 0.2)',
             borderColor: 'rgba(82,205,14,1)',
             borderWidth: 1
         }]
@@ -49,9 +48,11 @@ let totalRefugees = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
             }]
         }
     }
 });
+
+
