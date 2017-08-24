@@ -13,10 +13,10 @@ namespace New_Leaves.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class newleavesDBEntities : DbContext
+    public partial class icontest2Entities : DbContext
     {
-        public newleavesDBEntities()
-            : base("name=newleavesDBEntities")
+        public icontest2Entities()
+            : base("name=icontest2Entities")
         {
         }
     
@@ -25,10 +25,10 @@ namespace New_Leaves.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Donation> Donations { get; set; }
-        public virtual DbSet<Donor> Donors { get; set; }
-        public virtual DbSet<Item> Items { get; set; }
-        public virtual DbSet<Refugee> Refugees { get; set; }
+        public virtual DbSet<Donation> Donation { get; set; }
+        public virtual DbSet<Donor> Donor { get; set; }
+        public virtual DbSet<Item> Item { get; set; }
+        public virtual DbSet<Refugee> Refugee { get; set; }
         public virtual DbSet<Wish_List> Wish_List { get; set; }
     }
 }

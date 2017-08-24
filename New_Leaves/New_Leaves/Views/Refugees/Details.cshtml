@@ -36,11 +36,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PostCode)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PostCode)
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
         </dd>
 
         <dt>
@@ -88,47 +96,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Family_Description)<br /><br />
+            @Html.DisplayFor(model => model.Family_Description)
         </dd>
-        <!--show all wish items-->
-        @foreach (var x in Model.Wish_List)
-        {
-            <dt>
-                Item Name:
-            </dt>
-            <dd>
-                @Html.DisplayName(x.Item.Item_Name)
-            </dd>
-            <dt>
-                Category:
-            </dt>
-            <dd>
-                @Html.DisplayName(x.Item.Category)
-            </dd>
-            <dt>
-                Description:
-            </dt>
-            <dd>
-                @Html.DisplayName(x.Item.Description)
-            </dd>
-            <dt>
-                Icon:<img src=@x.Item.Icon  border="0">
-            </dt>
-            <dd>
-            </dd>
-            <dt>
-                Estimated Price:
-            </dt>
-            <dd>
-                @x.Item.Estimated_Price
-            </dd>
-            <dt>
-                Status:
-            </dt>
-            <dd>
-                @Html.DisplayName(x.Item.Status)<br /><br />
-            </dd>
-        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icon)
+        </dd>
 
     </dl>
 </div>

@@ -17,7 +17,7 @@ namespace New_Leaves.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Wish_List()
         {
-            this.Donations = new HashSet<Donation>();
+            this.Donation = new HashSet<Donation>();
         }
     
         public int Wish_List_ID { get; set; }
@@ -27,7 +27,7 @@ namespace New_Leaves.Models
         public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Donation> Donations { get; set; }
+        public virtual ICollection<Donation> Donation { get; set; }
         public virtual Item Item { get; set; }
         public virtual Refugee Refugee { get; set; }
     }

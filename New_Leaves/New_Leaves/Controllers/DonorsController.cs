@@ -12,12 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class DonorsController : Controller
     {
-        private newleavesDBEntities db = new newleavesDBEntities();
+        private icontest2Entities db = new icontest2Entities();
 
         // GET: Donors
         public ActionResult Index()
         {
-            return View(db.Donors.ToList());
+            return View(db.Donor.ToList());
         }
 
         // GET: Donors/Details/5
@@ -27,7 +27,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Donor donor = db.Donors.Find(id);
+            Donor donor = db.Donor.Find(id);
             if (donor == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,icon")] Donor donor)
+        public ActionResult Create([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,Icon")] Donor donor)
         {
             if (ModelState.IsValid)
             {
-                db.Donors.Add(donor);
+                db.Donor.Add(donor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Donor donor = db.Donors.Find(id);
+            Donor donor = db.Donor.Find(id);
             if (donor == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,icon")] Donor donor)
+        public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,Icon")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Donor donor = db.Donors.Find(id);
+            Donor donor = db.Donor.Find(id);
             if (donor == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Donor donor = db.Donors.Find(id);
-            db.Donors.Remove(donor);
+            Donor donor = db.Donor.Find(id);
+            db.Donor.Remove(donor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

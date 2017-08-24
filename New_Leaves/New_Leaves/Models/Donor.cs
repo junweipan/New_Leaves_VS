@@ -17,7 +17,7 @@ namespace New_Leaves.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Donor()
         {
-            this.Donations = new HashSet<Donation>();
+            this.Donation = new HashSet<Donation>();
         }
     
         public int DID { get; set; }
@@ -32,9 +32,9 @@ namespace New_Leaves.Models
         public string State { get; set; }
         public string Postcode { get; set; }
         public string Phone { get; set; }
-        public string icon { get; set; }
+        public string Icon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Donation> Donations { get; set; }
+        public virtual ICollection<Donation> Donation { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace New_Leaves.Models
 {
     public class DonorLogin
     {
-        
+
         [Display(Name = "Email ID")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
         public string Email { get; set; }

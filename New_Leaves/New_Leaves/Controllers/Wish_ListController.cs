@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class Wish_ListController : Controller
     {
-        private newleavesDBEntities db = new newleavesDBEntities();
+        private icontest2Entities db = new icontest2Entities();
 
         // GET: Wish_List
         public ActionResult Index()
@@ -39,8 +39,8 @@ namespace New_Leaves.Controllers
         // GET: Wish_List/Create
         public ActionResult Create()
         {
-            ViewBag.Item_ID = new SelectList(db.Items, "Item_ID", "Item_Name");
-            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName");
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace New_Leaves.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Item_ID = new SelectList(db.Items, "Item_ID", "Item_Name", wish_List.Item_ID);
-            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 
@@ -75,8 +75,8 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Item_ID = new SelectList(db.Items, "Item_ID", "Item_Name", wish_List.Item_ID);
-            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 
@@ -93,8 +93,8 @@ namespace New_Leaves.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Item_ID = new SelectList(db.Items, "Item_ID", "Item_Name", wish_List.Item_ID);
-            ViewBag.RID = new SelectList(db.Refugees, "RID", "RefugeeFName", wish_List.RID);
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
 

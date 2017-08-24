@@ -50,9 +50,9 @@ namespace New_Leaves.Controllers
                 donor.IsEmailVerified = false;
 
                 #region Save to Database
-                using (newleavesDBEntities dc = new newleavesDBEntities())
+                using (icontest2Entities dc = new icontest2Entities())
                 {
-                    dc.Donors.Add(donor);
+                    dc.Donor.Add(donor);
                     dc.SaveChanges();
 
                     //Send Email to User
@@ -78,11 +78,11 @@ namespace New_Leaves.Controllers
         public ActionResult VerifyAccount(string id)
         {
             bool Status = false;
-            using (newleavesDBEntities dc = new newleavesDBEntities())
+            using (icontest2Entities dc = new icontest2Entities())
             {
                 dc.Configuration.ValidateOnSaveEnabled = false; // This line I have added here to avoid 
                                                                 // Confirm password does not match issue on save changes
-                var v = dc.Donors.Where(a => a.ActivationCode == new Guid(id)).FirstOrDefault();
+                var v = dc.Donor.Where(a => a.ActivationCode == new Guid(id)).FirstOrDefault();
                 if (v != null)
                 {
                     v.IsEmailVerified = true;
@@ -111,9 +111,9 @@ namespace New_Leaves.Controllers
         public ActionResult Login(DonorLogin login, string ReturnUrl = "")
         {
             string message = "";
-            using (newleavesDBEntities dc = new newleavesDBEntities())
+            using (icontest2Entities dc = new icontest2Entities())
             {
-                var v = dc.Donors.Where(a => a.Email == login.Email).FirstOrDefault();
+                var v = dc.Donor.Where(a => a.Email == login.Email).FirstOrDefault();
                 if (v != null)
                 {
                     if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
@@ -163,9 +163,9 @@ namespace New_Leaves.Controllers
         [NonAction]
         public bool IsEmailExist(string emailID)
         {
-            using (newleavesDBEntities dc = new newleavesDBEntities())
+            using (icontest2Entities dc = new icontest2Entities())
             {
-                var v = dc.Donors.Where(a => a.Email == emailID).FirstOrDefault();
+                var v = dc.Donor.Where(a => a.Email == emailID).FirstOrDefault();
                 return v != null;
             }
         }

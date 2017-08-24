@@ -169,36 +169,36 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Donation.cs">
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donor.cs">
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DonorLogin.cs" />
     <Compile Include="Models\Extended\Donor.cs" />
     <Compile Include="Models\Item.cs">
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel.Context.cs">
+    <Compile Include="Models\NLModel1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel.Context.tt</DependentUpon>
+      <DependentUpon>NLModel1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel.cs">
+    <Compile Include="Models\NLModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel.Designer.cs">
+    <Compile Include="Models\NLModel1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel.edmx</DependentUpon>
+      <DependentUpon>NLModel1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Refugee.cs">
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Wish_List.cs">
-      <DependentUpon>NLModel.tt</DependentUpon>
+      <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,15 +244,15 @@
     <Content Include="images\resource\aboutimage.jpg" />
     <Content Include="images\slide-image-2.jpg" />
     <Content Include="images\slide-image-3.jpg" />
-    <Content Include="Models\NLModel.Context.tt">
+    <Content Include="Models\NLModel1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NLModel.edmx</DependentUpon>
-      <LastGenOutput>NLModel.Context.cs</LastGenOutput>
+      <DependentUpon>NLModel1.edmx</DependentUpon>
+      <LastGenOutput>NLModel1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NLModel.tt">
+    <Content Include="Models\NLModel1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NLModel.edmx</DependentUpon>
-      <LastGenOutput>NLModel.cs</LastGenOutput>
+      <DependentUpon>NLModel1.edmx</DependentUpon>
+      <LastGenOutput>NLModel1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -279,12 +279,12 @@
     <Content Include="fonts\revicons90c6.woff" />
     <Content Include="images\.DS_Store" />
     <Content Include="Content\data\data.csv" />
-    <EntityDeploy Include="Models\NLModel.edmx">
+    <EntityDeploy Include="Models\NLModel1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NLModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NLModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NLModel.edmx.diagram">
-      <DependentUpon>NLModel.edmx</DependentUpon>
+    <Content Include="Models\NLModel1.edmx.diagram">
+      <DependentUpon>NLModel1.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\newleaves - Web Deploy %282%29.pubxml" />
@@ -325,7 +325,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -337,28 +339,28 @@
     <Content Include="Views\DonorRegister\VerifyAccount.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\DonorRegister\Login.cshtml" />
+    <Content Include="Views\Home\IndexLogin.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial2.cshtml" />
     <Content Include="Views\Donors\Create.cshtml" />
     <Content Include="Views\Donors\Delete.cshtml" />
     <Content Include="Views\Donors\Details.cshtml" />
     <Content Include="Views\Donors\Edit.cshtml" />
     <Content Include="Views\Donors\Index.cshtml" />
-    <Content Include="Views\Refugees\Create.cshtml" />
-    <Content Include="Views\Refugees\Delete.cshtml" />
-    <Content Include="Views\Refugees\Details.cshtml" />
-    <Content Include="Views\Refugees\Edit.cshtml" />
-    <Content Include="Views\Refugees\Index.cshtml" />
     <Content Include="Views\Items\Create.cshtml" />
     <Content Include="Views\Items\Delete.cshtml" />
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Refugees\Create.cshtml" />
+    <Content Include="Views\Refugees\Delete.cshtml" />
+    <Content Include="Views\Refugees\Details.cshtml" />
+    <Content Include="Views\Refugees\Edit.cshtml" />
+    <Content Include="Views\Refugees\Index.cshtml" />
     <Content Include="Views\Wish_List\Create.cshtml" />
     <Content Include="Views\Wish_List\Delete.cshtml" />
     <Content Include="Views\Wish_List\Details.cshtml" />
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
-    <Content Include="Views\Home\IndexLogin.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

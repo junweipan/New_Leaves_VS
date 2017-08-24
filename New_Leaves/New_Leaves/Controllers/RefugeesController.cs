@@ -12,12 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class RefugeesController : Controller
     {
-        private newleavesDBEntities db = new newleavesDBEntities();
+        private icontest2Entities db = new icontest2Entities();
 
         // GET: Refugees
         public ActionResult Index()
         {
-            return View(db.Refugees.ToList());
+            return View(db.Refugee.ToList());
         }
 
         // GET: Refugees/Details/5
@@ -27,7 +27,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Refugee refugee = db.Refugees.Find(id);
+            Refugee refugee = db.Refugee.Find(id);
             if (refugee == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,PostCode,Email,Street,Suburb,State,Phone,Family_Description,icon")] Refugee refugee)
+        public ActionResult Create([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {
-                db.Refugees.Add(refugee);
+                db.Refugee.Add(refugee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Refugee refugee = db.Refugees.Find(id);
+            Refugee refugee = db.Refugee.Find(id);
             if (refugee == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,PostCode,Email,Street,Suburb,State,Phone,Family_Description,icon")] Refugee refugee)
+        public ActionResult Edit([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Refugee refugee = db.Refugees.Find(id);
+            Refugee refugee = db.Refugee.Find(id);
             if (refugee == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Refugee refugee = db.Refugees.Find(id);
-            db.Refugees.Remove(refugee);
+            Refugee refugee = db.Refugee.Find(id);
+            db.Refugee.Remove(refugee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

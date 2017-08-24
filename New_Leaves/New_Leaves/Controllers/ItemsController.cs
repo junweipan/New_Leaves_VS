@@ -12,12 +12,12 @@ namespace New_Leaves.Controllers
 {
     public class ItemsController : Controller
     {
-        private newleavesDBEntities db = new newleavesDBEntities();
+        private icontest2Entities db = new icontest2Entities();
 
         // GET: Items
         public ActionResult Index()
         {
-            return View(db.Items.ToList());
+            return View(db.Item.ToList());
         }
 
         // GET: Items/Details/5
@@ -27,7 +27,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
+            Item item = db.Item.Find(id);
             if (item == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace New_Leaves.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Items.Add(item);
+                db.Item.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
+            Item item = db.Item.Find(id);
             if (item == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace New_Leaves.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
+            Item item = db.Item.Find(id);
             if (item == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Item item = db.Items.Find(id);
-            db.Items.Remove(item);
+            Item item = db.Item.Find(id);
+            db.Item.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
