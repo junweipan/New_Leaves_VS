@@ -26,7 +26,7 @@
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                             <li><a href="@Url.Action("Create", "Refugees")">I am a Refugee</a></li>
-                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
                             @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
                             {
                             <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>

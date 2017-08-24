@@ -29,23 +29,23 @@ namespace New_Leaves.Models
         public string Email { get; set; }
 
         [Display(Name = "State")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "State required")]
         public string State { get; set; }
 
         [Display(Name = "Phone")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Phine Number required")]
         public string Phone { get; set; }
 
         [Display(Name = "Postcode")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Postcode required")]
         public string Postcode { get; set; }
 
         [Display(Name = "Street")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Address required")]
         public string Street { get; set; }
 
         [Display(Name = "Suburb")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Suburb required")]
         public string Suburb { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
