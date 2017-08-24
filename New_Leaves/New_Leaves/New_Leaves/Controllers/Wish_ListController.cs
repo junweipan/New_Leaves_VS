@@ -39,6 +39,7 @@ namespace New_Leaves.Controllers
         // GET: Wish_List/Create
         public ActionResult Create()
         {
+            ViewBag.list = db.Wish_List.ToList();
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
             return View();
@@ -55,7 +56,7 @@ namespace New_Leaves.Controllers
             {
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
