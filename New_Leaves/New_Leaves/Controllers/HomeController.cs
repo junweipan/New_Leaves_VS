@@ -8,7 +8,7 @@ namespace New_Leaves.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+       
         public ActionResult IndexLogin()
         {
             return View("IndexLogin");

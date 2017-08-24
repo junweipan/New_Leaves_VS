@@ -133,7 +133,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("IndexLogin", "Home");
+                            return RedirectToAction("Index", "Home");
                         }
                     }
                     else

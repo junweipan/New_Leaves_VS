@@ -221,11 +221,11 @@
     <Content Include="Content\revolution-slider.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\flaticon.svg" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\FuturaBT-Medium.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\revicons90c6.svg" />
+    <Content Include="Controllers\fonts\flaticon.svg" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.svg" />
+    <Content Include="Controllers\fonts\FuturaBT-Medium.svg" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Controllers\fonts\revicons90c6.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\background\2.jpg" />
@@ -262,21 +262,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\flaticon.eot" />
-    <Content Include="fonts\flaticon.ttf" />
-    <Content Include="fonts\flaticon.woff" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\FuturaBT-Medium.eot" />
-    <Content Include="fonts\FuturaBT-Medium.ttf" />
-    <Content Include="fonts\FuturaBT-Medium.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\revicons90c6.eot" />
-    <Content Include="fonts\revicons90c6.ttf" />
-    <Content Include="fonts\revicons90c6.woff" />
+    <Content Include="Controllers\fonts\flaticon.eot" />
+    <Content Include="Controllers\fonts\flaticon.ttf" />
+    <Content Include="Controllers\fonts\flaticon.woff" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.eot" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.woff" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Controllers\fonts\FontAwesome.otf" />
+    <Content Include="Controllers\fonts\FuturaBT-Medium.eot" />
+    <Content Include="Controllers\fonts\FuturaBT-Medium.ttf" />
+    <Content Include="Controllers\fonts\FuturaBT-Medium.woff" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Controllers\fonts\revicons90c6.eot" />
+    <Content Include="Controllers\fonts\revicons90c6.ttf" />
+    <Content Include="Controllers\fonts\revicons90c6.woff" />
     <Content Include="images\.DS_Store" />
     <Content Include="Content\data\data.csv" />
     <EntityDeploy Include="Models\NLModel.edmx">
@@ -364,9 +364,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
