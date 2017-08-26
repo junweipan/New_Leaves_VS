@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\RefugeesController.cs" />
+    <Compile Include="Controllers\RefugeesLoginController.cs" />
     <Compile Include="Controllers\Wish_ListController.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
@@ -196,6 +197,7 @@
     <Compile Include="Models\Refugee.cs">
       <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RefugeeLogin.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Wish_List.cs">
       <DependentUpon>NLModel1.tt</DependentUpon>
@@ -361,6 +363,7 @@
     <Content Include="Views\Wish_List\Details.cshtml" />
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
+    <Content Include="Views\RefugeesLogin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
