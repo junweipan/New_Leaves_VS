@@ -1,0 +1,88 @@
+﻿@if (Request.IsAuthenticated)
+{
+<div class="header-upper">
+    <div class="auto-container">
+        <div class="clearfix">
+
+            <div class="pull-left logo-outerpadding0">
+                <div class="logo"><a href='@Url.Action("RefugeeIndex", "Home")'><img src="~/images/logo_small.png"></a></div>
+            </div>
+
+            <div class="nav-outer clearfix">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+
+
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+                            <li class="dropdown">
+                                <a href="#">About</a>
+                                <ul>
+                                    <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                                    <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+                           
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "RefugeeManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            @using (Html.BeginForm("Logout", "RefugeesLogin", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                            }
+
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Main Menu End-->
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+else
+{
+
+    <div class="header-upper">
+        <div class="auto-container">
+            <div class="clearfix">
+
+                <div class="pull-left logo-outerpadding0">
+                    <div class="logo"><a href='@Url.Action("Index", "Home")'><img src="~/images/logo_small.png"></a></div>
+                </div>
+
+                <div class="nav-outer clearfix">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class="dropdown">
+                                    <a href="#">About</a>
+                                    <ul>
+                                        <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                                        <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+                                <li><a href="@Url.Action("Login", "RefugeesLogin")">I am a Refugee</a></li>                     
+                                <li>@Html.ActionLink("Join Us", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                              
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- Main Menu End-->
+        </div>
+
+    </div>
+</div>
+</div>
+
+}

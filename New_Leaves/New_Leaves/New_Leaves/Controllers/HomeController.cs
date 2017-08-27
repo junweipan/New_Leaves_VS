@@ -14,7 +14,13 @@ namespace New_Leaves.Controllers
             return View("IndexLogin");
 
         }
-       
+
+        public ActionResult RefugeeIndex()
+        {
+            return View("RefugeeIndex");
+
+        }
+
         public ActionResult Index()
         {
             return View("Index");

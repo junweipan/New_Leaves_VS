@@ -339,10 +339,9 @@
     <Content Include="Views\Home\team.cshtml" />
     <Content Include="Views\DonorRegister\Registration.cshtml" />
     <Content Include="Views\DonorRegister\VerifyAccount.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\DonorRegister\Login.cshtml" />
-    <Content Include="Views\Home\IndexLogin.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial2.cshtml" />
+    <Content Include="Views\Home\RefugeeIndex.cshtml" />
+    <Content Include="Views\Shared\_DonorLoginPartial.cshtml" />
     <Content Include="Views\Donors\Create.cshtml" />
     <Content Include="Views\Donors\Delete.cshtml" />
     <Content Include="Views\Donors\Details.cshtml" />
@@ -364,6 +363,8 @@
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
     <Content Include="Views\RefugeesLogin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
+    <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
