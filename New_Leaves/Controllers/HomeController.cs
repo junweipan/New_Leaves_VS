@@ -14,6 +14,7 @@ namespace New_Leaves.Controllers
         //Get refugee by email
         public ActionResult Details(String email)
         {
+
             if (email == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -24,7 +25,15 @@ namespace New_Leaves.Controllers
             {
                 return HttpNotFound();
             }
-            return View(refugee);
+            //Store your email (in the TempData)
+            //TempData["id"] = refugee.RID;
+
+            //Store your Student (in the Session)
+            //Session["Student"] = oStudent;
+
+            //return RedirectToAction("Details", "Refugees");
+            return RedirectToAction("Details", "Refugees", new { id = refugee.RID });
+            // return View(refugee);
         }
         public ActionResult IndexLogin()
         {
