@@ -286,6 +286,7 @@
     <Content Include="Models\NLModel.edmx.diagram">
       <DependentUpon>NLModel.edmx</DependentUpon>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\newleaves - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
