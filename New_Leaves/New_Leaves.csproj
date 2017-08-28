@@ -162,6 +162,7 @@
     <Compile Include="Controllers\DonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\RefugeeManageController.cs" />
     <Compile Include="Controllers\RefugeesController.cs" />
     <Compile Include="Controllers\RefugeesLoginController.cs" />
     <Compile Include="Controllers\Wish_ListController.cs" />
@@ -366,6 +367,8 @@
     <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
     <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\RefugeeManage\RefugeeDetails.cshtml" />
+    <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

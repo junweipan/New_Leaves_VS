@@ -17,6 +17,10 @@ namespace New_Leaves.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+      
+        public int RID { get; set; }
+
+        public string RefugeeFName { get; set; }
 
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }

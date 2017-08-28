@@ -37,13 +37,15 @@ namespace New_Leaves.Controllers
                 if (v != null)
                 {
                     if (string.Compare((login.Password), v.Password) == 0)
-                    {
+                    {   
                         int timeout = login.RememberMe ? 525600 : 20;
                         var ticket = new FormsAuthenticationTicket(login.Email, login.RememberMe, timeout);
+                       
                         string encrypted = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
                         cookie.Expires = DateTime.Now.AddMinutes(timeout);
                         cookie.HttpOnly = true;
+                       
                         Response.Cookies.Add(cookie);
 
 

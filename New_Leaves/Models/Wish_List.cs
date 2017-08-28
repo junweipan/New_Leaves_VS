@@ -30,5 +30,10 @@ namespace New_Leaves.Models
         public virtual ICollection<Donation> Donation { get; set; }
         public virtual Item Item { get; set; }
         public virtual Refugee Refugee { get; set; }
+
+        internal object ToList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
