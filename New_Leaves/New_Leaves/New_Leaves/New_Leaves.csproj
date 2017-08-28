@@ -162,7 +162,6 @@
     <Compile Include="Controllers\DonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
-    <Compile Include="Controllers\RefugeeManageAccountController.cs" />
     <Compile Include="Controllers\RefugeesController.cs" />
     <Compile Include="Controllers\RefugeesLoginController.cs" />
     <Compile Include="Controllers\Wish_ListController.cs" />
@@ -367,12 +366,9 @@
     <Content Include="Views\RefugeesLogin\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
     <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
-    <Content Include="Views\RefugeeManageAccount\Details.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\RefugeeManageAccoun\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

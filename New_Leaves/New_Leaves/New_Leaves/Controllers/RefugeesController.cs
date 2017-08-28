@@ -19,7 +19,7 @@ namespace New_Leaves.Controllers
         {
             return View(db.Refugee.ToList());
         }
-       
+
         // GET: Refugees/Details/5
         public ActionResult Details(int? id)
         {
