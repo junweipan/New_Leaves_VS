@@ -365,6 +365,7 @@
     <Content Include="Views\RefugeesLogin\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
     <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
