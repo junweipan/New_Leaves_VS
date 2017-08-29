@@ -42,13 +42,9 @@ namespace New_Leaves.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var wish_List = db.Wish_List.Include(w => w.Item).Include(w => w.Refugee);
-            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
-            if (wish_List == null)
-            {
-                return HttpNotFound();
-            }
-            return View(wish_List.ToList());
+            var wishlist = db.Wish_List.Where(a => a.RID == id).FirstOrDefault();
+                     
+            return View(wishlist.ToList());
         }
     }
 }
