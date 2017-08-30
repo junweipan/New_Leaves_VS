@@ -1,15 +1,26 @@
 ﻿@model New_Leaves.Models.Wish_List
+
 @{
     ViewBag.Title = "create";
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
 <h2>Index</h2>
-    
-  <table class="table">
-  
-  </table>
-
+   <table>
+    <tr>
+        <th>Item Name:</th>
+        <th>Category:</th>
+        <th>Date:</th>
+    </tr>
+    @foreach (var x in @ViewBag.list)
+    {
+        <tr>
+            <td>@x.Item.Item_Name</td>
+            <td>@x.Item.Category</td>
+            <td>@x.List_Submit_Date</td>
+        </tr>
+    }
+</table>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

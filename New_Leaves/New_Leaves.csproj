@@ -200,6 +200,7 @@
     </Compile>
     <Compile Include="Models\RefugeeLogin.cs" />
     <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\WishListIndividual.cs" />
     <Compile Include="Models\Wish_List.cs">
       <DependentUpon>NLModel1.tt</DependentUpon>
     </Compile>
@@ -369,6 +370,7 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\RefugeeManage\RefugeeDetails.cshtml" />
     <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
+    <Content Include="Views\RefugeeManage\ShowWishList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

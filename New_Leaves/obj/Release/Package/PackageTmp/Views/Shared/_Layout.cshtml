@@ -49,8 +49,9 @@
                 </div>
             </div>
         </div>
-
+      
         <!--Header-Upper-->
+        if(@HttpContext.Current.User.Identity.Name.Contains("@"))
         @Html.Partial("_DonorLoginPartial")
         
         <!--End Header Upper-->

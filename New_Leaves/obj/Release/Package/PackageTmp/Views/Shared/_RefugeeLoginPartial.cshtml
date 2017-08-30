@@ -26,12 +26,13 @@
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            
-                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "RefugeeManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            <li> @Html.ActionLink("Hello " + User.Identity.Name, "RefugeeDetails", "RefugeeManage", new { email = User.Identity.Name }, null)</li>
                             @using (Html.BeginForm("Logout", "RefugeesLogin", FormMethod.Post, new { id = "logoutForm" }))
                             {
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                            <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
                             }
-                            @Html.ActionLink("Detailsssssss", "Details", new { email = User.Identity.Name })
+                           
+                            
                             
                         </ul>
                     </div>

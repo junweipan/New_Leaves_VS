@@ -35,16 +35,38 @@ namespace New_Leaves.Controllers
             return View(refugee);
         }
 
-        public ActionResult CreateWishList(int? id)
+        
+
+        public ActionResult ShowWishList(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var wishlist = db.Wish_List.Where(a => a.RID == id).FirstOrDefault();
-                     
-            return View(wishlist.ToList());
+            var wishlist = db.Wish_List.Where(a => a.RID == id);
+
+            return View(wishlist);
         }
+
+        public ActionResult CreateWishList(int? id)
+
+        {
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
+            var wishlist = db.Wish_List.Where(a => a.RID == id);
+            ViewBag.MyList = wishlist;
+
+
+            // if (id == null)
+            //   {
+            //       return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //   }
+
+            //   var wishlist = db.Wish_List.Where(a => a.RID == id);
+
+            //   return View(wishlist.ToList());
+            return View(wishlist);
+        }
+
     }
 }
