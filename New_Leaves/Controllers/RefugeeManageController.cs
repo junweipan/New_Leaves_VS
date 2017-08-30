@@ -45,28 +45,37 @@ namespace New_Leaves.Controllers
             }
 
             var wishlist = db.Wish_List.Where(a => a.RID == id);
-
+            ViewBag.RID = id;
             return View(wishlist);
         }
 
         public ActionResult CreateWishList(int? id)
 
         {
+            // GET: Wish_List/Create
+            ViewBag.list = db.Wish_List.Where(a =>a.RID ==id);
+            //Todo
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
-            var wishlist = db.Wish_List.Where(a => a.RID == id);
-            ViewBag.MyList = wishlist;
-
-
-            // if (id == null)
-            //   {
-            //       return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //   }
-
-            //   var wishlist = db.Wish_List.Where(a => a.RID == id);
-
-            //   return View(wishlist.ToList());
-            return View(wishlist);
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
+            return View();
         }
+        // POST: Wish_List/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateWishList([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Wish_List.Add(wish_List);
+                db.SaveChanges();
+                return RedirectToAction("CreateWishList");
+            }
 
+            ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
+            ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
+            return View(wish_List);
+        }
     }
 }
