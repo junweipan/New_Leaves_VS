@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Wish List</h2>
 
 <p>
-    @Html.ActionLink("Create", "CreateWishList",new { id = Model.FirstOrDefault().RID})
+    @Html.ActionLink("Add Items", "CreateWishList",new { id = Model.FirstOrDefault().RID})
 </p>
 
 
@@ -37,3 +37,4 @@
     }
 
 </table>
+@Html.ActionLink("Back", "RefugeeDetails", new { email = User.Identity.Name })

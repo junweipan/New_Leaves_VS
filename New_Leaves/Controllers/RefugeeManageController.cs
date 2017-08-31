@@ -15,11 +15,12 @@ namespace New_Leaves.Controllers
     public class RefugeeManageController : Controller
     {
         // GET: RefugeeManage
-        public ActionResult Index()
+        public ActionResult WishListIndex()
         {
-            return View();
+            return View("ShowWishList");
         }
         private icontest2Entities db = new icontest2Entities();
+
         public ActionResult RefugeeDetails(String email)
         {
 
@@ -82,6 +83,37 @@ namespace New_Leaves.Controllers
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
+        }
+
+        public ActionResult RefugeeModifyAccount(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.Find(id);
+            if (refugee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(refugee);
+        }
+
+        // POST: Refugees/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RefugeeModifyAccount([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee, int id)
+        {
+            int rid = id;
+            if (ModelState.IsValid)
+            {
+                db.Entry(refugee).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("RefugeeDetails");
+            }
+            return View(refugee);
         }
     }
 }
