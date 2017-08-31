@@ -111,7 +111,7 @@ namespace New_Leaves.Controllers
             {
                 db.Entry(refugee).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("RefugeeDetails");
+                return RedirectToAction("RefugeeIndex","Home");
             }
             return View(refugee);
         }
