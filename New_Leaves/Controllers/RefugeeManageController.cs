@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using New_Leaves.Models;
+using System.Collections;
 
 namespace New_Leaves.Controllers
 {
@@ -57,6 +58,11 @@ namespace New_Leaves.Controllers
             //Todo
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
+            //List<object> list = new List<object>();
+            //list.Add(id);
+            //IEnumerable<object> fakeID = list;
+            //ViewBag.fakeID = fakeID;
+            ViewBag.id = new SelectList(db.Refugee.Where(a =>a.RID ==id), "RID", "RefugeeFName");
             return View();
         }
         // POST: Wish_List/Create
@@ -67,7 +73,7 @@ namespace New_Leaves.Controllers
         public ActionResult CreateWishList([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
         {
             if (ModelState.IsValid)
-            {
+            {   
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
                 return RedirectToAction("CreateWishList");
