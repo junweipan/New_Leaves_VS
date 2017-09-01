@@ -73,8 +73,11 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateWishList([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
         {
-            if (ModelState.IsValid)
-            {   
+           
+            
+               
+                if (ModelState.IsValid) {
+                wish_List.List_Submit_Date = DateTime.Now;
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
                 return RedirectToAction("CreateWishList");
