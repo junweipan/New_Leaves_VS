@@ -11,7 +11,8 @@ namespace New_Leaves.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Wish_List
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,8 @@ namespace New_Leaves.Models
         public int Wish_List_ID { get; set; }
         public Nullable<int> RID { get; set; }
         public Nullable<int> Item_ID { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",
+               ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> List_Submit_Date { get; set; }
         public string Status { get; set; }
     
