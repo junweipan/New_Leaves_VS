@@ -64,6 +64,7 @@ namespace New_Leaves.Controllers
             //IEnumerable<object> fakeID = list;
             //ViewBag.fakeID = fakeID;
             ViewBag.id = new SelectList(db.Refugee.Where(a =>a.RID ==id), "RID", "RefugeeFName");
+            ViewBag.id2 = id;
             return View();
         }
         // POST: Wish_List/Create
