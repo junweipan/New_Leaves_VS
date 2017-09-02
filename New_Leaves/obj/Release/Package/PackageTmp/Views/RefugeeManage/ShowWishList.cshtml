@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Wish List</h2>
 
 <p>
-    @Html.ActionLink("Create", "CreateWishList")
+    @Html.ActionLink("Add Items", "CreateWishList",new { id = Model.FirstOrDefault().RID})
 </p>
 
 
@@ -20,11 +20,9 @@
     @foreach (var item in Model)
     {
 
-
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Wish_List_ID)
-            </td>
+    if (item != null)
+    { <tr>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.List_Submit_Date)
             </td>
@@ -35,7 +33,8 @@
                 @Html.DisplayFor(modelItem => item.Item.Item_Name)
             </td>
 
-        </tr>
+        </tr>}
     }
 
 </table>
+@Html.ActionLink("Back", "RefugeeDetails", new { email = User.Identity.Name })

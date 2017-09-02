@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-<h2>RefugeeDetails</h2>
+<h2>Personal Information</h2>
 
 <div>
-    <h4>Refugee</h4>
-    @Html.ActionLink("wish list", "ShowWishList", new { id = Model.RID })
+    
+    @Html.ActionLink("see wish list", "ShowWishList", new { id = Model.RID })
     <hr />
     <dl class="dl-horizontal">
        
@@ -92,5 +92,5 @@
 
     </dl>
 </div>
-
+@Html.ActionLink("Modify Profile", "RefugeeModifyAccount", new { id = Model.RID })
 

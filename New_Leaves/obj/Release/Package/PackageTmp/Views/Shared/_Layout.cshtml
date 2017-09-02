@@ -43,7 +43,7 @@
                            
                         </ul>
                         <div class="donation-btn">
-                            <a href="@Url.Action("Index","Wish_List")" class="theme-btn btn-style-two">See Wish List!</a>
+                            <a href="@Url.Action("Index","Wish_List")" class="theme-btn btn-style-two">Wish List!</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
         </div>
       
         <!--Header-Upper-->
-        if(@HttpContext.Current.User.Identity.Name.Contains("@"))
+       
         @Html.Partial("_DonorLoginPartial")
         
         <!--End Header Upper-->
