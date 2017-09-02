@@ -373,6 +373,7 @@
     <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
     <Content Include="Views\RefugeeManage\ShowWishList.cshtml" />
     <Content Include="Views\RefugeeManage\RefugeeModifyAccount.cshtml" />
+    <Content Include="Views\RefugeeManage\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
