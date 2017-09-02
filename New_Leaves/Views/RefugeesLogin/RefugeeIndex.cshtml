@@ -1,8 +1,11 @@
 ﻿@model New_Leaves.Models.Refugee
+
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "RefugeeIndex";
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
+
+<h2>RefugeeIndex</h2>
 
 @Html.DisplayFor(model => model.RefugeeFName)
 <!--Services Section-->
@@ -82,7 +85,6 @@
     </div>
 </section>
 <!--End Services Section-->
-
 <!--Counter Section-->
 <section class="counter-section" style="background-image:url(images/background/2.jpg);">
     <div class="auto-container">
@@ -149,7 +151,6 @@
     </div>
 </section>
 <!--End Counter Section-->
-
 <!--Fullwidth Section One-->
 <section class="fullwidth-section-one">
     <div class="section-outer clearfix">
@@ -158,7 +159,7 @@
             <div class="hidden-image">
                 <img src="images/fullwidth-1.jpg" alt="" />
             </div>
-        </div> 
+        </div>
 
         <!--Left Column-->
         <div class="left-column">
