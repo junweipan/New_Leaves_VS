@@ -76,9 +76,9 @@ namespace New_Leaves.Controllers
         {
            
             
-               
+               // wish_List.List_Submit_Date = DateTime.Now;
                 if (ModelState.IsValid) {
-                wish_List.List_Submit_Date = DateTime.Now;
+               
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
                 return RedirectToAction("CreateWishList");

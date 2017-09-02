@@ -241,6 +241,7 @@
     <Content Include="images\icon-5.png" />
     <Content Include="images\icon-6.png" />
     <Content Include="images\icon-7.png" />
+    <Content Include="images\icons\calendar.png" />
     <Content Include="images\icons\icon-select.png" />
     <Content Include="images\NewLeaves_small2.png" />
     <Content Include="images\logo_small.png" />
