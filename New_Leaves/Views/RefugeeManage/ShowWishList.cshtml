@@ -20,8 +20,8 @@
     @foreach (var item in Model)
     {
 
-
-        <tr>
+    if (item != null)
+    { <tr>
            
             <td>
                 @Html.DisplayFor(modelItem => item.List_Submit_Date)
@@ -33,7 +33,7 @@
                 @Html.DisplayFor(modelItem => item.Item.Item_Name)
             </td>
 
-        </tr>
+        </tr>}
     }
 
 </table>
