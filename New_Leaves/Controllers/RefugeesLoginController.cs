@@ -55,7 +55,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("RefugeeIndex" ,new { email = User.Identity.Name });
+                            return RedirectToAction("RefugeeIndex", "Home");
                         }
                     }
                     else
@@ -79,14 +79,6 @@ namespace New_Leaves.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
-        }
-        private icontest2Entities db = new icontest2Entities();
-        public ActionResult RefugeeIndex(string email)
-        {
-            
-        Refugee refugee = db.Refugee.SingleOrDefault(r => r.Email == email);
-            return View("RefugeeIndex", refugee);
-
         }
 
     }

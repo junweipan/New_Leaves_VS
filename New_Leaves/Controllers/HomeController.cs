@@ -41,10 +41,10 @@ namespace New_Leaves.Controllers
 
         }
 
-        public ActionResult RefugeeIndex(string email)
+        public ActionResult RefugeeIndex()
         {
-            Refugee refugee = db.Refugee.SingleOrDefault(r => r.Email == email);
-            return View("RefugeeIndex", refugee);
+            
+            return View("RefugeeIndex");
 
         }
 
