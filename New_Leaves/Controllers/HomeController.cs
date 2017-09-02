@@ -43,6 +43,7 @@ namespace New_Leaves.Controllers
 
         public ActionResult RefugeeIndex()
         {
+            
             return View("RefugeeIndex");
 
         }

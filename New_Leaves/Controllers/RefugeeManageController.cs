@@ -120,5 +120,29 @@ namespace New_Leaves.Controllers
             }
             return View(refugee);
         }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Wish_List wish_List = db.Wish_List.Find(id);
+            if (wish_List == null)
+            {
+                return HttpNotFound();
+            }
+            return View(wish_List);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Wish_List wish_List = db.Wish_List.Find(id);
+            db.Wish_List.Remove(wish_List);
+            db.SaveChanges();
+            return RedirectToAction("ShowWishList");
+        }
     }
 }
