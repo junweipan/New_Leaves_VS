@@ -41,7 +41,7 @@ namespace New_Leaves.Controllers
 
         }
 
-        public ActionResult RefugeeIndex()
+        public ActionResult RefugeeIndex(string email)
         {
             
             return View("RefugeeIndex");
