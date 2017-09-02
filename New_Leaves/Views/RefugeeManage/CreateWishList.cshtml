@@ -11,7 +11,7 @@
 <script>
   $( function() {
       $("#datepicker").datepicker({
-          dateFormat: "dd/mm/yy"
+          dateFormat: "d/M/yy"
       });
   } );
 </script>
@@ -62,10 +62,12 @@
 
         <div hidden="hidden" class="form-group">
 
-            @Html.LabelFor(model => model.List_Submit_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.List_Submit_Date, new { htmlAttributes = new { @class = "form-control",id= "datepicker" } })
-                @Html.ValidationMessageFor(model => model.List_Submit_Date, "", new { @class = "text-danger" })
+            @Html.Label("Please Diliver it after:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@*
+    @Html.EditorFor(model => model.List_Submit_Date, new { htmlAttributes = new { @class = "form-control",id= "datepicker" } })
+    @Html.ValidationMessageFor(model => model.List_Submit_Date, "", new { @class = "text-danger" })
+            *@
+                @Html.TextBoxFor(model => model.List_Submit_Date, "{0:dd/MMM/yyyy}", new { datepicker = true, @class = "form-control", id = "datepicker" })
             </div>
         </div>
 

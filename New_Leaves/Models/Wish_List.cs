@@ -24,8 +24,7 @@ namespace New_Leaves.Models
         public int Wish_List_ID { get; set; }
         public Nullable<int> RID { get; set; }
         public Nullable<int> Item_ID { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",
-               ApplyFormatInEditMode = true)]
+        [DataType(DataType.DateTime)]
         public Nullable<System.DateTime> List_Submit_Date { get; set; }
         public string Status { get; set; }
     
