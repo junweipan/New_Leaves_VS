@@ -140,9 +140,11 @@ namespace New_Leaves.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Wish_List wish_List = db.Wish_List.Find(id);
+            int rid = (int)wish_List.RID;
             db.Wish_List.Remove(wish_List);
             db.SaveChanges();
-            return RedirectToAction("ShowWishList");
+           //Refugee refugee = db.Refugee.SingleOrDefault(w => w.Wish_List == id);
+            return RedirectToAction("ShowWishList",new {id = rid });
         }
     }
 }

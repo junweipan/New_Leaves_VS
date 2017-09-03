@@ -55,7 +55,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("RefugeeIndex", "Home");
+                            return RedirectToAction("RefugeeIndex", "Home", new { email = User.Identity.Name });
                         }
                     }
                     else
