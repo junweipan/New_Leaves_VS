@@ -1,4 +1,6 @@
-﻿@if (Request.IsAuthenticated)
+﻿@model New_Leaves.Models.Refugee
+
+@if (Request.IsAuthenticated)
 {
 <div class="header-upper">
     <div class="auto-container">
@@ -25,7 +27,7 @@
                             </li>
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
-                           
+                           @*  <li> @Html.ActionLink("My List", "ShowWishList", "RefugeeManage", new { id = User.Identity.GetUserId() }, null)</li> *@
                             <li> @Html.ActionLink("Hello " + User.Identity.Name, "RefugeeDetails", "RefugeeManage", new { email = User.Identity.Name }, null)</li>
                             @using (Html.BeginForm("Logout", "RefugeesLogin", FormMethod.Post, new { id = "logoutForm" }))
                             {
@@ -72,8 +74,8 @@ else
                                 </li>
 
                                 <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
-                                <li><a href="@Url.Action("Login", "RefugeesLogin")">I am a Refugee</a></li>                     
-                                <li>@Html.ActionLink("Join Us As Donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li><a href="@Url.Action("Login", "RefugeesLogin")">Beneficiaries</a></li>                     
+                                <li>@Html.ActionLink("Become a donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                                 <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                               
 
