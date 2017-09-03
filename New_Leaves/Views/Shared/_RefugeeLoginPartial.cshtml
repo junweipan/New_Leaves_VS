@@ -27,13 +27,12 @@
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            @*  <li> @Html.ActionLink("My List", "ShowWishList", "RefugeeManage", new { id = User.Identity.GetUserId() }, null)</li> *@
                             <li> @Html.ActionLink("Hello " + User.Identity.Name, "RefugeeDetails", "RefugeeManage", new { email = User.Identity.Name }, null)</li>
-                            @using (Html.BeginForm("Logout", "RefugeesLogin", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                            <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
-                            }
-                           
-                            
-                            
+                            <li>
+                                @using (Html.BeginForm("Logout", "RefugeesLogin", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                                }
+                            </li> 
                         </ul>
                     </div>
                 </nav>

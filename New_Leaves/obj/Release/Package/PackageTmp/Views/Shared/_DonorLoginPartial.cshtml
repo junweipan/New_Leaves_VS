@@ -27,10 +27,12 @@
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            
                             <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                            @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
-                            }
+                            <li>
+                                @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                                }
+                            </li>
 
                         </ul>
                     </div>
@@ -69,9 +71,8 @@ else
                                     </ul>
                                 </li>
 
-                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
-                                <li><a href="@Url.Action("Login", "RefugeesLogin")">I am a Refugee</a></li>                     
-                                <li>@Html.ActionLink("Join Us As Donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>                  
+                                <li>@Html.ActionLink("Become a Donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                                 <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                               
 
