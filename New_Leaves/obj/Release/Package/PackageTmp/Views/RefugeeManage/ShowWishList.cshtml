@@ -15,14 +15,11 @@
 
 <table class="table">
 
-
-
     @foreach (var item in Model)
     {
 
     if (item != null)
-    { <tr>
-           
+    { <tr>          
             <td>
                 @Html.DisplayFor(modelItem => item.List_Submit_Date)
             </td>
@@ -32,8 +29,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Item.Item_Name)
             </td>
-
-        </tr>}
+          <td>
+              @Html.ActionLink("Delete", "Delete", new { id = item.Wish_List_ID })
+          </td>
+</tr>}
     }
 
 </table>
