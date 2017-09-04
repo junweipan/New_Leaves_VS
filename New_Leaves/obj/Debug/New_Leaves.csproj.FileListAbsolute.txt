@@ -169,7 +169,6 @@ E:\GitHub\New_Leaves_VS\New_Leaves\bin\Newtonsoft.Json.xml
 E:\GitHub\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache
 E:\GitHub\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.dll
 E:\GitHub\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.pdb
-C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.dll
 C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.pdb
 C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\bin\ApplicationInsights.config
@@ -340,3 +339,4 @@ C:\Users\Administrator\Desktop\New_Leaves_VS-master\New_Leaves_VS-master\New_Lea
 C:\Users\Administrator\Desktop\New_Leaves_VS-master\New_Leaves_VS-master\New_Leaves\bin\System.Web.WebPages.Razor.xml
 C:\Users\Administrator\Desktop\New_Leaves_VS-master\New_Leaves_VS-master\New_Leaves\bin\Antlr3.Runtime.pdb
 C:\Users\Administrator\Desktop\New_Leaves_VS-master\New_Leaves_VS-master\New_Leaves\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache

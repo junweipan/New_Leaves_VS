@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="newleavesdatabaseModelStoreContainer" CdmEntityContainer="newleavesdatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="newleavesdatabaseModelStoreContainer" CdmEntityContainer="newleavesdatabaseEntities1">
     <EntitySetMapping Name="Donation">
       <EntityTypeMapping TypeName="newleavesdatabaseModel.Donation">
         <MappingFragment StoreEntitySet="Donation">
@@ -40,7 +40,6 @@
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Icon" ColumnName="Icon" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -74,6 +73,7 @@
           <ScalarProperty Name="Hope_Delivery_Date" ColumnName="Hope_Delivery_Date" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AuthorityCode" ColumnName="AuthorityCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

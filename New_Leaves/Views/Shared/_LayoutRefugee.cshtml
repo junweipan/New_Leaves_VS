@@ -42,7 +42,9 @@
                     <div class="top-right">
                         <ul class="social-icon-four clearfix"></ul>
                         <div class="donation-btn">
-                            <a href="@Url.Action("Index","Wish_List")" class="theme-btn btn-style-two">Wish List!</a>
+                           
+                            <a href="@Url.Action("ShowWishList","RefugeeManage",new {code = User.Identity.Name })" class="theme-btn btn-style-two">My Wishlist</a>
+                            
                            
                         </div>
                     </div>
@@ -90,6 +92,7 @@
     @Scripts.Render("~/bundles/validate")
     @Scripts.Render("~/bundles/script")
     @Scripts.Render("~/bundles/newLeavesViz")
+    @Scripts.Render("~/bundles/chart")
 
     @RenderSection("scripts", required: false)
 </body>

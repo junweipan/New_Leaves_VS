@@ -158,7 +158,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\DonorManageController.cs" />
     <Compile Include="Controllers\DonorRegisterController.cs" />
     <Compile Include="Controllers\DonorsController.cs" />
@@ -202,7 +201,6 @@
     </Compile>
     <Compile Include="Models\RefugeeLogin.cs" />
     <Compile Include="Models\UserLogin.cs" />
-    <Compile Include="Models\WishListIndividual.cs" />
     <Compile Include="Models\Wish_List.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -355,11 +353,9 @@
     <Content Include="Views\RefugeeManage\ShowWishList.cshtml" />
     <Content Include="Views\RefugeeManage\RefugeeModifyAccount.cshtml" />
     <Content Include="Views\RefugeeManage\Delete.cshtml" />
-    <Content Include="Views\Donations\Create.cshtml" />
-    <Content Include="Views\Donations\Delete.cshtml" />
-    <Content Include="Views\Donations\Details.cshtml" />
-    <Content Include="Views\Donations\Edit.cshtml" />
-    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
+    <Content Include="Views\Shared\_DonorLoginPartialSticky.cshtml" />
+    <Content Include="Views\Shared\_RefugeeLoginPartialSticky.cshtml" />
     <Content Include="Views\Donors\Create.cshtml" />
     <Content Include="Views\Donors\Delete.cshtml" />
     <Content Include="Views\Donors\Details.cshtml" />
@@ -380,9 +376,7 @@
     <Content Include="Views\Wish_List\Details.cshtml" />
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
-    <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
-    <Content Include="Views\Shared\_DonorLoginPartialSticky.cshtml" />
-    <Content Include="Views\Shared\_RefugeeLoginPartialSticky.cshtml" />
+    <Content Include="Views\RefugeeManage\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

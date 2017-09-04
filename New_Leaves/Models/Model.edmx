@@ -43,7 +43,6 @@
           <Property Name="Category" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="Estimated_Price" Type="money" />
-          <Property Name="Status" Type="nvarchar" MaxLength="50" />
           <Property Name="Icon" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Refugee">
@@ -75,6 +74,7 @@
           <Property Name="Hope_Delivery_Date" Type="datetime" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="AuthorityCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Donation_ToDonor">
           <End Role="Donor" Type="Self.Donor" Multiplicity="0..1" />
@@ -193,7 +193,6 @@
           <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Estimated_Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Wish_List" Relationship="Self.FK_Wish_List_ToItem" FromRole="Item" ToRole="Wish_List" />
         </EntityType>
@@ -227,6 +226,7 @@
           <Property Name="Hope_Delivery_Date" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Donation" Relationship="Self.FK_Donation_ToWish_List" FromRole="Wish_List" ToRole="Donation" />
           <NavigationProperty Name="Item" Relationship="Self.FK_Wish_List_ToItem" FromRole="Wish_List" ToRole="Item" />
           <NavigationProperty Name="Refugee" Relationship="Self.FK_Wish_List_ToRefugee" FromRole="Wish_List" ToRole="Refugee" />
@@ -279,7 +279,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="newleavesdatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="newleavesdatabaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Donation" EntityType="Self.Donation" />
           <EntitySet Name="Donor" EntityType="Self.Donor" />
           <EntitySet Name="Item" EntityType="Self.Item" />
@@ -307,7 +307,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="newleavesdatabaseModelStoreContainer" CdmEntityContainer="newleavesdatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="newleavesdatabaseModelStoreContainer" CdmEntityContainer="newleavesdatabaseEntities1">
           <EntitySetMapping Name="Donation">
             <EntityTypeMapping TypeName="newleavesdatabaseModel.Donation">
               <MappingFragment StoreEntitySet="Donation">
@@ -347,7 +347,6 @@
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -381,6 +380,7 @@
                 <ScalarProperty Name="Hope_Delivery_Date" ColumnName="Hope_Delivery_Date" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AuthorityCode" ColumnName="AuthorityCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

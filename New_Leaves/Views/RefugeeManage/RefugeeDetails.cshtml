@@ -8,7 +8,7 @@
 <div class="col-md-12 refugee-details">
     <div class="col-md-offset-2 col-md-10">
         <h2>Personal Information</h2>
-        @Html.ActionLink("see wish list", "ShowWishList", new { id = Model.RID }, new { @class = "theme-btn btn-style-four" })
+        @Html.ActionLink("see wish list", "ShowWishList", new { code = User.Identity.Name }, new { @class = "theme-btn btn-style-four" })
         @Html.ActionLink("Modify Profile", "RefugeeModifyAccount", new { id = Model.RID }, new { @class = "theme-btn btn-style-four" })
     </div>
     

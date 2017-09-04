@@ -31,7 +31,7 @@ namespace New_Leaves.Controllers
         public ActionResult Login(RefugeeLogin login, string ReturnUrl = "")
         {
             string message = "";
-            using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
+            using (newleavesdatabaseEntities1 dc = new newleavesdatabaseEntities1())
             {
                 var v = dc.Refugee.Where(a => a.AuthorityCode == login.AuthorityCode).FirstOrDefault();
                 if (v != null)
@@ -55,7 +55,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("RefugeeIndex", "Home", new { code = User.Identity.Name });
+                            return RedirectToAction("RefugeeIndex", "Home");
                         }
                     }
                     else

@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class Wish_ListController : Controller
     {
-        private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
+        private newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
 
         // GET: Wish_List
         public ActionResult Index()
@@ -49,9 +49,12 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description")] Wish_List wish_List)
-        {   if (wish_List != null) {
+        public ActionResult Create([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description,AuthorityCode")] Wish_List wish_List)
+        {
+            if (wish_List != null)
+            {
                 wish_List.Create_Date = DateTime.Now;
+                wish_List.Status = "Not deliverd";
             }
             if (ModelState.IsValid)
             {
@@ -87,7 +90,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description")] Wish_List wish_List)
+        public ActionResult Edit([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description,AuthorityCode")] Wish_List wish_List)
         {
             if (ModelState.IsValid)
             {
