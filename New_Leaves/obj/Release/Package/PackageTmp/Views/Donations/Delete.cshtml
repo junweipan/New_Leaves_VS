@@ -1,4 +1,4 @@
-﻿@model New_Leaves.Models.Wish_List
+﻿@model New_Leaves.Models.Donation
 
 @{
     ViewBag.Title = "Delete";
@@ -9,23 +9,23 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Wish_List</h4>
+    <h4>Donation</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Create_Date)
+            @Html.DisplayNameFor(model => model.Item_Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Create_Date)
+            @Html.DisplayFor(model => model.Item_Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Hope_Delivery_Date)
+            @Html.DisplayNameFor(model => model.Donate_Date)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hope_Delivery_Date)
+            @Html.DisplayFor(model => model.Donate_Date)
         </dd>
 
         <dt>
@@ -37,27 +37,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Donor.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Donor.FirstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Item.Item_Name)
+            @Html.DisplayNameFor(model => model.Wish_List.Status)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Item.Item_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Refugee.RefugeeFName)
+            @Html.DisplayFor(model => model.Wish_List.Status)
         </dd>
 
     </dl>

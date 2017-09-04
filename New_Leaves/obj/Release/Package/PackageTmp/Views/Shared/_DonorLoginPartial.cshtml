@@ -71,8 +71,9 @@ else
                                     </ul>
                                 </li>
 
-                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>                  
-                                <li>@Html.ActionLink("Become a Donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li> 
+                                <li><a href="@Url.Action("Login", "RefugeesLogin")">Beneficiaries</a></li>                      
+                                <li>@Html.ActionLink("Become a donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                                 <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                               
 

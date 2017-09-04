@@ -159,6 +159,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\DonorManageController.cs" />
     <Compile Include="Controllers\DonorRegisterController.cs" />
     <Compile Include="Controllers\DonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -380,9 +381,12 @@
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
     <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
+    <Content Include="Views\Shared\_DonorLoginPartialSticky.cshtml" />
+    <Content Include="Views\Shared\_RefugeeLoginPartialSticky.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DonorManage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -34,7 +34,7 @@ namespace New_Leaves.Controllers
                 var isExist = IsEmailExist(donor.Email);
                 if (isExist)
                 {
-                    ModelState.AddModelError("EmailExist", "Email already exist");
+                    ModelState.AddModelError("EmailExist", "Email already exists");
                     return View(donor);
                 }
                 #endregion

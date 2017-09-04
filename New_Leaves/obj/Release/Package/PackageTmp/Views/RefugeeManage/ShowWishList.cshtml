@@ -14,14 +14,20 @@
 
 
 <table class="table">
+     <tr>
+         <th>Create Date:</th>
+         <th>Status:</th>
+         <th>Item Name:</th>
+         <th>Operation:</th>
 
+     </tr>
     @foreach (var item in Model)
     {
 
     if (item != null)
     { <tr>          
             <td>
-                @Html.DisplayFor(modelItem => item.List_Submit_Date)
+                @Html.DisplayFor(modelItem => item.Create_Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
@@ -36,4 +42,4 @@
     }
 
 </table>
-@Html.ActionLink("Back", "RefugeeDetails", new { email = User.Identity.Name })
+@Html.ActionLink("Back", "RefugeeDetails", new { code = User.Identity.Name })

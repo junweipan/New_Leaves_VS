@@ -54,49 +54,8 @@
         @Html.Partial("_RefugeeLoginPartial")
 
         <!--End Header Upper-->
-        <!--Sticky Header-->
-        <div class="sticky-header">
-            <div class="auto-container clearfix">
-                <!--Logo-->
-                <div class="logo pull-left">
-                    <a href="#" class="img-responsive"><img src="~/images/NewLeaves_small2.png" alt="" title=""></a>
-                </div>
-
-                <!--Right Col-->
-                <div class="right-col pull-right">
-                    <!-- Main Menu -->
-                    <nav class="main-menu">
-                        <div class="navbar-header">
-                            <!-- Toggle Button -->
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-
-                        <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation clearfix">
-                                <li class="dropdown">
-                                    <a href="#">About</a>
-                                    <ul>
-                                        <li><a href="@Url.Action("About","Home")">About Us</a></li>
-                                        <li><a href="team.html">Our Team</a></li>
-
-                                    </ul>
-                                </li>
-                                <li><a href="@Url.Action("Contact","Home")">Contact Us</a></li>
-                                <li><a href="@Url.Action("Create", "Donors")">Become a donor</a></li>
-                                <li><a href="@Url.Action("Create","Refugees")">Beneficiaries</a></li>
-                                <li><a href="#">Login</a></li>
-                            </ul>
-                        </div>
-                    </nav><!-- Main Menu End-->
-                </div>
-
-            </div>
-        </div>
-        <!--End Sticky Header-->
+        @Html.Partial("_RefugeeLoginPartialSticky")
+       
 
     </header>
     <!--End Main Header -->
