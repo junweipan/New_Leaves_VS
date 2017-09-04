@@ -10,107 +10,116 @@ using New_Leaves.Models;
 
 namespace New_Leaves.Controllers
 {
-    public class ItemsController : Controller
+    public class DonationsController : Controller
     {
         private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
 
-        // GET: Items
+        // GET: Donations
         public ActionResult Index()
         {
-            return View(db.Item.ToList());
+            var donation = db.Donation.Include(d => d.Donor).Include(d => d.Wish_List);
+            return View(donation.ToList());
         }
 
-        // GET: Items/Details/5
+        // GET: Donations/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Item.Find(id);
-            if (item == null)
+            Donation donation = db.Donation.Find(id);
+            if (donation == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(donation);
         }
 
-        // GET: Items/Create
+        // GET: Donations/Create
         public ActionResult Create()
         {
+            ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName");
+            ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status");
             return View();
         }
 
-        // POST: Items/Create
+        // POST: Donations/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Item_ID,Item_Name,Category,Description,Estimated_Price,Status,Icon")] Item item)
+        public ActionResult Create([Bind(Include = "DonationID,DID,Wish_List_ID,Item_Name,Donate_Date,Status")] Donation donation)
         {
             if (ModelState.IsValid)
             {
-                db.Item.Add(item);
+                db.Donation.Add(donation);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(item);
+            ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName", donation.DID);
+            ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status", donation.Wish_List_ID);
+            return View(donation);
         }
 
-        // GET: Items/Edit/5
+        // GET: Donations/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Item.Find(id);
-            if (item == null)
+            Donation donation = db.Donation.Find(id);
+            if (donation == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName", donation.DID);
+            ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status", donation.Wish_List_ID);
+            return View(donation);
         }
 
-        // POST: Items/Edit/5
+        // POST: Donations/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Item_ID,Item_Name,Category,Description,Estimated_Price,Status,Icon")] Item item)
+        public ActionResult Edit([Bind(Include = "DonationID,DID,Wish_List_ID,Item_Name,Donate_Date,Status")] Donation donation)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(item).State = EntityState.Modified;
+                db.Entry(donation).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(item);
+            ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName", donation.DID);
+            ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status", donation.Wish_List_ID);
+            return View(donation);
         }
 
-        // GET: Items/Delete/5
+        // GET: Donations/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Item.Find(id);
-            if (item == null)
+            Donation donation = db.Donation.Find(id);
+            if (donation == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(donation);
         }
 
-        // POST: Items/Delete/5
+        // POST: Donations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Item item = db.Item.Find(id);
-            db.Item.Remove(item);
+            Donation donation = db.Donation.Find(id);
+            db.Donation.Remove(donation);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

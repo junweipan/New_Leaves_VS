@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class DonorsController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
 
         // GET: Donors
         public ActionResult Index()

@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class RefugeesController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
 
         // GET: Refugees
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
+        public ActionResult Create([Bind(Include = "RID,RefugeeFName,RefugeeLName,AuthorityCode,Password,Street,Suburb,State,Email,Postcode,Phone,Family_Description,Icon")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
+        public ActionResult Edit([Bind(Include = "RID,RefugeeFName,RefugeeLName,AuthorityCode,Password,Street,Suburb,State,Email,Postcode,Phone,Family_Description,Icon")] Refugee refugee)
         {
             if (ModelState.IsValid)
             {

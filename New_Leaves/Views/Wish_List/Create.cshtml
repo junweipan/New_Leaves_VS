@@ -4,24 +4,18 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+      $("#datepicker").datepicker({
+          dateFormat: "d/M/yy"
+      });
+  } );
+</script>
 <h2>Create</h2>
-<table>
-    <tr>
-        <th>Item Name:</th>
-        <th>Category:</th>
-        <th>Date:</th>
-    </tr>
-    @foreach (var x in @ViewBag.list)
-    {
-        <tr>
-            <td>@x.Item.Item_Name</td>
-            <td>@x.Item.Category</td>
-            <td>@x.List_Submit_Date</td>
-        </tr>
-    }
-</table>
-
 
 @using (Html.BeginForm()) 
 {
@@ -47,16 +41,21 @@
             </div>
         </div>
 
-        <div class="form-group">
-
-            
-
-                @Html.LabelFor(model => model.List_Submit_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.List_Submit_Date, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.List_Submit_Date, "", new { @class = "text-danger" })
-                </div>
+        <div  hidden ="hidden" class="form-group">
+            @Html.LabelFor(model => model.Create_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Create_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Create_Date, "", new { @class = "text-danger" })
             </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Hope_Delivery_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hope_Delivery_Date, new { htmlAttributes = new { @class = "form-control" ,@id= "datepicker"} })
+                @Html.ValidationMessageFor(model => model.Hope_Delivery_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -67,19 +66,21 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Add" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-<div>
-    @Html.ActionLink("Finish Adding", "Index", "Home")<br />
-</div>
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -1,4 +1,4 @@
-﻿@model New_Leaves.Models.Item
+﻿@model New_Leaves.Models.Donation
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +8,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Item</h4>
+    <h4>Donation</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,42 +20,40 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Category)
+            @Html.DisplayNameFor(model => model.Donate_Date)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Category)
+            @Html.DisplayFor(model => model.Donate_Date)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Status)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Status)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estimated_Price)
+            @Html.DisplayNameFor(model => model.Donor.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Estimated_Price)
+            @Html.DisplayFor(model => model.Donor.FirstName)
         </dd>
 
-        
-
         <dt>
-            @Html.DisplayNameFor(model => model.Icon)
+            @Html.DisplayNameFor(model => model.Wish_List.Status)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Icon)
+            @Html.DisplayFor(model => model.Wish_List.Status)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Item_ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DonationID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

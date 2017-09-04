@@ -25,8 +25,8 @@ namespace New_Leaves.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool IsEmailVerified { get; set; }
-        public System.Guid ActivationCode { get; set; }
+        public Nullable<bool> IsEmailVerified { get; set; }
+        public Nullable<System.Guid> ActivationCode { get; set; }
         public string Street { get; set; }
         public string Suburb { get; set; }
         public string State { get; set; }

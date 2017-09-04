@@ -10,7 +10,7 @@ namespace New_Leaves.Controllers
 {
     public class HomeController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
         //Get refugee by email
         public ActionResult Details(String email)
         {

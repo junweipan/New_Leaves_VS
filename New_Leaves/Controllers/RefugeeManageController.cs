@@ -19,16 +19,16 @@ namespace New_Leaves.Controllers
         {
             return View("ShowWishList");
         }
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities db = new newleavesdatabaseEntities();
 
-        public ActionResult RefugeeDetails(String email)
+        public ActionResult RefugeeDetails(String code)
         {
 
-            if (email == null)
+            if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Refugee refugee = db.Refugee.SingleOrDefault(r => r.Email == email);
+            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
             // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
             if (refugee == null)
             {
@@ -59,12 +59,9 @@ namespace New_Leaves.Controllers
             //Todo
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
-            //List<object> list = new List<object>();
-            //list.Add(id);
-            //IEnumerable<object> fakeID = list;
-            //ViewBag.fakeID = fakeID;
+           
             ViewBag.id = new SelectList(db.Refugee.Where(a =>a.RID ==id), "RID", "RefugeeFName");
-            ViewBag.id2 = id;
+            ViewBag.rid = id;
             return View();
         }
         // POST: Wish_List/Create
@@ -72,12 +69,13 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateWishList([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
+        public ActionResult CreateWishList([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description")] Wish_List wish_List)
         {
-           // if (wish_List != null)
-          //  {
-            //    wish_List.List_Submit_Date = DateTime.Now;
-            //}
+            if (wish_List != null)
+            {   
+                wish_List.Create_Date = DateTime.Now;
+                wish_List.Status = "Not deliverd";
+            }
             if (ModelState.IsValid) {
             
                 db.Wish_List.Add(wish_List);
@@ -109,7 +107,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RefugeeModifyAccount([Bind(Include = "RID,AthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee, int id)
+        public ActionResult RefugeeModifyAccount([Bind(Include = "RID,AuthorityCode,RefugeeFName,RefugeeLName,Password,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee, int id)
         {
             int rid = id;
             if (ModelState.IsValid)

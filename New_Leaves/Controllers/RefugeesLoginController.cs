@@ -31,15 +31,15 @@ namespace New_Leaves.Controllers
         public ActionResult Login(RefugeeLogin login, string ReturnUrl = "")
         {
             string message = "";
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
             {
-                var v = dc.Refugee.Where(a => a.Email == login.Email).FirstOrDefault();
+                var v = dc.Refugee.Where(a => a.AuthorityCode == login.AuthorityCode).FirstOrDefault();
                 if (v != null)
                 {
                     if (string.Compare((login.Password), v.Password) == 0)
                     {   
                         int timeout = login.RememberMe ? 525600 : 20;
-                        var ticket = new FormsAuthenticationTicket(login.Email, login.RememberMe, timeout);
+                        var ticket = new FormsAuthenticationTicket(login.AuthorityCode, login.RememberMe, timeout);
                        
                         string encrypted = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
@@ -55,7 +55,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("RefugeeIndex", "Home", new { email = User.Identity.Name });
+                            return RedirectToAction("RefugeeIndex", "Home", new { code = User.Identity.Name });
                         }
                     }
                     else

@@ -10,9 +10,9 @@ namespace New_Leaves.Models
     public class RefugeeLogin
     {
 
-        [Display(Name = "Email")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Email required")]
-        public string Email { get; set; }
+        [Display(Name = "Authority Code")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Code required")]
+        public string AuthorityCode { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password required")]
         [DataType(DataType.Password)]

@@ -50,7 +50,7 @@ namespace New_Leaves.Controllers
                 donor.IsEmailVerified = false;
 
                 #region Save to Database
-                using (icontest2Entities dc = new icontest2Entities())
+                using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
                 {
                     dc.Donor.Add(donor);
                     dc.SaveChanges();
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         public ActionResult VerifyAccount(string id)
         {
             bool Status = false;
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
             {
                 dc.Configuration.ValidateOnSaveEnabled = false; // This line I have added here to avoid 
                                                                 // Confirm password does not match issue on save changes
@@ -111,7 +111,7 @@ namespace New_Leaves.Controllers
         public ActionResult Login(DonorLogin login, string ReturnUrl = "")
         {
             string message = "";
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
             {
                 var v = dc.Donor.Where(a => a.Email == login.Email).FirstOrDefault();
                 if (v != null)
@@ -163,7 +163,7 @@ namespace New_Leaves.Controllers
         [NonAction]
         public bool IsEmailExist(string emailID)
         {
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities dc = new newleavesdatabaseEntities())
             {
                 var v = dc.Donor.Where(a => a.Email == emailID).FirstOrDefault();
                 return v != null;

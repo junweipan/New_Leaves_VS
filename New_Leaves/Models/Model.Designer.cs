@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Administrator\Desktop\New_Leaves\New_Leaves\Models\NLModel1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Administrator\Desktop\New_Leaves_VS-master\New_Leaves_VS-master\New_Leaves\Models\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
