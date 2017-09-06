@@ -17,8 +17,8 @@ namespace New_Leaves.Controllers
         // GET: Donations
         public ActionResult Index()
         {
-            var donation = db.Donation.Include(d => d.Donor).Include(d => d.Wish_List);
-            return View(donation.ToList());
+            //var donation = db.Donation.Include(d => d.Donor).Include(d => d.Wish_List);
+            return View(db.Donation.ToList());
         }
 
         // GET: Donations/Details/5
@@ -39,13 +39,21 @@ namespace New_Leaves.Controllers
         // GET: Donations/Create
         public ActionResult Create(int id)
         {
+            //get the login donor information and refugee infomation
+            // write this imformation to donation table
             Wish_List wish = db.Wish_List.Find(id);
             Refugee refugee = wish.Refugee;
             String email = User.Identity.Name;
             Donor donor = db.Donor.SingleOrDefault(d=>d.Email == email);
-            //get the login donor information and refugee infomation
-            // write this imformation to donation table
 
+            //update the status record in wishlist table
+            wish.Status = "In processing";
+            if (ModelState.IsValid)
+            {
+                db.Entry(wish).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName");
             ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status");
             return View();
