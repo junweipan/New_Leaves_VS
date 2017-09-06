@@ -51,7 +51,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "ShowWishList", new { id = Model.RID })
+            @Html.ActionLink("Go back to wishlist", "ShowWishList", new { code = User.Identity.Name })
         </div>
     }
 </div>

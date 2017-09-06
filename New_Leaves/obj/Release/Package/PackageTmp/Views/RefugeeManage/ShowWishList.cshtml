@@ -5,41 +5,43 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-<h2>Wish List</h2>
+<h2>Your Wish List</h2>
 
 <p>
-    @Html.ActionLink("Add Items", "CreateWishList",new { id = Model.FirstOrDefault().RID})
+    @Html.ActionLink("Add Items", "CreateWishList",new { code = User.Identity.Name})
 </p>
 
 
-
-<table class="table">
-     <tr>
-         <th>Create Date:</th>
-         <th>Status:</th>
-         <th>Item Name:</th>
-         <th>Operation:</th>
-
-     </tr>
-    @foreach (var item in Model)
+    @if (Model != null)
     {
+        <table class="table">
+            <tr>
+                <th>Create Date:</th>
+                <th>Item Name:</th>
+                <th>Status:</th>
+                <th>Operations:</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Create_Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item.Item_Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                       
+                        <td>
 
-    if (item != null)
-    { <tr>          
-            <td>
-                @Html.DisplayFor(modelItem => item.Create_Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Item.Item_Name)
-            </td>
-          <td>
-              @Html.ActionLink("Delete", "Delete", new { id = item.Wish_List_ID })
-          </td>
-</tr>}
-    }
+                            @Html.ActionLink("Change it", "Edit", new { id = item.Wish_List_ID }) ||
+                            @Html.ActionLink("Remove from wishlist", "Delete", new { id = item.Wish_List_ID })
 
-</table>
-@Html.ActionLink("Back", "RefugeeDetails", new { code = User.Identity.Name })
+                        </td>
+                    </tr>
+            }
+        </table>
+         }
+@Html.ActionLink("Back to personal profile", "RefugeeDetails", new { code = User.Identity.Name })

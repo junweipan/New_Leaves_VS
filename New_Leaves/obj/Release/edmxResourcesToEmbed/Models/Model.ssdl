@@ -38,7 +38,6 @@
     <Property Name="Category" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Estimated_Price" Type="money" />
-    <Property Name="Status" Type="nvarchar" MaxLength="50" />
     <Property Name="Icon" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Refugee">
@@ -70,6 +69,7 @@
     <Property Name="Hope_Delivery_Date" Type="datetime" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="AuthorityCode" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Donation_ToDonor">
     <End Role="Donor" Type="Self.Donor" Multiplicity="0..1" />
