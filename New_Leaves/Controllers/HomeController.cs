@@ -55,9 +55,13 @@ namespace New_Leaves.Controllers
                 
             
         }
-
+        public ActionResult DonorIndex()
+        {        
+            return View("Index");
+        }
         public ActionResult Index()
         {
+          
             return View("Index");
 
         }

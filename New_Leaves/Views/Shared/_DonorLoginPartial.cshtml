@@ -27,8 +27,10 @@
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            
-                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "DonorDetails", "DonorManage", new { code = User.Identity.Name }, htmlAttributes: new { title = "Manage" })</li>
+                        
                             <li>
+<li>
                                 @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
                                 {
                                     <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>

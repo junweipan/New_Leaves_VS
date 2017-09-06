@@ -80,6 +80,7 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,Icon")] Donor donor)
         {
+           
             if (ModelState.IsValid)
             {
                 db.Entry(donor).State = EntityState.Modified;
