@@ -1,0 +1,92 @@
+﻿ <!--Sticky Header-->
+@if (Request.IsAuthenticated)
+{
+    <div class="sticky-header">
+        <div class="auto-container clearfix">
+            <!--Logo-->
+            <div class="logo pull-left">
+                <a href='@Url.Action("Index", "Home")' class="img-responsive"><img src="~/images/NewLeaves_small2.png" alt="" title=""></a>
+            </div>
+            <!--Right Col-->
+            <div class="right-col pull-right">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <!-- Toggle Button -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+                            <li class="dropdown">
+                                <a href="#">About</a>
+                                <ul>
+                                    <li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
+                                    <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                                    <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            <li>
+                                @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </nav><!-- Main Menu End-->
+            </div>
+        </div>
+    </div>
+}
+
+else
+{
+
+
+<div class="sticky-header">
+    <div class="auto-container clearfix">
+        <!--Logo-->
+        <div class="logo pull-left">
+            <a href='@Url.Action("Index", "Home")' class="img-responsive"><img src="~/images/NewLeaves_small2.png" alt="" title=""></a>
+        </div>
+        <!--Right Col-->
+        <div class="right-col pull-right">
+            <!-- Main Menu -->
+            <nav class="main-menu">
+                <div class="navbar-header">
+                    <!-- Toggle Button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix">
+                        <li class="dropdown">
+                            <a href="#">About</a>
+                            <ul>
+                                <li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
+                                <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                                <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+                        <li><a href="@Url.Action("Login", "RefugeesLogin")">Beneficiaries</a></li>
+                        <li>@Html.ActionLink("Become a donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    </ul>
+                </div>
+            </nav><!-- Main Menu End-->
+        </div>
+    </div>
+</div>
+}
+<!--End Sticky Header-->

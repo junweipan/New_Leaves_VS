@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div hidden="hidden" class="form-group">
             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-offset-3 col-md-6" })
             <div class="col-md-offset-3 col-md-6">
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
@@ -83,9 +83,57 @@
         <div class="form-group">
             @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "col-md-offset-3 col-md-6" })
             <div class="col-md-offset-3 col-md-6">
-                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "NSW",
+                        Value = "NSW"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "QLD",
+                        Value = "QLD",
+
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "SA",
+                        Value = "SA"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "TAS",
+                        Value = "TAS"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "VIC",
+                        Value = "VIC",
+                        Selected = true
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "WA",
+                        Value = "WA"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "ACT",
+                        Value = "ACT"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "NT",
+                        Value = "NT"
+                    });
+                }
+
+                @Html.DropDownListFor(model => model.State, listItems, "-- Select State --")
+                @*   @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
-            </div>
+
+            </div>          
         </div>
 
         <div class="form-group">

@@ -15,18 +15,19 @@
 
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
+                           
                             <li class="dropdown">
                                 <a href="#">About</a>
                                 <ul>
+                                    <li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
                                     <li><a href="@Url.Action("About", "Home")">About Us</a></li>
                                     <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
-
                                 </ul>
                             </li>
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            
-                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
                             <li>
                                 @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
                                 {
@@ -64,7 +65,7 @@ else
                             <ul class="navigation clearfix">
                                 <li class="dropdown">
                                     <a href="#">About</a>
-                                    <ul>
+                                    <ul><li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
                                         <li><a href="@Url.Action("About", "Home")">About Us</a></li>
                                         <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
 

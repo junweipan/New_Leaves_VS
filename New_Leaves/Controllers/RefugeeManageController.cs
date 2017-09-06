@@ -51,16 +51,22 @@ namespace New_Leaves.Controllers
             ViewBag.RID = code;
             return View(wishlist);
         }
-        [Authorize]
-        public ActionResult CreateWishList(int? id)
 
+        [Authorize]
+        public ActionResult CreateWishList(string code)
+          
         {
-            // GET: Wish_List/Create
-            if (id == null) {
-                return View("RefugeeIndex");
-            }
-            else
+            if (code == null)
             {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.Where(a => a.AuthorityCode == code).FirstOrDefault();
+            if (refugee == null)
+            {
+                return HttpNotFound();
+            }            
+                int id = refugee.RID;
+                // GET: Wish_List/Create                       
                 ViewBag.list = db.Wish_List.Where(a => a.RID == id);
                 //Todo
                 ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
@@ -68,12 +74,13 @@ namespace New_Leaves.Controllers
 
                 ViewBag.id = new SelectList(db.Refugee.Where(a => a.RID == id), "RID", "RefugeeFName");
                 ViewBag.rid = id;
-            }
+           
             return View();
         }
         // POST: Wish_List/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -90,7 +97,7 @@ namespace New_Leaves.Controllers
             
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
-                return RedirectToAction("CreateWishList");
+                return RedirectToAction("CreateWishList", new { code = User.Identity.Name});
             }
 
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);

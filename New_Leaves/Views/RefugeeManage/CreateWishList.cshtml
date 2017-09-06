@@ -16,25 +16,36 @@
   } );
 </script>
 <h2>Items</h2>
-<table>
-    <tr>
-        <th>Item Name:</th>
-        <th>Category:</th>
-        <th>Create Date:</th>
-    </tr>
-    @foreach (var x in @ViewBag.list)
 
+    @if (@ViewBag.list == null) {
+         <table>
+             <tr>
+                 <th></th>
+                 <th></th>
+                 <th></th>
+             </tr>
+             </table>
+    }
+     else
     {
-        if (x != null)
-        {
+        <table>
+            <tr>
+                <th>Item Name:</th>
+                <th>Category:</th>
+                <th>Create Date:</th>
+            </tr>
+           @foreach (var x in @ViewBag.list)
+            {
             <tr>
                 <td>@x.Item.Item_Name</td>
                 <td>@x.Item.Category</td>
                 <td>@x.Create_Date</td>
-                
-            </tr>}
-    }
-</table>
+            </tr>
+            }
+
+           
+
+        </table> }
 <h2>Add more items to your wishlist</h2>
 
 @using (Html.BeginForm()) 
@@ -42,7 +53,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Wish_List</h4>
+     
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })      
         <div hidden="hidden" class="form-group">         

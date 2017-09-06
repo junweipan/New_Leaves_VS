@@ -43,10 +43,10 @@ namespace New_Leaves.Controllers
                 donor.ActivationCode = Guid.NewGuid();
                 #endregion
 
-                #region  Password Hashing 
+                
                 donor.Password = Crypto.Hash(donor.Password);
-                donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); //
-                #endregion
+                donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); 
+                
                 donor.IsEmailVerified = false;
 
                 #region Save to Database
