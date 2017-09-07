@@ -57,7 +57,8 @@ namespace New_Leaves.Controllers
             }
             //jump to donor, rufugee check page
             ViewBag.wish = wish;
-            ViewBag.reugee = refugee;
+            ViewBag.Item_Name = wish.Item.Item_Name;
+            //ViewBag.reugee = refugee;
             ViewBag.donor = donor;
 
             ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName");
