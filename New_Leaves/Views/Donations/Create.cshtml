@@ -35,10 +35,10 @@
             @Html.ValidationMessageFor(model => model.DID, "", new { @class = "text-danger" })
         </div>
     </div>>*@
-        <div class="form-group">
+        <div class="form-group" hidden="hidden">
             @Html.TextBoxFor(model => model.DID, new { @Value = @ViewBag.donor.DID })
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden="hidden">
             @Html.TextBoxFor(model => model.Wish_List_ID, new { @Value = @ViewBag.wish.Wish_List_ID })
         </div>
       @*  <div class="form-group">
@@ -56,12 +56,12 @@
             @Html.ValidationMessageFor(model => model.Item_Name, "", new { @class = "text-danger" })
         </div>
     </div>*@
-        <div class="form-group">
+        <div class="form-group" hidden="hidden">
             @Html.TextBoxFor(model => model.Item_Name, new { @Value = @ViewBag.Item_Name })
         </div>
         <div class="form-group">
             
-            @Html.LabelFor(model => model.Donate_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Pick up Date", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Donate_Date, "{0:dd/MMM/yyyy}", new { datepicker = true, @class = "form-control", id = "datepicker" })
                 @Html.ValidationMessageFor(model => model.Donate_Date, "", new { @class = "text-danger" })
@@ -69,9 +69,9 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Pick up place & Time(if it is different from your address)", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Pick up Place(not from your home?)", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.fullAddress } })
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -60,6 +60,7 @@ namespace New_Leaves.Controllers
             ViewBag.Item_Name = wish.Item.Item_Name;
             //ViewBag.reugee = refugee;
             ViewBag.donor = donor;
+            ViewBag.fullAddress = donor.Street + " " + donor.Suburb + " " + donor.State;
 
             ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName");
             ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status");
