@@ -37,6 +37,7 @@ namespace New_Leaves.Controllers
         }
 
         // GET: Donations/Create
+        //button name: Donate
         public ActionResult Create(int id)
         {
             //get the login donor information and refugee infomation
@@ -52,8 +53,13 @@ namespace New_Leaves.Controllers
             {
                 db.Entry(wish).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
+            //jump to donor, rufugee check page
+            ViewBag.wish = wish;
+            ViewBag.reugee = refugee;
+            ViewBag.donor = donor;
+
             ViewBag.DID = new SelectList(db.Donor, "DID", "FirstName");
             ViewBag.Wish_List_ID = new SelectList(db.Wish_List, "Wish_List_ID", "Status");
             return View();
