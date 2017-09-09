@@ -158,6 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DonationsAdminController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\DonorManageController.cs" />
     <Compile Include="Controllers\DonorRegisterController.cs" />
@@ -386,6 +387,11 @@
     <Content Include="Views\Donations\Details.cshtml" />
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\DonationsAdmin\Create.cshtml" />
+    <Content Include="Views\DonationsAdmin\Delete.cshtml" />
+    <Content Include="Views\DonationsAdmin\Details.cshtml" />
+    <Content Include="Views\DonationsAdmin\Edit.cshtml" />
+    <Content Include="Views\DonationsAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
