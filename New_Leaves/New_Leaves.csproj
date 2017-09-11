@@ -158,6 +158,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DonationsAdminController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\DonorManageController.cs" />
     <Compile Include="Controllers\DonorRegisterController.cs" />
     <Compile Include="Controllers\DonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -171,38 +174,37 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Donation.cs">
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donor.cs">
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Extended\Donor.cs" />
     <Compile Include="Models\Item.cs">
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel1.Context.cs">
+    <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel1.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel1.cs">
+    <Compile Include="Models\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NLModel1.Designer.cs">
+    <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NLModel1.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Refugee.cs">
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RefugeeLogin.cs" />
     <Compile Include="Models\UserLogin.cs" />
-    <Compile Include="Models\WishListIndividual.cs" />
     <Compile Include="Models\Wish_List.cs">
-      <DependentUpon>NLModel1.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -249,15 +251,15 @@
     <Content Include="images\resource\aboutimage.jpg" />
     <Content Include="images\slide-image-2.jpg" />
     <Content Include="images\slide-image-3.jpg" />
-    <Content Include="Models\NLModel1.Context.tt">
+    <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NLModel1.edmx</DependentUpon>
-      <LastGenOutput>NLModel1.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NLModel1.tt">
+    <Content Include="Models\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NLModel1.edmx</DependentUpon>
-      <LastGenOutput>NLModel1.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -284,12 +286,12 @@
     <Content Include="fonts\revicons90c6.woff" />
     <Content Include="images\.DS_Store" />
     <Content Include="Content\data\data.csv" />
-    <EntityDeploy Include="Models\NLModel1.edmx">
+    <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NLModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NLModel1.edmx.diagram">
-      <DependentUpon>NLModel1.edmx</DependentUpon>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\new-leaves - Web Deploy.pubxml" />
@@ -346,6 +348,17 @@
     <Content Include="Views\DonorRegister\Login.cshtml" />
     <Content Include="Views\Home\RefugeeIndex.cshtml" />
     <Content Include="Views\Shared\_DonorLoginPartial.cshtml" />
+    <Content Include="Views\RefugeesLogin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
+    <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\RefugeeManage\RefugeeDetails.cshtml" />
+    <Content Include="Views\RefugeeManage\ShowWishList.cshtml" />
+    <Content Include="Views\RefugeeManage\RefugeeModifyAccount.cshtml" />
+    <Content Include="Views\RefugeeManage\Delete.cshtml" />
+    <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
+    <Content Include="Views\Shared\_DonorLoginPartialSticky.cshtml" />
+    <Content Include="Views\Shared\_RefugeeLoginPartialSticky.cshtml" />
     <Content Include="Views\Donors\Create.cshtml" />
     <Content Include="Views\Donors\Delete.cshtml" />
     <Content Include="Views\Donors\Details.cshtml" />
@@ -366,15 +379,20 @@
     <Content Include="Views\Wish_List\Details.cshtml" />
     <Content Include="Views\Wish_List\Edit.cshtml" />
     <Content Include="Views\Wish_List\Index.cshtml" />
-    <Content Include="Views\RefugeesLogin\Login.cshtml" />
-    <Content Include="Views\Shared\_LayoutRefugee.cshtml" />
-    <Content Include="Views\Shared\_RefugeeLoginPartial.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\RefugeeManage\RefugeeDetails.cshtml" />
-    <Content Include="Views\RefugeeManage\CreateWishList.cshtml" />
-    <Content Include="Views\RefugeeManage\ShowWishList.cshtml" />
-    <Content Include="Views\RefugeeManage\RefugeeModifyAccount.cshtml" />
-    <Content Include="Views\RefugeeManage\Delete.cshtml" />
+    <Content Include="Views\RefugeeManage\Edit.cshtml" />
+    <Content Include="Views\DonorManage\DonorDetails.cshtml" />
+    <Content Include="Views\DonorManage\Edit.cshtml" />
+    <Content Include="Views\DonorManage\Index.cshtml" />
+    <Content Include="Views\Donations\Create.cshtml" />
+    <Content Include="Views\Donations\Delete.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Donations\Edit.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\DonationsAdmin\Create.cshtml" />
+    <Content Include="Views\DonationsAdmin\Delete.cshtml" />
+    <Content Include="Views\DonationsAdmin\Details.cshtml" />
+    <Content Include="Views\DonationsAdmin\Edit.cshtml" />
+    <Content Include="Views\DonationsAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,22 +15,27 @@
 
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
+                           
                             <li class="dropdown">
                                 <a href="#">About</a>
                                 <ul>
+                                    <li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
                                     <li><a href="@Url.Action("About", "Home")">About Us</a></li>
                                     <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
-
                                 </ul>
                             </li>
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
                            
-                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "Index", "DonorManageAccount", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                            @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
-                            }
+                            <li>  @Html.ActionLink("Hello " + User.Identity.Name, "DonorDetails", "DonorManage", new { code = User.Identity.Name }, htmlAttributes: new { title = "Manage" })</li>
+                        
+                            <li>
+<li>
+                                @using (Html.BeginForm("Logout", "DonorRegister", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                                }
+                            </li>
 
                         </ul>
                     </div>
@@ -62,16 +67,16 @@ else
                             <ul class="navigation clearfix">
                                 <li class="dropdown">
                                     <a href="#">About</a>
-                                    <ul>
+                                    <ul><li><a href="@Url.Action("LearnMore", "Home")">Learn More</a></li>
                                         <li><a href="@Url.Action("About", "Home")">About Us</a></li>
                                         <li><a href="@Url.Action("Team", "Home")">Our Team</a></li>
 
                                     </ul>
                                 </li>
 
-                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
-                                <li><a href="@Url.Action("Login", "RefugeesLogin")">I am a Refugee</a></li>                     
-                                <li>@Html.ActionLink("Join Us As Donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li> 
+                                <li><a href="@Url.Action("Login", "RefugeesLogin")">Beneficiaries</a></li>                      
+                                <li>@Html.ActionLink("Become a donor", "Registration", "DonorRegister", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                                 <li>@Html.ActionLink("Login", "Login", "DonorRegister", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                               
 

@@ -1,67 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities3">
-    <EntitySetMapping Name="Donations">
-      <EntityTypeMapping TypeName="DatabaseModel.Donation">
+  <EntityContainerMapping StorageEntityContainer="newleavesdatabaseModelStoreContainer" CdmEntityContainer="newleavesdatabaseEntities1">
+    <EntitySetMapping Name="Donation">
+      <EntityTypeMapping TypeName="newleavesdatabaseModel.Donation">
         <MappingFragment StoreEntitySet="Donation">
-          <ScalarProperty Name="DId" ColumnName="DId" />
-          <ScalarProperty Name="Wish_List_Id" ColumnName="Wish_List_Id" />
-          <ScalarProperty Name="Donation_Item" ColumnName="Donation_Item" />
+          <ScalarProperty Name="DonationID" ColumnName="DonationID" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
           <ScalarProperty Name="Donate_Date" ColumnName="Donate_Date" />
           <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Donors">
-      <EntityTypeMapping TypeName="DatabaseModel.Donor">
+    <EntitySetMapping Name="Donor">
+      <EntityTypeMapping TypeName="newleavesdatabaseModel.Donor">
         <MappingFragment StoreEntitySet="Donor">
-          <ScalarProperty Name="DId" ColumnName="DId" />
-          <ScalarProperty Name="DonorFName" ColumnName="DonorFName" />
-          <ScalarProperty Name="DonorLName" ColumnName="DonorLName" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+          <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
           <ScalarProperty Name="Street" ColumnName="Street" />
           <ScalarProperty Name="Suburb" ColumnName="Suburb" />
           <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Items">
-      <EntityTypeMapping TypeName="DatabaseModel.Item">
+    <EntitySetMapping Name="Item">
+      <EntityTypeMapping TypeName="newleavesdatabaseModel.Item">
         <MappingFragment StoreEntitySet="Item">
-          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
-          <ScalarProperty Name="Item_name" ColumnName="Item_name" />
-          <ScalarProperty Name="category" ColumnName="category" />
-          <ScalarProperty Name="decription" ColumnName="decription" />
-          <ScalarProperty Name="icon" ColumnName="icon" />
-          <ScalarProperty Name="estimated_price" ColumnName="estimated_price" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Estimated_Price" ColumnName="Estimated_Price" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Refugees">
-      <EntityTypeMapping TypeName="DatabaseModel.Refugee">
+    <EntitySetMapping Name="Refugee">
+      <EntityTypeMapping TypeName="newleavesdatabaseModel.Refugee">
         <MappingFragment StoreEntitySet="Refugee">
-          <ScalarProperty Name="RId" ColumnName="RId" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
           <ScalarProperty Name="RefugeeFName" ColumnName="RefugeeFName" />
           <ScalarProperty Name="RefugeeLName" ColumnName="RefugeeLName" />
+          <ScalarProperty Name="AuthorityCode" ColumnName="AuthorityCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Street" ColumnName="Street" />
           <ScalarProperty Name="Suburb" ColumnName="Suburb" />
-          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
           <ScalarProperty Name="State" ColumnName="State" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FamilyDescription" ColumnName="FamilyDescription" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Family_Description" ColumnName="Family_Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Wish_List">
-      <EntityTypeMapping TypeName="DatabaseModel.Wish_List">
+      <EntityTypeMapping TypeName="newleavesdatabaseModel.Wish_List">
         <MappingFragment StoreEntitySet="Wish_List">
-          <ScalarProperty Name="Wish_List_Id" ColumnName="Wish_List_Id" />
-          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
-          <ScalarProperty Name="List_submit_Date" ColumnName="List_submit_Date" />
+          <ScalarProperty Name="Wish_List_ID" ColumnName="Wish_List_ID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Hope_Delivery_Date" ColumnName="Hope_Delivery_Date" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="RId" ColumnName="RId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AuthorityCode" ColumnName="AuthorityCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

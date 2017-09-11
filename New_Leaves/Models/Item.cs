@@ -25,7 +25,6 @@ namespace New_Leaves.Models
         public string Category { get; set; }
         public string Description { get; set; }
         public Nullable<decimal> Estimated_Price { get; set; }
-        public string Status { get; set; }
         public string Icon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

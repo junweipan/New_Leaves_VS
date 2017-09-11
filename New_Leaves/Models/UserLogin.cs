@@ -7,6 +7,7 @@ namespace New_Leaves.Models
 
         [Display(Name = "Email ID")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password required")]

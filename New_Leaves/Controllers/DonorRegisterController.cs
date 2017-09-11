@@ -34,7 +34,7 @@ namespace New_Leaves.Controllers
                 var isExist = IsEmailExist(donor.Email);
                 if (isExist)
                 {
-                    ModelState.AddModelError("EmailExist", "Email already exist");
+                    ModelState.AddModelError("EmailExist", "Email already exists");
                     return View(donor);
                 }
                 #endregion
@@ -43,14 +43,14 @@ namespace New_Leaves.Controllers
                 donor.ActivationCode = Guid.NewGuid();
                 #endregion
 
-                #region  Password Hashing 
-                donor.Password = Crypto.Hash(donor.Password);
-                donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); //
-                #endregion
+                
+               // donor.Password = Crypto.Hash(donor.Password);
+               // donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); 
+                
                 donor.IsEmailVerified = false;
 
                 #region Save to Database
-                using (icontest2Entities dc = new icontest2Entities())
+                using (newleavesdatabaseEntities1 dc = new newleavesdatabaseEntities1())
                 {
                     dc.Donor.Add(donor);
                     dc.SaveChanges();
@@ -78,7 +78,7 @@ namespace New_Leaves.Controllers
         public ActionResult VerifyAccount(string id)
         {
             bool Status = false;
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities1 dc = new newleavesdatabaseEntities1())
             {
                 dc.Configuration.ValidateOnSaveEnabled = false; // This line I have added here to avoid 
                                                                 // Confirm password does not match issue on save changes
@@ -111,13 +111,14 @@ namespace New_Leaves.Controllers
         public ActionResult Login(DonorLogin login, string ReturnUrl = "")
         {
             string message = "";
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities1 dc = new newleavesdatabaseEntities1())
             {
                 var v = dc.Donor.Where(a => a.Email == login.Email).FirstOrDefault();
                 if (v != null)
                 {
-                    if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
-                    {
+                   // if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
+                   if (string.Compare(login.Password, v.Password) == 0)
+                        {
                         int timeout = login.RememberMe ? 525600 : 20;
                         var ticket = new FormsAuthenticationTicket(login.Email, login.RememberMe, timeout);
                         string encrypted = FormsAuthentication.Encrypt(ticket);
@@ -163,7 +164,7 @@ namespace New_Leaves.Controllers
         [NonAction]
         public bool IsEmailExist(string emailID)
         {
-            using (icontest2Entities dc = new icontest2Entities())
+            using (newleavesdatabaseEntities1 dc = new newleavesdatabaseEntities1())
             {
                 var v = dc.Donor.Where(a => a.Email == emailID).FirstOrDefault();
                 return v != null;

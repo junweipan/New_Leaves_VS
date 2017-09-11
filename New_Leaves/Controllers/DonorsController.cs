@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class DonorsController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
 
         // GET: Donors
         public ActionResult Index()
@@ -80,6 +80,7 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,Icon")] Donor donor)
         {
+           
             if (ModelState.IsValid)
             {
                 db.Entry(donor).State = EntityState.Modified;

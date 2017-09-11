@@ -12,7 +12,7 @@ namespace New_Leaves.Controllers
 {
     public class Wish_ListController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
 
         // GET: Wish_List
         public ActionResult Index()
@@ -39,7 +39,6 @@ namespace New_Leaves.Controllers
         // GET: Wish_List/Create
         public ActionResult Create()
         {
-            ViewBag.list = db.Wish_List.ToList();
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name");
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName");
             return View();
@@ -50,13 +49,18 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
+        public ActionResult Create([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description,AuthorityCode")] Wish_List wish_List)
         {
+            if (wish_List != null)
+            {
+                wish_List.Create_Date = DateTime.Now;
+                wish_List.Status = "Not deliverd";
+            }
             if (ModelState.IsValid)
             {
                 db.Wish_List.Add(wish_List);
                 db.SaveChanges();
-                return RedirectToAction("Create");
+                return RedirectToAction("Index");
             }
 
             ViewBag.Item_ID = new SelectList(db.Item, "Item_ID", "Item_Name", wish_List.Item_ID);
@@ -86,7 +90,7 @@ namespace New_Leaves.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Wish_List_ID,RID,Item_ID,List_Submit_Date,Status")] Wish_List wish_List)
+        public ActionResult Edit([Bind(Include = "Wish_List_ID,RID,Item_ID,Create_Date,Hope_Delivery_Date,Status,Description,AuthorityCode")] Wish_List wish_List)
         {
             if (ModelState.IsValid)
             {

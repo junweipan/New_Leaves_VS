@@ -10,7 +10,7 @@ namespace New_Leaves.Controllers
 {
     public class HomeController : Controller
     {
-        private icontest2Entities db = new icontest2Entities();
+        private newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
         //Get refugee by email
         public ActionResult Details(String email)
         {
@@ -40,16 +40,28 @@ namespace New_Leaves.Controllers
             return View("IndexLogin");
 
         }
-
-        public ActionResult RefugeeIndex(string email)
+       
+        public ActionResult RefugeeIndex()
         {
+                var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
+                    return View("RefugeeIndex");
+                
             
-            return View("RefugeeIndex");
-
         }
-
+        public ActionResult DonorIndex()
+        {        
+            return View("Index");
+        }
         public ActionResult Index()
         {
+          
             return View("Index");
 
         }

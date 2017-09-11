@@ -13,11 +13,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.List_Submit_Date)
+            @Html.DisplayNameFor(model => model.Hope_Delivery_Date)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.List_Submit_Date)
+            @Html.DisplayFor(model => model.Hope_Delivery_Date)
         </dd>
 
         <dt>
@@ -51,7 +51,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Go back to wishlist", "ShowWishList", new { code = User.Identity.Name })
         </div>
     }
 </div>

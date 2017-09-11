@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
 <h2>Delete</h2>
@@ -12,14 +12,6 @@
     <h4>Refugee</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AthorityCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AthorityCode)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.RefugeeFName)
         </dt>
@@ -37,27 +29,19 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.AuthorityCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorityCode)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Postcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Postcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
         </dd>
 
         <dt>
@@ -82,6 +66,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
         </dd>
 
         <dt>
