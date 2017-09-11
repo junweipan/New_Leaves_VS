@@ -23,7 +23,7 @@ namespace New_Leaves.Controllers
 
         [Authorize]
         public ActionResult RefugeeDetails(String code)
-        {
+        {   
 
             if (code == null)
             {
@@ -204,5 +204,38 @@ namespace New_Leaves.Controllers
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
+
+        public ActionResult ChangePassword(string code)
+        {
+            if (code == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
+         
+            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
+            
+            return View(refugee);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword([Bind(Include = "RID,AuthorityCode,RefugeeFName,RefugeeLName,Password,OldPassword,ConfirmNewPassword,NewPassword,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
+        {    newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
+        //     var v = db.Refugee.Where(a => a.AuthorityCode == User.Identity.Name).FirstOrDefault();
+           
+       //         if (string.Compare(refugee.OldPassword, r.Password) == 0)
+        //        {
+                    if (ModelState.IsValid)
+                    {
+                         refugee.Password = refugee.NewPassword;
+                        db.Entry(refugee).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("RefugeeIndex", "Home");
+                    }
+       //         }
+            return View();
+        }
+
     }
 }

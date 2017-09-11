@@ -68,13 +68,30 @@ namespace New_Leaves.Controllers
         public ActionResult Team()
            
         {
-           
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username)&& !User.Identity.Name.Contains("com"))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
 
             return View("team");
         }
 
         public ActionResult About()
         {
+            var username = User.Identity.Name;
+
+           
+
+            if (!string.IsNullOrEmpty(username) && !User.Identity.Name.Contains("com"))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -82,6 +99,14 @@ namespace New_Leaves.Controllers
 
         public ActionResult Contact()
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username) && !User.Identity.Name.Contains("com"))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             ViewBag.Message = "Your contact page.";
 
             return View();

@@ -200,6 +200,7 @@
     <Compile Include="Models\Refugee.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Extended\Refugee.cs" />
     <Compile Include="Models\RefugeeLogin.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Wish_List.cs">
@@ -386,6 +387,7 @@
     <Content Include="Views\Donations\Details.cshtml" />
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\RefugeeManage\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

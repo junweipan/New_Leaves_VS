@@ -19,7 +19,6 @@ namespace New_Leaves.Models
         public Nullable<int> Wish_List_ID { get; set; }
         public string Item_Name { get; set; }
         public Nullable<System.DateTime> Donate_Date { get; set; }
-        //status used for record other address and time
         public string Status { get; set; }
     
         public virtual Donor Donor { get; set; }
