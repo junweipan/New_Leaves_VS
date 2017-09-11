@@ -51,6 +51,7 @@ namespace New_Leaves.Controllers
           //  donor.ConfirmPassword = donor.Password;
             if (ModelState.IsValid)
             {
+                donor.Password = Crypto.Hash(donor.Password);
                 db.Entry(donor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("DonorDetails", new { code = donor.Email });

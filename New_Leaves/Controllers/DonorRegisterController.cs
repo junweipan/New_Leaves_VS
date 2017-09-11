@@ -44,8 +44,8 @@ namespace New_Leaves.Controllers
                 #endregion
 
                 
-                //donor.Password = Crypto.Hash(donor.Password);
-                //donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); 
+                donor.Password = Crypto.Hash(donor.Password);
+                donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword); 
                 
                 donor.IsEmailVerified = false;
 
@@ -116,8 +116,8 @@ namespace New_Leaves.Controllers
                 var v = dc.Donor.Where(a => a.Email == login.Email).FirstOrDefault();
                 if (v != null)
                 {
-                    //if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
-                        if (string.Compare(login.Password, v.Password) == 0)
+                    if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
+                       // if (string.Compare(login.Password, v.Password) == 0)
                         {
                         int timeout = login.RememberMe ? 525600 : 20;
                         var ticket = new FormsAuthenticationTicket(login.Email, login.RememberMe, timeout);

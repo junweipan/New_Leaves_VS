@@ -29,7 +29,7 @@ namespace New_Leaves.Models
         public string OldConfirmPassword { get; set; }
 
         [Display(Name = "New Password")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
+     
         [DataType(DataType.Password)]
         [MinLength(6, ErrorMessage = "Minimum 6 characters required")]
         public string NewPassword { get; set; }
@@ -40,7 +40,7 @@ namespace New_Leaves.Models
         [Compare("NewPassword", ErrorMessage = "Confirm new password and new password do not match")]
         public string ConfirmNewPassword { get; set; }
 
-        public int RID { get; set; }
+        
         public string RefugeeFName { get; set; }
         public string RefugeeLName { get; set; }
         public string AuthorityCode { get; set; }        
