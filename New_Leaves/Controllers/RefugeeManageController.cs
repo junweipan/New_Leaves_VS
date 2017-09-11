@@ -51,7 +51,24 @@ namespace New_Leaves.Controllers
             ViewBag.RID = code;
             return View(wishlist);
         }
-
+        //get the wishlist id
+        //1, delete the wishlist in wishlist table
+        //2,chage the value in donation table
+        public ActionResult Received(int id)
+        {
+           
+            //delete the wishlist(make this record invisible)
+            Wish_List wish_List = db.Wish_List.Find(id);
+            wish_List.Status = "Completed";
+            db.Entry(wish_List).State = EntityState.Modified;
+            db.SaveChanges();
+            //change information in donation table
+            Donation donation = wish_List.Donation.Where(d=>d.Wish_List_ID==id).FirstOrDefault();
+            donation.Status = "Completed";
+            db.Entry(donation).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("ShowWishList", new { code = User.Identity.Name });
+        }
         [Authorize]
         public ActionResult CreateWishList(string code)
           
@@ -159,10 +176,9 @@ namespace New_Leaves.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Wish_List wish_List = db.Wish_List.Find(id);
-         //   int rid = (int)wish_List.RID;
-            db.Wish_List.Remove(wish_List);
+            wish_List.Status = "Deleted";
+            db.Entry(wish_List).State = EntityState.Modified;
             db.SaveChanges();
-           //Refugee refugee = db.Refugee.SingleOrDefault(w => w.Wish_List == id);
             return RedirectToAction("ShowWishList",new {code = User.Identity.Name });
         }
 

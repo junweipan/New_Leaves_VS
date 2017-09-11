@@ -1,13 +1,20 @@
-﻿
-/* Set padding to keep content from hitting the edges */
-.body-content {
+﻿.body-content {
     padding-left: 0;
     padding-right: 0;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+.delete-record h2 {
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 20px 0;
+}
+
+.delete-record h4 {
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+
 
 .dl-horizontal {
     font-size: 18px;

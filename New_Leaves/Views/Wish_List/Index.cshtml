@@ -60,9 +60,21 @@
             @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
         </td>
         <td>
-            @Html.ActionLink("Donate","Create","Donations", new { id = item.Wish_List_ID },null)|
-            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_ID })
-            @*@Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })*@
+            @if (item.Status.Equals("Deleted"))
+            {
+
+            }
+            @if (item.Status.Equals("Completed"))
+            {
+
+            }
+            @if (item.Status.Equals("Not deliverd"))
+            {
+                @Html.ActionLink("Donate", "Create", "Donations", new { id = item.Wish_List_ID }, null)<br />
+                @Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID })
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })*@
+            }
+
         </td>
     </tr>
 }
