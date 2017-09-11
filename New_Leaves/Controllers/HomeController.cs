@@ -68,9 +68,13 @@ namespace New_Leaves.Controllers
         public ActionResult Team()
            
         {
-           
-
             return View("team");
+        }
+
+        public ActionResult LearnMore()
+
+        {
+            return View("LearnMore");
         }
 
         public ActionResult About()
