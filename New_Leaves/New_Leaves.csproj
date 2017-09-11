@@ -245,6 +245,9 @@
     <Content Include="images\icon-7.png" />
     <Content Include="images\icons\calendar.png" />
     <Content Include="images\icons\icon-select.png" />
+    <Content Include="images\new-logo-long.png" />
+    <Content Include="images\new-logo-no-text.png" />
+    <Content Include="images\new-logo-short.png" />
     <Content Include="images\NewLeaves_small2.png" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\slide-image-1.jpg" />
@@ -388,6 +391,12 @@
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\RefugeeManage\ChangePassword.cshtml" />
+    <Content Include="Views\Home\LearnMore.cshtml" />
+    <Content Include="Views\DonationsAdmin\Create.cshtml" />
+    <Content Include="Views\DonationsAdmin\Delete.cshtml" />
+    <Content Include="Views\DonationsAdmin\Details.cshtml" />
+    <Content Include="Views\DonationsAdmin\Edit.cshtml" />
+    <Content Include="Views\DonationsAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
