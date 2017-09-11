@@ -1,7 +1,46 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-.vs/New_Leaves/v14/.suo
-.vs/New_Leaves/v14/.suo
-*.config
-.vs/config/applicationhost.config
-.vs/New_Leaves/v14/.suo
-.vs/New_Leaves/v14/.suo
+# Project specific
+node_modules/*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# DNX
+project.lock.json
+artifacts/
+
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
