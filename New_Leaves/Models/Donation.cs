@@ -11,13 +11,16 @@ namespace New_Leaves.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Donation
     {
         public int DonationID { get; set; }
         public Nullable<int> DID { get; set; }
         public Nullable<int> Wish_List_ID { get; set; }
         public string Item_Name { get; set; }
+
+        [Display(Name = "Pick up date")]
         public Nullable<System.DateTime> Donate_Date { get; set; }
         public string Status { get; set; }
     

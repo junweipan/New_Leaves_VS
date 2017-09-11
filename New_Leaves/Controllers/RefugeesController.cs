@@ -48,9 +48,10 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RID,RefugeeFName,RefugeeLName,AuthorityCode,Password,Street,Suburb,State,Email,Postcode,Phone,Family_Description,Icon")] Refugee refugee)
         {
-            refugee.Password = Crypto.Hash(refugee.Password);
+            
             if (ModelState.IsValid)
             {
+                refugee.Password = Crypto.Hash(refugee.Password);
                 db.Refugee.Add(refugee);
                 db.SaveChanges();
                 return RedirectToAction("Index");

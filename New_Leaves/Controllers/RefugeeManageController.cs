@@ -267,13 +267,13 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassword([Bind(Include = "RID,AuthorityCode,RefugeeFName,RefugeeLName,Password,OldConfirmPassword,ConfirmNewPassword,NewPassword,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
         {    newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
-            //     var v = db.Refugee.Where(a => a.AuthorityCode == User.Identity.Name).FirstOrDefault();
-
-            if (string.Compare(refugee.OldConfirmPassword, refugee.Password) == 0)
+          
+            if (string.Compare(Crypto.Hash(refugee.OldConfirmPassword), refugee.Password) == 0)
            {
                 if (ModelState.IsValid)
                 {
                     refugee.Password = refugee.NewPassword;
+                    refugee.Password = Crypto.Hash(refugee.Password);
                     db.Entry(refugee).State = EntityState.Modified;
                     db.SaveChanges();                                    
                     return RedirectToAction("RefugeeDetailsAfter", new { code = User.Identity.Name });
