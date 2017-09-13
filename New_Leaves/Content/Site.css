@@ -4,6 +4,23 @@
     padding-right: 0;
 }
 
+.btn-style-six {
+    position: relative;
+    padding: 14px 38px;
+    line-height: 24px;
+    color: #3ecd12;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: solid 2px;
+    border-radius: 5px;
+}
+
+.btn-style-six:hover {
+    color: #ffffff;
+    background: #82ea62;
+}
+
 .credentials-error-message {
     text-align: center;
     color: crimson;
@@ -91,6 +108,10 @@
 .table {
     margin: 0 40px;
     max-width: 94%;
+}
+
+.table>tbody>tr>td {
+    padding: 20px 0;
 }
 
 .refugee-details .btn-style-four {

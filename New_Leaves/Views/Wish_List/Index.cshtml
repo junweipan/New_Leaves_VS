@@ -5,69 +5,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>All wishlists items</h2>
 
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
 </p>
-<table class="table">
+<table id="wishlists-table" class="table">
+<thead>
     <tr>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Hope_Delivery_Date)
-        </th>
-       
         <th>
             @Html.DisplayNameFor(model => model.Item.Item_Name)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
-        <td>
-            
-        </td>
-        
-       
+        <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>       
-        <td>
-            @Html.DisplayFor(modelItem => item.Hope_Delivery_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.Item_Name)
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-       
-        <td>
-            @if (item.Status.Equals("Deleted"))
-            {
-
-            }
-            @if (item.Status.Equals("Completed"))
-            {
-
-            }
-            @if (item.Status.Equals("Not deliverd"))
-            {
-                @Html.ActionLink("Donate", "Create", "Donations", new { id = item.Wish_List_ID }, null)<br />
-            @*    @Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID }) *@
-    @*@Html.ActionLink("Delete", "Delete", new { id = item.Wish_List_ID }) *@
-            }
-
-        </td>
+</thead>
+<tfoot>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Item_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
     </tr>
-}
-
+</tfoot>
+<tbody>
+    @foreach (var item in Model)
+    {
+        if (!item.Status.Equals("Deleted") || item.Status.Equals("Completed"))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Item_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Donate", "Create", "Donations", new { id = item.Wish_List_ID }, new { @class = "btn-theme btn-style-six" })<br />
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID })*@ 
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })*@
+                </td>
+            </tr>
+        }      
+    }
+</tbody>
 </table>
