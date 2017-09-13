@@ -79,6 +79,11 @@
     text-transform: uppercase;
 }
 
+.table {
+    margin: 0 40px;
+    max-width: 94%;
+}
+
 .refugee-details .btn-style-four {
      font-family: 'Open Sans', sans-serif;
      margin: 20px 0;
@@ -90,5 +95,14 @@
 
 .visualization {
     max-height: 400px;
+}
+
+.wishlists-table_wrapper {
+    margin: 0 40px !important;
+}
+
+.dataTables_paginate .paging_simple_numbers #wishlists-table_paginate {
+    text-align: center !important;
+    margin: 0 auto;
 }
 
