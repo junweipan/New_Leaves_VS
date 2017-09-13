@@ -12,53 +12,44 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Create_Date)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Hope_Delivery_Date)
         </th>
+       
         <th>
-            @Html.DisplayNameFor(model => model.Status)
+            @Html.DisplayNameFor(model => model.Item.Item_Name)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorityCode)
+            @Html.DisplayNameFor(model => model.Status)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Item.Item_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
-        </th>
-        <th></th>
+        <td>
+            
+        </td>
+        
+       
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Create_Date)
-        </td>
+    <tr>       
         <td>
             @Html.DisplayFor(modelItem => item.Hope_Delivery_Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Status)
+            @Html.DisplayFor(modelItem => item.Item.Item_Name)
         </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AuthorityCode)
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.Item_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
-        </td>
+       
         <td>
             @if (item.Status.Equals("Deleted"))
             {
@@ -71,8 +62,8 @@
             @if (item.Status.Equals("Not deliverd"))
             {
                 @Html.ActionLink("Donate", "Create", "Donations", new { id = item.Wish_List_ID }, null)<br />
-                @Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID })
-                @*@Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })*@
+            @*    @Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID }) *@
+    @*@Html.ActionLink("Delete", "Delete", new { id = item.Wish_List_ID }) *@
             }
 
         </td>
