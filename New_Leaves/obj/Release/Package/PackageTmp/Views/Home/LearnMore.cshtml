@@ -1,23 +1,15 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Learn more";
     ViewBag.Title = "We believe in second chances";
-    if (this.User.Identity.Name.Contains("com"))
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    else
-    {
-        Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
-    }
 }
 <!--Page Title-->
 <section class="page-title" style="background-image:url(images/background/5.jpg);">
     <div class="auto-container">
         <div class="inner-box">
-            <h1>about us</h1>
+            <h1>learn more</h1>
             <ul class="bread-crumb">
                 <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                <li>About us</li>
+                <li>Learn more</li>
             </ul>
         </div>
     </div>
@@ -27,21 +19,42 @@
 <section class="about-section">
     <div class="auto-container">
         <div class="row clearfix">
-            <!--Image Column-->
+            <!--Barchart Column-->
             <div class="image-column col-md-6 col-sm-12 col-xs-12">
                 <div class="image">
-                    <img src="~/images/resource/aboutimage.jpg" alt="" />
+                    <canvas id="totalRefugees"></canvas>
                 </div>
             </div>
             <!--Content Column-->
             <div class="content-column col-md-6 col-sm-12 col-xs-12">
                 <div class="inner">
                     <div class="sec-title">
-                        <div class="title">New Leaves</div>
-                        <h2>Show Your Love<br></h2>
+                        <div class="title">Number of refugees in Australia</div>
+                        <h2>Statistics<br></h2>
                     </div>
-                    <div class="dark-text">This is a website that people can donate items to refugee families</div>
+                    <div class="dark-text">Refugees in australia from 2007 to 2016</div>
                     <div class="text">The main purpose of this project is to help refugees who just arrived at Australia to resettle their new homes. People leave their countries and come to Australia with nothing. It is hard and tough for them to start a new life in a unknown country, thus for people who have a stable and fortunate life like us should give them a hand to help them to built their homes. We wish them have a better life than before.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+   
+            <!--Content Column-->
+            <div class="content-column col-sm-12 col-xs-12">
+                <div class="inner">
+                    <div class="sec-title">
+                        <div class="title">Number of refugees in Australia</div>
+                        <h2>Statistics<br></h2>
+                    </div>
+                    <div class="dark-text">Refugees in australia from 2007 to 2016</div>
+                    <div class="text">The main purpose of this project is to help refugees who just arrived at Australia to resettle their new homes. People leave their countries and come to Australia with nothing. It is hard and tough for them to start a new life in a unknown country, thus for people who have a stable and fortunate life like us should give them a hand to help them to built their homes. We wish them have a better life than before.</div>
+                </div>
+            </div>
+
+            <!--Choropleth Column-->
+            <div class="image-column col-sm-12 col-xs-12">
+                <div class="image">
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
