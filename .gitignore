@@ -13,4 +13,9 @@ node_modules/*
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
+
+.vs/New_Leaves/v14/.suo
+New_Leaves/bin/New_Leaves.dll
+New_Leaves/bin/New_Leaves.pdb
+New_Leaves/obj/Debug/New_Leaves.dll
+New_Leaves/obj/Debug/New_Leaves.pdb
