@@ -83,9 +83,7 @@ namespace New_Leaves.Controllers
         public ActionResult About()
         {
             var username = User.Identity.Name;
-
-           
-
+            
             if (!string.IsNullOrEmpty(username) && !User.Identity.Name.Contains("com"))
             {
                 var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
@@ -110,6 +108,12 @@ namespace New_Leaves.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult LearnMore()
+        {
+            return View("LearnMore");
+
         }
     }
 }
