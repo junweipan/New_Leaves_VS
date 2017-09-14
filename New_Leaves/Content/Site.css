@@ -1,4 +1,33 @@
-﻿
+﻿.add-margin-bottom {
+    margin-bottom: 80px;
+}
+
+.all-wishlists h2 {
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 20px 0; 
+}
+
+.all-wishlists input[type=search]{
+    border: solid 1px #a4a4a4;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.all-wishlists img {
+    margin-left: 40px;
+}
+
+.all-wishlists td p {
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.all-wishlists td a {
+    display: inline-block;
+    margin-top: 15px;
+}
+
 .body-content {
     padding-left: 0;
     padding-right: 0;
@@ -136,3 +165,6 @@
     margin: 0 auto;
 }
 
+#map {
+    margin-top: 40px;
+}
