@@ -1,14 +1,12 @@
 ﻿@{
     ViewBag.Title = "About";
     ViewBag.Title = "We believe in second chances";
-    if (this.User.Identity.Name.Contains("com"))
-    {
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    else
+
+    if (this.User.Identity.Name.Length.Equals(8) && !User.Identity.Name.Contains("com"))
     {
         Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
     }
+    else { Layout = "~/Views/Shared/_Layout.cshtml"; }
 }
 <!--Page Title-->
 <section class="page-title" style="background-image:url(images/background/5.jpg);">
