@@ -9,9 +9,8 @@
     @Scripts.Render("~/bundles/d3")
     @Scripts.Render("~/bundles/chart")
 
-    <!-- ChartJs -->
     <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js”></script>
- 
+
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -36,7 +35,7 @@
                         <ul class="clearfix">
                             <li>Have Any Question?</li>
                             
-                            <li><span class="icon flaticon-e-mail-envelope"></span> <a href="#">homelyhome@fourloop.com</a></li>
+                            <li><span class="icon flaticon-e-mail-envelope"></span> <a href="#">NewLeaves@fourloop.com</a></li>
                         </ul>
                     </div>
                     <div class="top-right">
@@ -44,7 +43,7 @@
                            
                         </ul>
                         <div class="donation-btn">
-                            <a href="@Url.Action("Index","Wish_List",new {code = User.Identity.Name })" class="theme-btn btn-style-two">Donate Now</a>
+                            <a href="@Url.Action("Index","Wish_List",new {code = User.Identity.Name })" class="theme-btn btn-style-two">Wish List!</a>
                         </div>
                     </div>
                 </div>
@@ -70,22 +69,13 @@
 
         <!--End Footer-->
         <!--Page Bottom-->
-        @{
-            if (!User.Identity.Name.Contains("com"))
-            {
-                <section class="page-bottom" style="background-image:url(images/background/4.jpg);">
-                    <div class="auto-container">
-                        <div class="title">Spread your love</div>
-                        <h2>Become A Donor</h2>
-                        <a href="@Url.Action("Registration","DonorRegister")" class="theme-btn btn-style-two">Join Us Now</a>
-                    </div>
-                </section>
-            }
-        }
-
-
-
-     
+        <section class="page-bottom" style="background-image:url(images/background/4.jpg);">
+            <div class="auto-container">
+                <div class="title">Spread your love</div>
+                <h2>Become A Donor</h2>
+                <a href="@Url.Action("Registration","DonorRegister")" class="theme-btn btn-style-two">Join Us Now</a>
+            </div>
+        </section>
         <!--End Page Bottom-->
     </div>
     <!--End pagewrapper-->
@@ -100,7 +90,6 @@
     @Scripts.Render("~/bundles/revolution")
     @Scripts.Render("~/bundles/jquery.fancybox.pack")
     @Scripts.Render("~/bundles/jquery.fancybox-media")
-    @Scripts.Render("~/bundles/jquery.dataTables")
     @Scripts.Render("~/bundles/owl")
     @Scripts.Render("~/bundles/appear")
     @Scripts.Render("~/bundles/wow")
@@ -109,35 +98,6 @@
     @Scripts.Render("~/bundles/validate")
     @Scripts.Render("~/bundles/script")
     @Scripts.Render("~/bundles/newLeavesViz")
-
-    <!--Start of Jquery DataTables Script-->
-    <script type="text/javascript">
-    $(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        $('#wishlists-table tfoot th').each(function () {
-            var title = $(this).text();
-            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-        });
-
-        // DataTable
-        var table = $('#wishlists-table').DataTable({
-            "order": [[1, "desc"]]
-            });
-
-        // Apply the search
-        table.columns().every(function () {
-            var that = this;
-
-            $('input', this.footer()).on('keyup change', function () {
-                if (that.search() !== this.value) {
-                    that
-                        .search(this.value)
-                        .draw();
-                }
-            });
-        });
-    });
-    </script> <!--End of Jquery DataTables Script-->
    
     @RenderSection("scripts", required: false)
 </body>

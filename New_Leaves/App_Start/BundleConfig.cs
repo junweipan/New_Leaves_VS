@@ -20,9 +20,6 @@ namespace New_Leaves
             bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox-media").Include(
                         "~/Scripts/jquery.fancybox.media.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery.dataTables").Include(
-                        "~/Scripts/jquery.dataTables.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/owl").Include(
                         "~/Scripts/owl.js"));
 
@@ -79,7 +76,6 @@ namespace New_Leaves
                       "~/Content/jquery-ui.css",
                       "~/Content/style.jquery.bootstap-touchspin.css",
                       "~/Content/style.jquery.fancybox.css",
-                      "~/Content/style.jquery.dataTables.css",
                       "~/Content/nouislider.css",
                       "~/Content/nouislider.pips.css",
                       "~/Content/owl.css",

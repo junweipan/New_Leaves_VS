@@ -2,70 +2,67 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
 <h2>Index</h2>
 
 <p>
-    @*@Html.ActionLink("Create New", "Create")*@
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.Create_Date)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Hope_Delivery_Date)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Item.Item_Name)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
-        <td>
-            
-        </td>
-        
-       
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorityCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Item_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refugee.RefugeeFName)
+        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>       
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Create_Date)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Hope_Delivery_Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Item.Item_Name)
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
-        
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Status)
+            @Html.DisplayFor(modelItem => item.AuthorityCode)
         </td>
-       
         <td>
-            @if (item.Status.Equals("Deleted"))
-            {
-
-            }
-            @if (item.Status.Equals("Completed"))
-            {
-
-            }
-            @if (item.Status.Equals("Not deliverd"))
-            {
-                @Html.ActionLink("Donate", "Create", "Donations", new { id = item.Wish_List_ID }, null)<br />
-            @*    @Html.ActionLink("Details", "Details", new { id = item.Wish_List_ID }) *@
-    @*@Html.ActionLink("Delete", "Delete", new { id = item.Wish_List_ID }) *@
-            }
-
+            @Html.DisplayFor(modelItem => item.Item.Item_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Refugee.RefugeeFName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Wish_List_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Wish_List_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Wish_List_ID })
         </td>
     </tr>
 }
