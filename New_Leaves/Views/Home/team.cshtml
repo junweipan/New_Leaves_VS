@@ -1,6 +1,11 @@
 ﻿@{
     ViewBag.Title = "Our Team";
-   
+    if (this.User.Identity.Name.Length.Equals(8) && !User.Identity.Name.Contains("com"))
+    {
+        Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
+    }
+    else { Layout = "~/Views/Shared/_Layout.cshtml"; }
+
 }
   <!--Team Section-->
 <section class="team-section">

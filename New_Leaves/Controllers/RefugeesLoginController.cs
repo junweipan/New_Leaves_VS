@@ -36,7 +36,8 @@ namespace New_Leaves.Controllers
                 var v = dc.Refugee.Where(a => a.AuthorityCode == login.AuthorityCode).FirstOrDefault();
                 if (v != null)
                 {
-                    if (string.Compare((login.Password), v.Password) == 0)
+                    if (string.Compare(Crypto.Hash(login.Password), v.Password) == 0)
+                       
                     {   
                         int timeout = login.RememberMe ? 525600 : 20;
                         var ticket = new FormsAuthenticationTicket(login.AuthorityCode, login.RememberMe, timeout);
