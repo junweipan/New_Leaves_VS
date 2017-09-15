@@ -20,7 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
-        
+        <th>
+            @Html.DisplayNameFor(model => model.Donor.FirstName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Wish_List.Status)
         </th>
@@ -38,7 +40,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Status)
         </td>
-       
+        <td>
+            @Html.DisplayFor(modelItem => item.Donor.FirstName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Wish_List.Status)
         </td>
