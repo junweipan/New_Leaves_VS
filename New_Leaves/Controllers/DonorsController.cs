@@ -83,6 +83,7 @@ namespace New_Leaves.Controllers
            
             if (ModelState.IsValid)
             {
+                donor.Password = Crypto.Hash(donor.Password);
                 db.Entry(donor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

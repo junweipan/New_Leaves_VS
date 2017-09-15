@@ -17,10 +17,9 @@
 </script>
 <h2>Create</h2>
 
-@ViewBag.donor.DID
-@ViewBag.wish.Item_ID
+
 @ViewBag.Item_Name
-@using (Html.BeginForm()) 
+@using (Html.BeginForm( new { id = @ViewBag.wishlistid }))
 {
     @Html.AntiForgeryToken()
     

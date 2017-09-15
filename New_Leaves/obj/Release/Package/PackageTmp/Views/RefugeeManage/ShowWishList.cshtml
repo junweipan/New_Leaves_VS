@@ -23,6 +23,8 @@
             </tr>
             @foreach (var item in Model)
             {
+                if (!item.Status.Equals("Deleted"))
+                {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Create_Date)
@@ -33,14 +35,25 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
-                       
-                        <td>
 
-                            @Html.ActionLink("Change it", "Edit", new { id = item.Wish_List_ID }) ||
-                            @Html.ActionLink("Remove from wishlist", "Delete", new { id = item.Wish_List_ID })
-
+                        <td>              
+                            @*if this wish list compelte, this record would be deleted*@
+                            @if (item.Status.Equals("In processing"))
+                            {                                 
+                                @Html.ActionLink("Received", "Received", new { id = item.Wish_List_ID })<br />  
+                            }
+                            else if (item.Status.Equals("Not deliverd"))
+                            {
+                                @Html.ActionLink("Change it", "Edit", new { id = item.Wish_List_ID })<br />
+                                @Html.ActionLink("Remove it from wishlist", "Delete", new { id = item.Wish_List_ID })
+                            }
+                            else if (item.Status.Equals("Completed"))
+                            {
+                                @Html.ActionLink("Remove this record", "Delete", new { id = item.Wish_List_ID })
+                            }
                         </td>
                     </tr>
+                }
             }
         </table>
          }

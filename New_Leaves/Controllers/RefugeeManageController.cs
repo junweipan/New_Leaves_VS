@@ -23,7 +23,7 @@ namespace New_Leaves.Controllers
 
         [Authorize]
         public ActionResult RefugeeDetails(String code)
-        {
+        {   
 
             if (code == null)
             {
@@ -36,6 +36,23 @@ namespace New_Leaves.Controllers
                 return HttpNotFound();
             }
             return View(refugee);
+        }
+        [Authorize]
+        public ActionResult RefugeeDetailsAfter(String code)
+        {
+
+            if (code == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
+            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
+            if (refugee == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["Title1"] = "Change Password Successfully";
+            return View("RefugeeDetails",refugee);
         }
 
 
@@ -220,5 +237,56 @@ namespace New_Leaves.Controllers
             ViewBag.RID = new SelectList(db.Refugee, "RID", "RefugeeFName", wish_List.RID);
             return View(wish_List);
         }
+
+        public ActionResult ChangePassword(string code)
+        {
+            if (code == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
+           
+            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
+
+            return View(refugee);
+        }
+        public ActionResult ChangePasswordNon(string code)
+        {
+            if (code == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
+            ViewData["Non"] = "The old password didn't match";
+            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
+
+            return View("ChangePassword",refugee);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword([Bind(Include = "RID,AuthorityCode,RefugeeFName,RefugeeLName,Password,OldConfirmPassword,ConfirmNewPassword,NewPassword,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
+        {    newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
+          
+            if (string.Compare(Crypto.Hash(refugee.OldConfirmPassword), refugee.Password) == 0)
+           {
+                if (ModelState.IsValid)
+                {
+                    refugee.Password = refugee.NewPassword;
+                    refugee.Password = Crypto.Hash(refugee.Password);
+                    db.Entry(refugee).State = EntityState.Modified;
+                    db.SaveChanges();                                    
+                    return RedirectToAction("RefugeeDetailsAfter", new { code = User.Identity.Name });
+                }
+           }
+            else
+            {
+                ViewData["Non"] = "The old password didn't match";
+                return View("ChangePassword", refugee);
+            }
+           
+            return View();
+        }
+
     }
 }
