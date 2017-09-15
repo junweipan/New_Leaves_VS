@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="434937eb4a714b399047dfee2e9c94e2" Name="Diagram1">
-        <EntityTypeShape EntityType="newleavesdatabaseModel.Donation" Width="1.5" PointX="7" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="newleavesdatabaseModel.Donor" Width="1.5" PointX="2.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="newleavesdatabaseModel.Item" Width="1.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="newleavesdatabaseModel.Refugee" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="newleavesdatabaseModel.Wish_List" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesdatabaseModel.Donation" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesdatabaseModel.Donor" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesdatabaseModel.Item" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesdatabaseModel.Refugee" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="newleavesdatabaseModel.Wish_List" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="newleavesdatabaseModel.FK_Donation_ToDonor" ManuallyRouted="false" />
         <AssociationConnector Association="newleavesdatabaseModel.FK_Donation_ToWish_List" ManuallyRouted="false" />
         <AssociationConnector Association="newleavesdatabaseModel.FK_Wish_List_ToItem" ManuallyRouted="false" />

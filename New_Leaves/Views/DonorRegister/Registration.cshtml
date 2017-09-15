@@ -86,14 +86,48 @@ else
                 <div class="col-md-offset-3 col-md-6">
                     @{
                         List<SelectListItem> listItems = new List<SelectListItem>();
-                        
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "NSW",
+                            Value = "NSW"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "QLD",
+                            Value = "QLD",
+                            
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "SA",
+                            Value = "SA"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "TAS",
+                            Value = "TAS"
+                        });
                         listItems.Add(new SelectListItem
                         {
                             Text = "VIC",
                             Value = "VIC",
                             Selected = true
                         });
-               
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "WA",
+                            Value = "WA"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "ACT",
+                            Value = "ACT"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "NT",
+                            Value = "NT"
+                        });
                     }
 
                     @Html.DropDownListFor(model => model.State, listItems, "-- Select State --")

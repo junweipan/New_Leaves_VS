@@ -54,7 +54,7 @@ namespace New_Leaves.Controllers
             if (wish_List != null)
             {
                 wish_List.Create_Date = DateTime.Now;
-                wish_List.Status = "Not delivered";
+                wish_List.Status = "Not deliverd";
             }
             if (ModelState.IsValid)
             {

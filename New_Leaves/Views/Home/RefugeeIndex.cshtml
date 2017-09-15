@@ -4,15 +4,18 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-
+@Html.DisplayFor(model => model.RefugeeFName)
 <!--Services Section-->
 <section class="services-section">
     <div class="auto-container">
         <!--Sec Title-->
         <div class="sec-title centered">
-            <div class="title">Welcome to Blossing Hopes</div>
-            <h2>We are doing our best to help you</h2>
-            <div class="text">To check the status of the items of your wishlist please click in the link at the top-right corner button "My Wishlist". In case you haven't create one wishlist you can also do it clicking in that button</div>
+            <div class="title">Show your love</div>
+            <h2>We need your help Now!!</h2>
+            <div class="text">More and more refugees and asylum come to Australia in recent years, and the government issued large of political response to an increase in the number of asylum seekers arriving in Australia by boat. (51,637 arrivals in the five years to December 2013)</div>
+        </div>
+        <div class="col-md-offset-2 col-md-8">
+            <canvas id="totalRefugees" width="400" height="200"></canvas>
         </div>
         <div class="row clearfix">
             <!--Services Block-->
@@ -67,7 +70,7 @@
                         <span class="icon"><img src="../images/icon-7.png" alt="" /></span>
                     </div>
                     <h3><a href="services.html">Make a lasting impact</a></h3>
-                    <div class="lower-box" style="background-image:url(../images/resource/services-1.jpg);">
+                    <div class="lower-box" style="background-image:url(images/resource/services-1.jpg);">
                         <div class="curved-box"></div>
                         <div class="text">We will do our best to help refugees as soon as possible.</div>
                         <a href="#" class="theme-btn btn-style-three">Read More</a>
@@ -81,7 +84,7 @@
 <!--End Services Section-->
 
 <!--Counter Section-->
-<section class="counter-section" style="background-image:url(../images/background/2.jpg);">
+<section class="counter-section" style="background-image:url(images/background/2.jpg);">
     <div class="auto-container">
         <!--Sec Title-->
         <div class="sec-title light centered">
@@ -151,9 +154,9 @@
 <section class="fullwidth-section-one">
     <div class="section-outer clearfix">
         <!--Image Column-->
-        <div class="image-column" style="background-image:url(../images/fullwidth-1.jpg);">
+        <div class="image-column" style="background-image:url(images/fullwidth-1.jpg);">
             <div class="hidden-image">
-                <img src="../images/fullwidth-1.jpg" alt="" />
+                <img src="images/fullwidth-1.jpg" alt="" />
             </div>
         </div> 
 
@@ -164,7 +167,7 @@
                 <div class="sec-title">
                     <h2>Join <span>our event & helping us by donating</span></h2>
                 </div>
-                <div class="text">It is an non-profit organization website, we offer nice people in Australia who want to help these refugees, the donor need to register an account in the website, and donate the furniture they want, there are 11 basic household can be donated. They can see the wish list that proposed by refugees.</div>
+                <div class="text">It is an non-profit organization website, we offer  nice people in Australia who want to help these refugees, the donor need to register an account in the website, and donate the furniture they want, there are 11 basic household can be donated. They can see the wish list that proposed by refugees.</div>
                 <div class="row clearfix">
                     <!--Donate Box-->
                     <div class="donate-box col-md-4 col-sm-4 col-xs-12">

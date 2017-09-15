@@ -1,75 +1,13 @@
-﻿.add-margin-bottom {
-    margin-bottom: 80px;
-}
-
-.all-wishlists h2 {
-    text-align: center;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    margin: 20px 0; 
-}
-
-.all-wishlists input[type=search]{
-    border: solid 1px #a4a4a4;
-    padding: 5px;
-    margin: 0 5px;
-}
-
-.all-wishlists img {
-    margin-left: 40px;
-}
-
-.all-wishlists td p {
-    font-size: 18px;
-    padding-top: 30px;
-}
-
-.all-wishlists td a {
-    display: inline-block;
-    margin-top: 15px;
-}
-
+﻿
+/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 0;
     padding-right: 0;
 }
 
-.btn-style-six {
-    position: relative;
-    padding: 14px 38px;
-    line-height: 24px;
-    color: #3ecd12;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    border: solid 2px;
-    border-radius: 5px;
-}
-
-.btn-style-six:hover {
-    color: #ffffff;
-    background: #82ea62;
-}
-
-.credentials-error-message {
-    text-align: center;
-    color: crimson;
-    font-family: "Open Sans";
-    font-weight: 400;
-    padding-bottom: 15px;
-}
-
-.delete-record h2 {
-    text-align: center;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    margin: 20px 0;
-}
-
-.delete-record h4 {
-    text-align: center;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    margin-bottom: 40px;
-}
-
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
 
 .dl-horizontal {
     font-size: 18px;
@@ -134,15 +72,6 @@
     text-transform: uppercase;
 }
 
-.table {
-    margin: 0 40px;
-    max-width: 94%;
-}
-
-.table>tbody>tr>td {
-    padding: 20px 0;
-}
-
 .refugee-details .btn-style-four {
      font-family: 'Open Sans', sans-serif;
      margin: 20px 0;
@@ -156,15 +85,3 @@
     max-height: 400px;
 }
 
-.wishlists-table_wrapper {
-    margin: 0 40px !important;
-}
-
-.dataTables_paginate .paging_simple_numbers #wishlists-table_paginate {
-    text-align: center !important;
-    margin: 0 auto;
-}
-
-#map {
-    margin-top: 40px;
-}

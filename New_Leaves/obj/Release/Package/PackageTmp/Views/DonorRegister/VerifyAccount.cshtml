@@ -1,22 +1,20 @@
 ﻿
 @{
-    ViewBag.Title = "Verify Account";
+    ViewBag.Title = "VerifyAccount";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Verify your account</h2>
+<h2>VerifyAccount</h2>
 
- @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
 {
     <div class="alert alert-success">
-        <h3>Account created succesfully</h3> 
-        <p>Account has been activated successfully.</p>  
-        <p>Click here to @Html.ActionLink("Login", "Login", "DonorRegister")</p>
+        <strong>Success!</strong> Your account has been activated successfully. Click here to @Html.ActionLink("Login", "Login", "DonorRegister")
     </div>
 }
 else
 {
     <div class="alert alert-danger">
-        <strong>There was an error creating you account. Please contact support at support@newleaves.com </strong> @ViewBag.Message
+        <strong>Error!</strong> @ViewBag.Message
     </div>
 }

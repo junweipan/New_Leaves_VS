@@ -1,20 +1,13 @@
-﻿.body-content {
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
     padding-left: 0;
     padding-right: 0;
 }
 
-.delete-record h2 {
-    text-align: center;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    margin: 20px 0;
-}
-
-.delete-record h4 {
-    text-align: center;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    margin-bottom: 40px;
-}
-
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
 
 .dl-horizontal {
     font-size: 18px;
@@ -79,11 +72,6 @@
     text-transform: uppercase;
 }
 
-.table {
-    margin: 0 40px;
-    max-width: 94%;
-}
-
 .refugee-details .btn-style-four {
      font-family: 'Open Sans', sans-serif;
      margin: 20px 0;
@@ -95,14 +83,5 @@
 
 .visualization {
     max-height: 400px;
-}
-
-.wishlists-table_wrapper {
-    margin: 0 40px !important;
-}
-
-.dataTables_paginate .paging_simple_numbers #wishlists-table_paginate {
-    text-align: center !important;
-    margin: 0 auto;
 }
 
