@@ -28,6 +28,10 @@
     margin-top: 15px;
 }
 
+.all-wishlist dataTable tfoot {
+    display: none;
+}
+
 .body-content {
     padding-left: 0;
     padding-right: 0;

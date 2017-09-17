@@ -15,13 +15,13 @@ namespace New_Leaves
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox.pack").Include(
-                        "~/Scripts/jquery.fancybox.pack.js"));
+                        "~/Scripts/jquery-fancybox.pack.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox-media").Include(
-                        "~/Scripts/jquery.fancybox.media.js"));
+                        "~/Scripts/jquery-fancybox.media.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery.dataTables").Include(
-                        "~/Scripts/jquery.dataTables.js"));
+                        "~/Scripts/jquery-dataTables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/owl").Include(
                         "~/Scripts/owl.js"));
@@ -77,11 +77,11 @@ namespace New_Leaves
                       "~/Content/font-awesome.css",
                       "~/Content/hover.css",
                       "~/Content/jquery-ui.css",
-                      "~/Content/style.jquery.bootstap-touchspin.css",
-                      "~/Content/style.jquery.fancybox.css",
-                      "~/Content/style.jquery.dataTables.css",
+                      "~/Content/jquery-bootstap-touchspin.css",
+                      "~/Content/jquery-fancybox.css",
+                      "~/Content/jquery-dataTables.css",
                       "~/Content/nouislider.css",
-                      "~/Content/nouislider.pips.css",
+                      "~/Content/nouislider-pips.css",
                       "~/Content/owl.css",
                       "~/Content/responsive.css",
                       "~/Content/revolution-slider.css"));
