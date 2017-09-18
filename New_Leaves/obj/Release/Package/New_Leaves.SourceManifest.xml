@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="\\ad.monash.edu\home\User028\dtor6\Documents\GitHub\New_Leaves_VS\New_Leaves\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="\\ad.monash.edu\home\User028\dtor6\Documents\GitHub\New_Leaves_VS\New_Leaves\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="\\ad.monash.edu\home\User028\dtor6\Documents\GitHub\New_Leaves_VS\New_Leaves\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

@@ -98,9 +98,9 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/revolution")
-    @Scripts.Render("~/bundles/jquery.fancybox.pack")
-    @Scripts.Render("~/bundles/jquery.fancybox-media")
-    @Scripts.Render("~/bundles/jquery.dataTables")
+    @Scripts.Render("~/bundles/jquery-fancybox-pack")
+    @Scripts.Render("~/bundles/jquery-fancybox-media")
+    @Scripts.Render("~/bundles/jquery-dataTables")
     @Scripts.Render("~/bundles/owl")
     @Scripts.Render("~/bundles/appear")
     @Scripts.Render("~/bundles/wow")
@@ -116,7 +116,7 @@
         // Setup - add a text input to each footer cell
         $('#wishlists-table tfoot th').each(function () {
             var title = $(this).text();
-            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            $(this).html('<input type="text" style="display: none;" placeholder="Search ' + title + '" />');
         });
 
         // DataTable

@@ -14,13 +14,13 @@ namespace New_Leaves
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox.pack").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery-fancybox-pack").Include(
                         "~/Scripts/jquery-fancybox.pack.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery.fancybox-media").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery-fancybox-media").Include(
                         "~/Scripts/jquery-fancybox.media.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery.dataTables").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery-dataTables").Include(
                         "~/Scripts/jquery-dataTables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/owl").Include(
