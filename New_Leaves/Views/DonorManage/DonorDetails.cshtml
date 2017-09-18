@@ -11,7 +11,7 @@
     <div class="col-md-offset-2 col-md-8 text-center">
         <h2>Donor Details</h2>
         @Html.ActionLink("Edit", "Edit", new { email = Model.Email }, new { @class = "theme-btn btn-style-four" }) |
-        @Html.ActionLink("See my Donation", "Index", "Donations", null, new { @class = "theme-btn btn-style-four" }) |
+        @Html.ActionLink("See my Donation history", "Index", "Donations", null, new { @class = "theme-btn btn-style-four" }) |
         @Html.ActionLink("Back to Home page", "Index", "Home", null, new { @class = "theme-btn btn-style-four" })
     </div>
     <dl class="dl-horizontal col-md-offset-2 col-md-8">
@@ -43,10 +43,6 @@
     </dl>
 </div>
 <div class="col-md-12 text-center">
-    <p>
-        @Html.ActionLink("Edit my pprofile", "Edit", new { email = Model.Email }) |
-        @Html.ActionLink("See my Donations", "Index", "Donations", null, null) |
-        @Html.ActionLink("Back to Home page", "Index", "Home", null, null)
-    </p>
+   
 </div>
 
