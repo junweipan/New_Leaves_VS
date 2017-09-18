@@ -28,6 +28,10 @@
     margin-top: 15px;
 }
 
+.all-wishlist dataTable tfoot {
+    display: none;
+}
+
 .body-content {
     padding-left: 0;
     padding-right: 0;
@@ -104,6 +108,12 @@
     font-family: 'Open Sans', Arial, sans-serif;
    
 }
+
+.form-horizontal h4 {
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif, sans-serif; 
+}
+
 
 .form-horizontal label {
     font-weight: 500;

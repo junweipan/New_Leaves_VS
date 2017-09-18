@@ -11,7 +11,8 @@
 
     <!-- ChartJs -->
     <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js”></script>
- 
+    <!--Google traslate API-->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -51,18 +52,35 @@
             </div>
         </div>
       
+        <!--google translate bar-->
+        <div id="google_translate_element"></div>
+        <style type="text/css">
+            iframe.goog-te-banner-frame {
+                display: none !important;
+            }
+        </style>
+        <style type="text/css">
+            body {
+                position: static !important;
+                top: 0px !important;
+            }
+        </style>
+        <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            autoDisplay: false,
+                            includedLanguages: ''
+                        },'google_translate_element');}
+        </script>
         <!--Header-Upper-->
        
         @Html.Partial("_DonorLoginPartial")
        
         <!--End Header Upper-->
         @Html.Partial("_DonorLoginPartialSticky")
-       
-
     </header>
     <!--End Main Header -->
-
-
     <div class="page-wrapper body-content">
         @RenderBody()
   
@@ -98,9 +116,9 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/revolution")
-    @Scripts.Render("~/bundles/jquery.fancybox.pack")
-    @Scripts.Render("~/bundles/jquery.fancybox-media")
-    @Scripts.Render("~/bundles/jquery.dataTables")
+    @Scripts.Render("~/bundles/jquery-fancybox-pack")
+    @Scripts.Render("~/bundles/jquery-fancybox-media")
+    @Scripts.Render("~/bundles/jquery-dataTables")
     @Scripts.Render("~/bundles/owl")
     @Scripts.Render("~/bundles/appear")
     @Scripts.Render("~/bundles/wow")
@@ -116,7 +134,7 @@
         // Setup - add a text input to each footer cell
         $('#wishlists-table tfoot th').each(function () {
             var title = $(this).text();
-            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            $(this).html('<input type="text" style="display: none;" placeholder="Search ' + title + '" />');
         });
 
         // DataTable
