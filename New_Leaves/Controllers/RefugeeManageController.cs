@@ -23,8 +23,15 @@ namespace New_Leaves.Controllers
 
         [Authorize]
         public ActionResult RefugeeDetails(String code)
-        {   
+        {
+            var username = User.Identity.Name;
 
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,7 +47,14 @@ namespace New_Leaves.Controllers
         [Authorize]
         public ActionResult RefugeeDetailsAfter(String code)
         {
+            var username = User.Identity.Name;
 
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -59,6 +73,14 @@ namespace New_Leaves.Controllers
         [Authorize]
         public ActionResult ShowWishList(string code)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -71,9 +93,17 @@ namespace New_Leaves.Controllers
         //get the wishlist id
         //1, delete the wishlist in wishlist table
         //2,chage the value in donation table
+        [Authorize]
         public ActionResult Received(int id)
         {
-           
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             //delete the wishlist(make this record invisible)
             Wish_List wish_List = db.Wish_List.Find(id);
             wish_List.Status = "Completed";
@@ -90,6 +120,14 @@ namespace New_Leaves.Controllers
         public ActionResult CreateWishList(string code)
           
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -142,6 +180,14 @@ namespace New_Leaves.Controllers
         [Authorize]
         public ActionResult RefugeeModifyAccount(int? id)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -175,6 +221,14 @@ namespace New_Leaves.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -192,6 +246,14 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             Wish_List wish_List = db.Wish_List.Find(id);
             wish_List.Status = "Deleted";
             db.Entry(wish_List).State = EntityState.Modified;
@@ -201,6 +263,14 @@ namespace New_Leaves.Controllers
 
         public ActionResult Edit(int? id)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -240,6 +310,14 @@ namespace New_Leaves.Controllers
 
         public ActionResult ChangePassword(string code)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -252,6 +330,14 @@ namespace New_Leaves.Controllers
         }
         public ActionResult ChangePasswordNon(string code)
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             if (code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

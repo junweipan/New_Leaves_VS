@@ -112,6 +112,14 @@ namespace New_Leaves.Controllers
 
         public ActionResult LearnMore()
         {
+            var username = User.Identity.Name;
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
+                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
+                ViewData.Add("FullName", fullName);
+            }
             return View("LearnMore");
 
         }
