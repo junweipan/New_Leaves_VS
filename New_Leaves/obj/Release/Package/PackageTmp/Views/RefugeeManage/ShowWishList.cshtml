@@ -1,0 +1,60 @@
+﻿@model IEnumerable<New_Leaves.Models.Wish_List>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
+}
+
+<h2>Your Wish List</h2>
+
+<p>
+    @Html.ActionLink("Add Items", "CreateWishList",new { code = User.Identity.Name})
+</p>
+
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <tr>
+                <th>Create Date:</th>
+                <th>Item Name:</th>
+                <th>Status:</th>
+                <th>Operations:</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (!item.Status.Equals("Deleted"))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Create_Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item.Item_Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+
+                        <td>              
+                            @*if this wish list compelte, this record would be deleted*@
+                            @if (item.Status.Equals("In processing"))
+                            {                                 
+                                @Html.ActionLink("Received", "Received", new { id = item.Wish_List_ID })<br />  
+                            }
+                            else if (item.Status.Equals("Not deliverd"))
+                            {
+                                @Html.ActionLink("Change it", "Edit", new { id = item.Wish_List_ID })<br />
+                                @Html.ActionLink("Remove it from wishlist", "Delete", new { id = item.Wish_List_ID })
+                            }
+                            else if (item.Status.Equals("Completed"))
+                            {
+                                @*@Html.ActionLink("Remove this record", "Delete", new { id = item.Wish_List_ID })*@
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+         }
+@Html.ActionLink("Back to personal profile", "RefugeeDetails", new { code = User.Identity.Name })
