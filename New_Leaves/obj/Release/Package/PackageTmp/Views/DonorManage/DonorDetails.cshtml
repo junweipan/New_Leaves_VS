@@ -1,0 +1,48 @@
+﻿@model New_Leaves.Models.Donor
+
+@{
+    ViewBag.Title = "DonorDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="refugee-details">
+    <div class="col-md-offset-2 col-md-8 text-center">
+        <h2>Donor Details</h2>
+        @Html.ActionLink("Edit", "Edit", new { email = Model.Email }, new { @class = "theme-btn btn-style-four" })  | 
+        @Html.ActionLink("See my Donation history", "Index", "Donations", null, new { @class = "theme-btn btn-style-four" })  | 
+        @Html.ActionLink("Back to Home page", "Index", "Home", null, new { @class = "theme-btn btn-style-four" })
+    </div>
+    <dl class="dl-horizontal col-md-offset-2 col-md-8">
+        <dt> @Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd> @Html.DisplayFor(model => model.FirstName)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd> @Html.DisplayFor(model => model.LastName)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Email)</dt>
+        <dd> @Html.DisplayFor(model => model.Email)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Street)</dt>
+        <dd> @Html.DisplayFor(model => model.Street)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Suburb)</dt>
+        <dd> @Html.DisplayFor(model => model.Suburb) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.State)</dt>
+        <dd> @Html.DisplayFor(model => model.State)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Postcode)</dt>
+        <dd> @Html.DisplayFor(model => model.Postcode) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Phone) </dt>
+        <dd> @Html.DisplayFor(model => model.Phone)</dd>
+
+        
+    </dl>
+</div>
+<div class="col-md-12 text-center">
+   
+</div>
+

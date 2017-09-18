@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - New Leaves</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/d3")
+    @Scripts.Render("~/bundles/chart")
+
+    <!-- ChartJs -->
+    <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js”></script>
+    <!--Google traslate API-->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="~/Content/responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700,700i|Lora:400,400i,700,700i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i
+" rel="stylesheet">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+<body>
+    <!-- Main Header / Header Style Two-->
+    <header class="main-header header-style-two">
+
+        <!--Header Top-->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+                    <div class="top-left">
+                        <ul class="clearfix">
+                            <li>Have Any Question?</li>
+                            
+                            <li><span class="icon flaticon-e-mail-envelope"></span> <a href="#">homelyhome@fourloop.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right">
+                        <ul class="social-icon-four clearfix">
+                           
+                        </ul>
+                        <div class="donation-btn">
+                            <a href="@Url.Action("Index","Wish_List",new {code = User.Identity.Name })" class="theme-btn btn-style-two">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <!--google translate bar-->
+        <div id="google_translate_element"></div>
+        <style type="text/css">
+            iframe.goog-te-banner-frame {
+                display: none !important;
+            }
+        </style>
+        <style type="text/css">
+            body {
+                position: static !important;
+                top: 0px !important;
+            }
+        </style>
+        <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            autoDisplay: false,
+                            includedLanguages: ''
+                        },'google_translate_element');}
+        </script>
+        <!--Header-Upper-->
+       
+        @Html.Partial("_DonorLoginPartial")
+       
+        <!--End Header Upper-->
+        @Html.Partial("_DonorLoginPartialSticky")
+    </header>
+    <!--End Main Header -->
+    <div class="page-wrapper body-content">
+        @RenderBody()
+  
+        <!--Main Footer-->
+
+        <!--End Footer-->
+        <!--Page Bottom-->
+        @{
+            if (!User.Identity.Name.Contains("com"))
+            {
+                <section class="page-bottom" style="background-image:url(images/background/4.jpg);">
+                    <div class="auto-container">
+                        <div class="title">Spread your love</div>
+                        <h2>Become A Donor</h2>
+                        <a href="@Url.Action("Registration","DonorRegister")" class="theme-btn btn-style-two">Join Us Now</a>
+                    </div>
+                </section>
+            }
+        }
+
+
+
+     
+        <!--End Page Bottom-->
+    </div>
+    <!--End pagewrapper-->
+   
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="icon fa fa-long-arrow-up"></span></div>
+
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/revolution")
+    @Scripts.Render("~/bundles/jquery-fancybox-pack")
+    @Scripts.Render("~/bundles/jquery-fancybox-media")
+    @Scripts.Render("~/bundles/jquery-dataTables")
+    @Scripts.Render("~/bundles/owl")
+    @Scripts.Render("~/bundles/appear")
+    @Scripts.Render("~/bundles/wow")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/mixitup")
+    @Scripts.Render("~/bundles/validate")
+    @Scripts.Render("~/bundles/script")
+    @Scripts.Render("~/bundles/newLeavesViz")
+
+    <!--Start of Jquery DataTables Script-->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#wishlists-table tfoot th').each(function () {
+            var title = $(this).text();
+            $(this).html('<input type="text" style="display: none;" placeholder="Search ' + title + '" />');
+        });
+
+        // DataTable
+        var table = $('#wishlists-table').DataTable({
+            "order": [[1, "desc"]]
+            });
+
+        // Apply the search
+        table.columns().every(function () {
+            var that = this;
+
+            $('input', this.footer()).on('keyup change', function () {
+                if (that.search() !== this.value) {
+                    that
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
+    });
+    </script> <!--End of Jquery DataTables Script-->
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>
