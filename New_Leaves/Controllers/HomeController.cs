@@ -55,18 +55,18 @@ namespace New_Leaves.Controllers
                 
             
         }
+
         public ActionResult DonorIndex()
         {        
-            return View("Index");
+            return View("DonorIndex");
         }
+
         public ActionResult Index()
         {
-          
             return View("Index");
-
         }
-        public ActionResult Team()
-           
+
+        public ActionResult Team()   
         {
             var username = User.Identity.Name;
 
