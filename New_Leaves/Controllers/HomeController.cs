@@ -123,5 +123,11 @@ namespace New_Leaves.Controllers
             return View("LearnMore");
 
         }
+        public ActionResult Disclaimer()
+        {
+
+            return View("Disclaimer");
+
+        }
     }
 }
