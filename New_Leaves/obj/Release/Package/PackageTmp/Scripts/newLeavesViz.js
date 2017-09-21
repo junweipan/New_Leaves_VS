@@ -81,7 +81,7 @@ dataWrangle(csvData).then( () => {
 
 //D3 VISUALISATION - CLOROPETH MAP
 //Load in GeoJSON data
-d3.json("../Content/data/countries.geo.json", (error, worldMap) => {
+d3.json("../Content/data/countriesGeo.json", (error, worldMap) => {
 		//Array for map visualisation
 		worldMap.features.map(country => {
 })
