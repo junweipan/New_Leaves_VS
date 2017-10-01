@@ -328,26 +328,7 @@ namespace New_Leaves.Controllers
 
             return View(refugee);
         }
-        public ActionResult ChangePasswordNon(string code)
-        {
-            var username = User.Identity.Name;
-
-            if (!string.IsNullOrEmpty(username))
-            {
-                var user = db.Refugee.SingleOrDefault(u => u.AuthorityCode == username);
-                string fullName = string.Concat(new string[] { user.RefugeeFName, " ", user.RefugeeLName });
-                ViewData.Add("FullName", fullName);
-            }
-            if (code == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Refugee refugee = db.Refugee.SingleOrDefault(r => r.AuthorityCode == code);
-            ViewData["Non"] = "The old password didn't match";
-            // User myUser = myDBContext.Users.SingleOrDefault(user => user.Username == username);
-
-            return View("ChangePassword",refugee);
-        }
+       
 
         [HttpPost]
         [ValidateAntiForgeryToken]

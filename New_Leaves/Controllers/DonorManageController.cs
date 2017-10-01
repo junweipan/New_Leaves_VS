@@ -48,10 +48,13 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "DID,FirstName,LastName,Email,Password,ConfirmPassword,IsEmailVerified,ActivationCode,Street,Suburb,State,Postcode,Phone,Icon")] Donor donor)
         {
-          //  donor.ConfirmPassword = donor.Password;
+            
+            
             if (ModelState.IsValid)
             {
+
                 donor.Password = Crypto.Hash(donor.Password);
+                donor.ConfirmPassword = Crypto.Hash(donor.ConfirmPassword);
                 db.Entry(donor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("DonorDetails", new { code = donor.Email });
