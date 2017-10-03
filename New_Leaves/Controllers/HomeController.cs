@@ -123,6 +123,14 @@ namespace New_Leaves.Controllers
             return View("LearnMore");
 
         }
+
+        public ActionResult FastResponse()
+        {
+
+            return View("FastResponse");
+        }
+
+
         public ActionResult Disclaimer()
         {
 

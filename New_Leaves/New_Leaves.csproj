@@ -441,6 +441,7 @@
     <Content Include="Views\DonationsAdmin\Index.cshtml" />
     <Content Include="Views\Home\Disclaimer.cshtml" />
     <Content Include="Views\Home\DonorIndex.cshtml" />
+    <Content Include="Views\Home\FastResponse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
