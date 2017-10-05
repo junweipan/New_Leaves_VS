@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "SecondChance";
+
+    if (this.User.Identity.Name.Length.Equals(8) && !User.Identity.Name.Contains("com"))
+    {
+        Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
+    }
+    else { Layout = "~/Views/Shared/_Layout.cshtml"; }
+}
+<!--Page Title-->
+<section class="page-title" style="background-image:url(images/background/5.jpg);">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1>They deserve a second chance</h1>
+            <ul class="bread-crumb">
+                <li><a href="@Url.Action(" Index","Home")">Home</a></li>
+                <li>Second Chance</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!--About Section-->
+<section class="about-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!--Image Column-->
+            <div class="image-column col-md-6 col-sm-12 col-xs-12">
+                <div class="image">
+                    <img src="~/images/resource/refuge.png" alt="" />
+                </div>
+            </div>
+            <!--Content Column-->
+            <div class="content-column col-md-6 col-sm-12 col-xs-12">
+                <div class="inner">
+                    <div class="sec-title">
+                        <div class="title">Where do refugees' come from ?</div>
+                        
+                    </div>
+                    
+                    <div class="text">
+                        The data is according to "Refugee Action Coalition Sydney".<br>
+                        In 2013-14 Australia allowed visas to 11,016 individuals who were abroad and needed security. 
+                        The greater part were from only three nations: Afghanistan, Iran and Burma. 
+                        Around the same time, 545 visas were allowed to individuals who landed in Australia by vessel. 
+                        The majority of these were from Afghanistan, Iran and Sri Lanka, places where individuals live in 
+                        steady dread of savagery, demise and torment, and experience the ill effects of serious constraint 
+                        for their ethnic, religious, political, or sexual alliance. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End About Section-->
+
+<!--About Section-->
+<section class="about-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            
+            <!--Content Column-->
+            <div class="content-column col-md-6 col-sm-12 col-xs-12">
+                <div class="inner">
+                    <div class="sec-title">
+                        <div class="title">Conditions in other countries</div>
+
+                    </div>
+
+                    <div class="text">
+                        Afganistan: 2014 was the deadliest year yet for regular folks in the war against the Taliban, with no less than 3,188 murdered and 6,429 harmed. 
+                        Since the U.N. started following regular citizen losses in 2009, a sum of 17,252 non military personnel passings and 29,536 wounds have been recorded. 
+                        Ladies, youngsters, schools and centers are frequently focused on. 
+                        Net human rights abusers regularly hold open office.
+                        <br />
+                        Iran: A large number of individuals, including many democratic activists, were unreasonably detained following the ill-conceived June 2009 Presidential 
+                        decision. Many stay in jail. No less than 9 political nonconformists have been executed since 2009. 
+                        Torment of political detainees is normal. Individuals from ethnic and religious minorities are liable to merciless suppression. 
+                        Understudy associations are regularly prohibited and their pioneers detained.
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Image Column-->
+            <div class="image-column col-md-6 col-sm-12 col-xs-12">
+                <div class="image">
+                    <img src="~/images/resource/refuge1.jpg" alt="" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End About Section-->
+
+<!--Services Section-->
+<section class="services-section style-two">
+    <div class="auto-container">
+        <!--Sec Title-->
+        <div class="sec-title centered">
+            <div class="sub-title">Look into</div>
+            <h2>More Insights</h2>
+        </div>
+
+        <div class="row clearfix">
+            <!--Services Block Two-->
+            <div class="services-block-two col-md-3 col-sm-6 col-xs-12">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="icon-box">
+                        <span class="icon"><img src="~/images/resource/iraq.jpg" alt="" /></span>
+                    </div>
+                    <h3>Iraq</h3>
+                    <div class="overlay-box">
+                        <div class="overlay-inner">
+                            <div class="content">
+                                <h4>Conditions in Iraq</h4>
+                                <div class="text">Violence kills or injures hundreds of civilians each month. More than 17,000 civilians died from violence 2014. 
+                                Government forces and armed militias continued to commit gross human rights abuses. Many are widows, who are forced into sex-trafficking and prostitution.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Services Block Two-->
+            <div class="services-block-two col-md-3 col-sm-6 col-xs-12">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="icon-box">
+                        <span class="icon"><img src="~/images/resource/syria.png" alt="" /></span>
+                    </div>
+                    <h3>Syria</h3>
+                    <div class="overlay-box">
+                        <div class="overlay-inner">
+                            <div class="content">
+                                <h4>Conditions in Syria</h4>
+                                <div class="text">Refugee people are frequently escaping war, or ruthless administrations like the Taliban.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Services Block Two-->
+            <div class="services-block-two col-md-3 col-sm-6 col-xs-12">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="icon-box">
+                        <span class="icon"><img src="~/images/resource/iran.png" alt="" /></span>
+                    </div>
+                    <h3>Iran</h3>
+                    <div class="overlay-box">
+                        <div class="overlay-inner">
+                            <div class="content">
+                                <h4>Conditions in Iran</h4>
+                                <div class="text"> Iran executes more prisoners than any country except China. 
+                                In 2011, for instance, the Islamic Republic of Iran executed 660 people.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Services Block Two-->
+            <div class="services-block-two col-md-3 col-sm-6 col-xs-12">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                    <div class="icon-box">
+                        <span class="icon"><img src="~/images/resource/srilanka.png" alt="" /></span>
+                    </div>
+                    <h3>Sri Lanka</h3>
+                    <div class="overlay-box">
+                        <div class="overlay-inner">
+                            <div class="content">
+                                <h4>Conditions in Sri Lanka</h4>
+                                <div class="text">The most recent UN report lists 5676 “outstanding cases” of enforced or involuntary disappearances in Sri Lanka. 
+                                The Sri Lankan government has refused to cooperate with United Nations war crimes enquiries.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Services Section-->

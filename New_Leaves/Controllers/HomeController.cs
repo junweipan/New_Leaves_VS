@@ -130,6 +130,12 @@ namespace New_Leaves.Controllers
             return View("FastResponse");
         }
 
+        public ActionResult SecondChance()
+        {
+
+            return View("SecondChance");
+        }
+
 
         public ActionResult Disclaimer()
         {
