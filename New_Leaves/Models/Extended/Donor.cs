@@ -68,16 +68,6 @@ namespace New_Leaves.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
-        /**
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
-        [DataType(DataType.Password)]
-        [MinLength(6, ErrorMessage = "Minimum 6 characters required")]
-        public string NewPassword { get; set; }
-
-        [Display(Name = "Confirm New Password")]
-        [DataType(DataType.Password)]
-        [Compare("NewPassword", ErrorMessage = "Confirm new password and  new password do not match")]
-        public string ConfirmNewPassword { get; set; }
-        **/
+        
     }
 }
