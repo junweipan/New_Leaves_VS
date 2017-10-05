@@ -82,7 +82,7 @@
 
 </div> <!-- End of add new item form-->
 <div class="col-md-3 all-wishlists">
-    <h2>Your actual wishlist</h2>
+    <h2>Your Wishlist</h2>
 
     @if (@ViewBag.list == null)
     {
@@ -98,14 +98,16 @@
     {
         <table style="width: 100%;">
             <tr style="border-bottom: solid 1px #e5e5e5;">
-                <th>Item Name: </th>
-                <th>Category: </th>
+                <td>Item:</td>
+                <td>Image: </td>
+                <td>Category: </td>
             </tr>
             @foreach (var x in @ViewBag.list)
             {
                 <tr>
                     <td style="padding: 5px 0;">@x.Item.Item_Name</td>
                     <td class="pull-right">@x.Item.Category</td>
+                    <td class="pull-right"><img src=@x.Item.Icon></td>
                 </tr>
             }
 
