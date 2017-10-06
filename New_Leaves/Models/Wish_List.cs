@@ -11,7 +11,8 @@ namespace New_Leaves.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Wish_List
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,7 +27,10 @@ namespace New_Leaves.Models
         public Nullable<System.DateTime> Create_Date { get; set; }
         public Nullable<System.DateTime> Hope_Delivery_Date { get; set; }
         public string Status { get; set; }
+
+        [Display(Name = "More Information")]
         public string Description { get; set; }
+
         public string AuthorityCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

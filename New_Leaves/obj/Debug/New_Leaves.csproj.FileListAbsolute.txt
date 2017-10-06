@@ -168,7 +168,6 @@ C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\bin\Newtonsoft.Json.xml
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.dll
 C:\Users\Sky\Desktop\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.pdb
-C:\Users\Administrator\Downloads\New_Leaves_VS\New_Leaves\obj\Debug\New_Leaves.csprojResolveAssemblyReference.cache
 C:\Users\CCC\Documents\GitHub\New_Leaves_VS\New_Leaves\bin\ApplicationInsights.config
 C:\Users\CCC\Documents\GitHub\New_Leaves_VS\New_Leaves\bin\roslyn\csc.exe
 C:\Users\CCC\Documents\GitHub\New_Leaves_VS\New_Leaves\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
