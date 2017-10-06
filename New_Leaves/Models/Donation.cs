@@ -20,7 +20,7 @@ namespace New_Leaves.Models
         public Nullable<int> Wish_List_ID { get; set; }
         public string Item_Name { get; set; }
 
-        [Display(Name = "Pick up date")]
+        [Display(Name = "Pick up date after:")]
         public Nullable<System.DateTime> Donate_Date { get; set; }
         public string Status { get; set; }
     

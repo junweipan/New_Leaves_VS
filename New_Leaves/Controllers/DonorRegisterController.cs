@@ -134,7 +134,7 @@ namespace New_Leaves.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("About", "Home");
+                            return RedirectToAction("DonorIndex", "Home");
                         }
                     }
                     else
