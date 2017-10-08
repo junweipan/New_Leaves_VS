@@ -9,13 +9,14 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-  $( function() {
+    $( function() {
+        <a href="~/Views/RefugeeManage/CreateWishList.cshtml">~/Views/RefugeeManage/CreateWishList.cshtml</a>
       $("#datepicker").datepicker({
           dateFormat: "d/M/yy"
       });
   } );
 </script>
-<div class="col-md-8">
+<div class="col-md-6">
     
     @using (Html.BeginForm())
     {
@@ -47,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div hidden="hidden" class="form-group">
 
                 @Html.Label("Diliver it after:", htmlAttributes: new { @class = "col-md-offset-3 col-md-6" })
                 <div class="col-md-offset-3 col-md-6">
@@ -81,12 +82,12 @@
     }
 
 </div> <!-- End of add new item form-->
-<div class="col-md-3 all-wishlists">
-    <h2>Your actual wishlist</h2>
+<div class="col-md-5 all-wishlists">
+    <h2>Your Wishlist</h2>
 
     @if (@ViewBag.list == null)
     {
-        <table>
+        <table class="table table-responsive">
             <tr>
                 <th></th>
                 <th></th>
@@ -96,16 +97,18 @@
     }
     else
     {
-        <table style="width: 100%;">
-            <tr style="border-bottom: solid 1px #e5e5e5;">
-                <th>Item Name: </th>
-                <th>Category: </th>
+        <table class="table table-responsive" style="width: 100%;">
+            <tr style="border-bottom: solid 1px #e5e5e5; text-align: center;">
+                <td>Item:</td>
+                <td>Category: </td>
+                <td>Image: </td>
             </tr>
             @foreach (var x in @ViewBag.list)
             {
-                <tr>
+                <tr style="text-align:center;">
                     <td style="padding: 5px 0;">@x.Item.Item_Name</td>
-                    <td class="pull-right">@x.Item.Category</td>
+                    <td class="">@x.Item.Category</td>
+                    <td class=""><center><img class="img-responsive" src=@x.Item.Icon></center></td>
                 </tr>
             }
 

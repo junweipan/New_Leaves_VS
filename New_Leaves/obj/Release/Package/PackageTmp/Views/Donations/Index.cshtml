@@ -13,6 +13,7 @@
         <tr>
             <th>Item</th>
             <th>@Html.DisplayNameFor(model => model.Donate_Date)</th>
+            <th>Pick up address</th>
             <th>@Html.DisplayNameFor(model => model.Wish_List.Status)</th>
             <th></th>
         </tr>
@@ -22,6 +23,7 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Item_Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Donate_Date)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
                 <td>@Html.DisplayFor(modelItem => item.Wish_List.Status)</td>
             </tr>
         }
