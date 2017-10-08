@@ -110,10 +110,10 @@ namespace New_Leaves.Controllers
             db.Entry(wish_List).State = EntityState.Modified;
             db.SaveChanges();
             //change information in donation table
-            Donation donation = wish_List.Donation.Where(d=>d.Wish_List_ID==id).FirstOrDefault();
-            donation.Status = "Completed";
-            db.Entry(donation).State = EntityState.Modified;
-            db.SaveChanges();
+         //   Donation donation = wish_List.Donation.Where(d=>d.Wish_List_ID==id).FirstOrDefault();
+          //  donation.Status = "Completed";
+         //   db.Entry(donation).State = EntityState.Modified;
+       //     db.SaveChanges();
             return RedirectToAction("ShowWishList", new { code = User.Identity.Name });
         }
         [Authorize]
@@ -334,23 +334,34 @@ namespace New_Leaves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassword([Bind(Include = "RID,AuthorityCode,RefugeeFName,RefugeeLName,Password,OldConfirmPassword,ConfirmNewPassword,NewPassword,Postcode,Email,Street,Suburb,State,Phone,Family_Description,Icon")] Refugee refugee)
         {    newleavesdatabaseEntities1 db = new newleavesdatabaseEntities1();
-          
-            if (string.Compare(Crypto.Hash(refugee.OldConfirmPassword), refugee.Password) == 0)
-           {
-                if (ModelState.IsValid)
-                {
-                    refugee.Password = refugee.NewPassword;
-                    refugee.Password = Crypto.Hash(refugee.Password);
-                    db.Entry(refugee).State = EntityState.Modified;
-                    db.SaveChanges();                                    
-                    return RedirectToAction("RefugeeDetailsAfter", new { code = User.Identity.Name });
-                }
-           }
-            else
+
+            if (refugee.OldConfirmPassword != null && refugee.NewPassword != null && refugee.NewPassword != null)
             {
-                ViewData["Non"] = "The old password didn't match";
-                return View("ChangePassword", refugee);
+                if (string.Compare(Crypto.Hash(refugee.OldConfirmPassword), refugee.Password) == 0)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        refugee.Password = refugee.NewPassword;
+                        refugee.Password = Crypto.Hash(refugee.Password);
+                        db.Entry(refugee).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("RefugeeDetailsAfter", new { code = User.Identity.Name });
+                    }
+                }
+                else
+                {
+                    ViewData["Non"] = "The old password didn't match";
+                    return View("ChangePassword", refugee);
+                }
+
             }
+            else {
+                ViewData["Non"] = "Please fill all the boxes before submit.";
+                return View("ChangePassword", refugee);
+
+            }
+            
+         
            
             return View();
         }
