@@ -139,12 +139,12 @@ namespace New_Leaves.Controllers
                     }
                     else
                     {
-                        message = "Invalid credential provided";
+                        message = "Username or password is invalid";
                     }
                 }
                 else
                 {
-                    message = "Invalid credential provided";
+                    message = "Username or password is invalid";
                 }
             }
             ViewBag.Message = message;

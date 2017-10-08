@@ -9,9 +9,9 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="form-horizontal contact-form">
         <h3 class="centered">Donor Login</h3>
-        @ViewBag.Message
+       <center><span style=" center; color indianred;">@ViewBag.Message</span></center> 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "col-md-offset-4 col-md-4 col-xs-offset-1 col-xs-10" })

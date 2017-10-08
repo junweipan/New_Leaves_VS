@@ -5,31 +5,30 @@
     Layout = "~/Views/Shared/_LayoutRefugee.cshtml";
 }
 
-<h2>Your Wish List</h2>
+<h3 style="text-align: center; margin: 20px 0;">Your Wish List</h3>
 
-<p>
-    @Html.ActionLink("Add Items", "CreateWishList",new { code = User.Identity.Name})
-</p>
+<center>
+    <p class="theme-btn btn-style-four" style="color: white;">
+        @Html.ActionLink("Add Items", "CreateWishList", new { code = User.Identity.Name })
+    </p>
+</center>
+
 
 
     @if (Model != null)
     {
-        <table class="table">
+        <table class="table table-responsive">
             <tr>
-                <th>Create Date:</th>
                 <th>Item Name:</th>
                 <th>Image:</th>
                 <th>Status:</th>
-                <th>Operations:</th>
+                <th>Actions:</th>
             </tr>
             @foreach (var item in Model)
             {
                 if (!item.Status.Equals("Deleted"))
                 {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Create_Date)
-                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Item.Item_Name)
                         </td>
@@ -61,4 +60,4 @@
             }
         </table>
          }
-@Html.ActionLink("Back to personal profile", "RefugeeDetails", new { code = User.Identity.Name })
+<center>@Html.ActionLink("Back to personal profile", "RefugeeDetails", new { code = User.Identity.Name })</center> 
