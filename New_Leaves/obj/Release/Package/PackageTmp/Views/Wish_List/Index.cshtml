@@ -9,7 +9,7 @@
 <div class="all-wishlists">
     <h2>All wishlists items</h2>
 
-    <table id="wishlists-table" class="table">
+    <table id="wishlists-table" class="table table-responsive">
 
 
         <thead>
@@ -20,10 +20,10 @@
                 <th>
                     Item
                 </th>
-                <th>
+                <th class="hidden-xs">
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
-                <th>
+                <th class="hidden-xs">
                     @Html.DisplayNameFor(model => model.Item.Category)
                 </th>
                 <th></th>
@@ -37,10 +37,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Item.Item_Name)
                 </th>
-                <th>
+                <th class="hidden-xs">
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
-                <th>
+                <th class="hidden-xs">
                     @Html.DisplayNameFor(model => model.Item.Category)
                 </th>
                 <th></th>
@@ -53,15 +53,15 @@
                 {
                     <tr>
                         <td>
-                           <img src="@Html.DisplayFor(model => item.Item.Icon)" />   
+                           <img class="img-responsive" src="@Html.DisplayFor(model => item.Item.Icon)" />   
                         </td>
                         <td>
                            <p>@Html.DisplayFor(modelItem => item.Item.Item_Name)</p> 
                         </td>
-                        <td>
+                        <td class="hidden-xs">
                             <p>@Html.DisplayFor(modelItem => item.Description)</p>
                         </td>
-                        <td>
+                        <td class="hidden-xs">
                            <p>@Html.DisplayFor(modelItem => item.Item.Category)</p>
                         </td>
                         <td>
